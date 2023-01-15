@@ -1,0 +1,143 @@
+{ 
+    // ##################################################
+
+    "workbench.colorTheme": "Default Light+",
+
+
+    // ####################括弧記号色付け####################
+
+    // 括弧記号色付け有効無効
+    "editor.bracketPairColorization.enabled": true,
+    
+    // 括弧編
+    // "workbench.colorCustomizations": {
+    //     "editorBracketHighlight.foreground1": "#202020", 
+    //     "editorBracketHighlight.foreground2": "#FF0000", 
+    //     "editorBracketHighlight.foreground3": "#1e90ff", 
+    //     "editorBracketHighlight.foreground4": "#008000", 
+    //     "editorBracketHighlight.foreground5": "#ffbf00", 
+    //     "editorBracketHighlight.foreground6": "#9400d3"  
+    // },
+    // "editor.guides.bracketPairs": true,
+    // 色線によるガイドの太さを指定 1
+    // "indentRainbow.lightIndicatorStyleLineWidth":2,
+
+    // インデント編
+    "indentRainbow.colors": [   
+        "rgba(0,     0,   0, 7)", // 黒
+        "rgba(128,  64,  64, 7)", // 赤
+        "rgba(128,  96,  32, 7)", // 橙
+        "rgba( 32, 128,  32, 7)", // 緑
+        "rgba( 32,  64, 128, 7)", // 青
+        "rgba(128,  64, 128, 7)"  // 紫
+    ],
+
+    // ####################VScodeのカスタマイズ####################
+
+    "workbench.iconTheme": "vscode-icons",
+
+    //ブレークポイントの表示
+    "editor.glyphMargin": true,
+
+    //ミニマップの非表示
+    // "editor.minimap.enabled": false,
+    "editor.minimap.maxColumn": 60,
+
+    // ミニマップのスライダーの表示方法
+    "editor.minimap.showSlider": "always",
+    // ミニマップのサイズ
+    "editor.minimap.size": "fit",
+
+    //エクスプローラーから「開いている開いているエディター」非表示
+    "explorer.openEditors.visible": 0,
+    //行と行の文字の上下左右の間隔を変更する
+    "editor.letterSpacing": -0.3,
+    "editor.lineHeight": 20,
+
+    // .から始まる隠しフォルダを非表示にする
+    "files.exclude": {
+        // "**/.*": true
+    },
+
+    // ##################################################
+
+    // デバッグコンソールの表示方法
+    "debug.internalConsoleOptions": "openOnSessionStart",
+
+    // デバッグ中に行内に変数値を表示
+    "debug.inlineValues": "on",
+    // デバッグビューの表示方法
+    "debug.openDebug": "openOnSessionStart",
+    // ドラッグアンドドロップで選択範囲のテキストを移動できるようにする
+    "editor.dragAndDrop": false,
+
+    "window.title": "${dirty}${activeEditorShort} / ${rootName}", // タイトルバーの文字
+    "editor.renderLineHighlight": "all", // 選択中の行を強調する
+    // "editor.glyphMargin": true, // 行の左端に余白を作る
+    "editor.roundedSelection": true, // 選択範囲の角を丸める
+    "editor.scrollBeyondLastLine": true, // 最終行よりも下へのスクロールを許可
+    "editor.renderControlCharacters": true, // 制御文字の表示
+    "editor.insertSpaces": true, // Tabキーで半角スペースを入力
+    "editor.minimap.side": "right", // ミニマップを右に表示
+    "editor.emptySelectionClipboard": false, // 選択範囲無しでのコピー 不許可
+    "files.insertFinalNewline": true, // ファイルの終端に空の行を追加
+    "files.autoGuessEncoding": true, // 文字コードを自動判別
+
+    // "window.menuBarVisibility": "toggle",    // メニューバー(上端)の非表示
+    "workbench.editor.showTabs": true, // 上段タブを表示
+    "workbench.activityBar.visible": true, // アクティビティバー(左端)を表示に
+    "workbench.sideBar.location": "left", // サイドバーを左に
+
+    "workbench.statusBar.visible": true,
+
+
+    "workbench.panel.defaultLocation": "right",
+    "terminal.integrated.tabs.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    
+    // 開かれるエディターをプレビュー として表示するかどうかを制御します。
+    // "workbench.editor.enablePreview": false,
+
+    // 開かれるエディターをプレビュー として表示するかどうかを制御します。
+    "workbench.editor.enablePreview": true,
+
+    // Quick Open で開いたエディター をプレビューとして表示するかどうかを制御します。
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "explorer.confirmDelete": false,
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "workbench.startupEditor": "none",
+    "workbench.editor.untitled.hint": "hidden",
+    // エディターの書式をコピー時に保持するか
+    "editor.copyWithSyntaxHighlighting": true,
+    "vsicons.dontShowNewVersionMessage": true,
+
+    // 診断データを送信しない
+    "telemetry.telemetryLevel": "off",
+    "indentRainbow.indicatorStyle": "light",
+    "remote.SSH.remotePlatform": {
+        "RaspberryPi-SSSS": "linux",
+        "RaspberryPi-v4": "linux",
+        "RaspberryPi": "linux",
+        "RaspberryPi-v6": "linux",
+        "raspberrypi": "linux"
+    },
+    "editor.mouseWheelZoom": true,
+    "window.zoomLevel": 1,
+    "remote.extensionKind": {
+
+        "pub.name": [
+            "ui"
+        ]
+    },
+    "vscode-ahk-plus.executePath": "C:/Program Files/AutoHotkey/v2/AutoHotkey64.exe",
+    "vscode-ahk-plus.documentPath": "C:/Program Files/AutoHotkey/v2/AutoHotkey.chm",
+    "vscode-ahk-plus.compilePath": "",
+    "files.associations": {
+        "*.txt": "markdown"
+    },
+
+    // ##################################################
+
+    
+}
+

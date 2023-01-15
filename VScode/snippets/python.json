@@ -1,0 +1,339 @@
+{
+    // Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    // same ids are connected.
+    // Example:
+    // "Print to console": {
+    // 	"prefix": "log",
+    // 	"body": [
+    // 		"console.log('$1');",
+    // 		"$2"
+    // 	],
+    // 	"description": "Log output to console"
+    // }
+    // ==========ユーザー定義==========
+    "simple_print": {
+        "prefix": "pr",
+        "body": "print('$1')",
+        "description": "print()の標準的構文"
+    },
+    "value_for_print()": {
+        "prefix": "pv",
+        "body": "print('${1:value}: ',${1:value})",
+        "description": "変数を名前とセットでprint出力"
+    },
+    "args_kwargs": {
+        "prefix": "arg",
+        "body": "*args, **kwargs",
+        "description": "可変長引数セット"
+    },
+    "open()_read": {
+        "prefix": "open_read",
+        "body": [
+            "with open(${1:path}, mode='r', encoding='utf-8') as f:",
+            "    s = f.read()       #文字列で読み込み",
+            "    s = f.readlines()    #リストで読み込み"
+        ],
+        "description": "open()関数ファイル読み出し"
+    },
+    "open()_write": {
+        "prefix": "open_write",
+        "body": [
+            "with open(path, mode='w', encoding='utf-8') as f:",
+            "    f.write(s)             #文字列を書き込み",
+            "    f.write('\\n'.join(lis)) # リストを書き込み"
+        ],
+        "description": "open()関数ファイル書き込み"
+    },
+    "line_No_print": {
+        "prefix": "pl",
+        "body": "print('line: $TM_LINE_NUMBER','$1')",
+        "description": "print出力にコードの現在の行を追加"
+    },
+    "filename": {
+        "prefix": "filename",
+        "body": "$TM_FILENAME",
+        "description": "現在のファイル名を表示"
+    },
+    "dirinfo": {
+        "prefix": "dinfo",
+        "body": [
+            "$1# $TM_FILENAME   | ファイル名",
+            "# $TM_FILENAME_BASE   | ファイル名(拡張子なし)",
+            "# $TM_DIRECTORY   | 現在のドキュメントのディレクトリ",
+            "# $TM_FILEPATH   | 現在の完全なファイルパス",
+            "# $RELATIVE_FILEPATH   | ワークスペースからの相対パス",
+            "# $WORKSPACE_NAME   | ワークスペースのファイル名",
+            "# $WORKSPACE_FOLDER   | ワークスペースのパス"
+        ],
+        "description": " "
+    },
+    //==========numpy==========
+    "numpyarray": {
+        "prefix": "npa",
+        "body": "np.array([[$1]])",
+        "description": "numpy配列生成"
+    },
+    "numpyarray12": {
+        "prefix": "npa",
+        "body": "np.array([[0$1, 0]])",
+        "description": "ヨコ2のnumpy配列生成"
+    },
+    "numpyarray21": {
+        "prefix": "npa",
+        "body": "np.array([[0$1], [0]])",
+        "description": "タテ2のnumpy配列生成"
+    },
+    "numpyarray22": {
+        "prefix": "npa",
+        "body": "np.array([[0$1, 0], [0, 0]])",
+        "description": "2*2のnumpy配列生成"
+    },
+    //==========mytemplate==========
+    "matplotlib.pyplot mytemplate": {
+        "prefix": "plt",
+        "body": [
+            "# ==========グラフ==========",
+            "#(縦数, 横数, sharex=False, sharey=False, figsize=(横,高さ), squeeze=False)",
+            "fig, ax = plt.subplots(1, 1, squeeze=False ,)",
+            "",
+            "yx = (0,0)",
+            "ax[yx].plot(x, y, label='')",
+            "# ax[yx].plot(x, y, label='', c='b', ls='-', marker='')",
+            "",
+            "# ax[yx].set_title('') #タイトル",
+            "# ax[yx].set_xlabel('') #X軸ラベル",
+            "# ax[yx].set_ylabel('') #Y軸ラベル",
+            "# ax[yx].set_xlim(0,5) #X軸範囲",
+            "# ax[yx].set_ylim(0,5) #Y軸範囲",
+            "# ax[yx].axhline(0, c='k') #X軸ゼロ水平線",
+            "# ax[yx].axvline(0, c='k') #Y軸ゼロ垂直線",
+            "ax[yx].grid(which='minor',ls=':', ) #補助グリッド線の表示",
+            "ax[yx].legend(loc='best',) # 凡例表示",
+            "",
+            "plt.show() # グラフ描画",
+        ],
+        "description": "matplotlibグラフのテンプレート展開"
+    },
+    "try/except Pass": {
+        "prefix": "try/except Pass",
+        "body": [
+            "try:",
+            "\tany",
+            "except:",
+            "\tpass"
+        ],
+        "description": "Code snippet for a try/except statement"
+    },
+
+    "try/except print": {
+        "prefix": "try/except print",
+        "body": [
+            "try:",
+            "\tany",
+            "except Exception as e:",
+            "\tprint(e)"
+        ],
+        "description": "Code snippet for a try/except statement"
+    },
+    //==========以下従来標準搭載されていたスペニット==========
+    "if": {
+        "prefix": "if",
+        "body": [
+            "if ${1:expression}:",
+            "\t${2:pass}"
+        ],
+        "description": "Code snippet for an if statement"
+    },
+    "if/else": {
+        "prefix": "if/else",
+        "body": [
+            "if ${1:condition}:",
+            "\t${2:pass}",
+            "else:",
+            "\t${3:pass}"
+        ],
+        "description": "Code snippet for an if statement with else"
+    },
+    "elif": {
+        "prefix": "elif",
+        "body": [
+            "elif ${1:expression}:",
+            "\t${2:pass}"
+        ],
+        "description": "Code snippet for an elif"
+    },
+    "else": {
+        "prefix": "else",
+        "body": [
+            "else:",
+            "\t${1:pass}"
+        ],
+        "description": "Code snippet for an else"
+    },
+    "while": {
+        "prefix": "while",
+        "body": [
+            "while ${1:expression}:",
+            "\t${2:pass}"
+        ],
+        "description": "Code snippet for a while loop"
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for ${1:target_list} in ${2:expression_list}:",
+            "\t${3:pass}"
+        ],
+        "description": "Code snippet for a for loop"
+    },
+    "try/except": {
+        "prefix": "try/except",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}"
+        ],
+        "description": "Code snippet for a try/except statement"
+    },
+    "try/finally": {
+        "prefix": "try/finally",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "finally:",
+            "\t${2:pass}"
+        ],
+        "description": "Code snippet for a try/finally statement"
+    },
+    "try/except/else": {
+        "prefix": "try/except/else",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}",
+            "else:",
+            "\t${5:pass}"
+        ],
+        "description": "Code snippet for a try/except/else statement"
+    },
+    "try/except/finally": {
+        "prefix": "try/except/finally",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}",
+            "finally:",
+            "\t${5:pass}"
+        ],
+        "description": "Code snippet for a try/except/finally statement"
+    },
+    "with": {
+        "prefix": "with",
+        "body": [
+            "with ${1:expression} as ${2:target}:",
+            "\t${3:pass}"
+        ],
+        "description": "Code snippet for a with statement"
+    },
+    "def": {
+        "prefix": "def",
+        "body": [
+            "def ${1:funcname}(${2:parameter_list}):",
+            "\t\"\"\"",
+            "\t${3:docstring}",
+            "\t\"\"\"",
+            "\t${4:pass}"
+        ],
+        "description": "Code snippet for a function definition"
+    },
+    "class": {
+        "prefix": "class",
+        "body": [
+            "class ${1:classname}(${2:object}):",
+            "\t\"\"\"",
+            "\t${3:docstring}",
+            "\t\"\"\"",
+            "\t${4:pass}"
+        ],
+        "description": "Code snippet for a class definition"
+    },
+    "lambda": {
+        "prefix": "lambda",
+        "body": [
+            "lambda ${1:parameter_list}: ${2:expression}"
+        ],
+        "description": "Code snippet for a lambda statement"
+    },
+    "if(main)": {
+        "prefix": "__main__",
+        "body": [
+            "if __name__ == \"__main__\":",
+            "    ${1:pass}"
+        ],
+        "description": "Code snippet for a `if __name__ == \"__main__\": ...` block"
+    },
+    "async/def": {
+        "prefix": "async/def",
+        "body": [
+            "async def ${1:funcname}(${2:parameter_list}):",
+            "\t${3:pass}"
+        ],
+        "description": "Code snippet for an async statement"
+    },
+    "async/for": {
+        "prefix": "async/for",
+        "body": [
+            "async for ${1:target} in ${2:iter}:",
+            "\t${3:block}"
+        ],
+        "description": "Code snippet for an async for statement"
+    },
+    "async/for/else": {
+        "prefix": "async/for/else",
+        "body": [
+            "async for ${1:target} in ${2:iter}:",
+            "\t${3:block}",
+            "else:",
+            "\t${4:block}"
+        ],
+        "description": "Code snippet for an async for statement with else"
+    },
+    "async/with": {
+        "prefix": "async/with",
+        "body": [
+            "async with ${1:expr} as ${2:var}:",
+            "\t${3:block}"
+        ],
+        "description": "Code snippet for an async with statement"
+    },
+    "ipdb": {
+        "prefix": "ipdb",
+        "body": "import ipdb; ipdb.set_trace()",
+        "description": "Code snippet for ipdb debug"
+    },
+    "pdb": {
+        "prefix": "pdb",
+        "body": "import pdb; pdb.set_trace()",
+        "description": "Code snippet for pdb debug"
+    },
+    "pudb": {
+        "prefix": "pudb",
+        "body": "import pudb; pudb.set_trace()",
+        "description": "Code snippet for pudb debug"
+    },
+    "add/new/cell": {
+        "prefix": "add/new/cell",
+        "body": "# %%",
+        "description": "Code snippet to add a new cell"
+    },
+    "mark/markdown": {
+        "prefix": "mark/markdown",
+        "body": "# %% [markdown]",
+        "description": "Code snippet to add a new markdown cell"
+    }
+}

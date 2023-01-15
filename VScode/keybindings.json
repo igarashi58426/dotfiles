@@ -1,0 +1,44 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+    {
+        // 行を下へ移動
+        "key": "shift+alt+down",
+        "command": "editor.action.moveLinesDownAction",
+    },
+    {
+        // 矩形選択 カーソルを下に挿入
+        "key": "alt+down",
+        "command": "editor.action.insertCursorBelow",
+    },
+    {
+        // 行を上へ移動
+        "key": "shift+alt+up",
+        "command": "editor.action.moveLinesUpAction",
+    },
+    {
+        // 矩形選択 カーソルを上に挿入
+        "key": "alt+up",
+        "command": "editor.action.insertCursorAbove",
+    },
+    {
+        // マルチカーソル修飾子の切り替え
+        "key": "shift+alt",
+        "command": "workbench.action.toggleMultiCursorModifier"
+    },
+    {
+        // 表示: 以前のエディターを開く
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        //表示: 次のエディターを開く
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        // 表示: 最大化されるパネルの切り替え
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "!inSearchEditor && !searchViewletFocus"
+    }
+]
