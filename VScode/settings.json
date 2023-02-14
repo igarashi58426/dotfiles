@@ -1,10 +1,10 @@
-{ 
+{
     // ====================VScodeのカスタマイズ====================
     // カラーテーマ:ライト
     "workbench.colorTheme": "Default Light+",
-    
+
     //  アイコン
-    "workbench.iconTheme": "vscode-icons",  
+    "workbench.iconTheme": "vscode-icons",
 
     //エクスプローラーから「開いている開いているエディター」非表示
     "explorer.openEditors.visible": 0,
@@ -40,36 +40,36 @@
     "editor.minimap.size": "fit",
 
     // ミニマップを右に表示
-    "editor.minimap.side": "right", 
-    
+    "editor.minimap.side": "right",
+
     // 選択中の行を強調する
     "editor.renderLineHighlight": "all",
     // 行の左端に余白を作る
-    // "editor.glyphMargin": true, 
+    // "editor.glyphMargin": true,
     // 選択範囲の角を丸める
-    "editor.roundedSelection": true, 
+    "editor.roundedSelection": true,
     // 最終行よりも下へのスクロールを許可
     "editor.scrollBeyondLastLine": true,
     // 制御文字の表示
-    "editor.renderControlCharacters": true, 
+    "editor.renderControlCharacters": true,
     // Tabキーで半角スペースを入力
-    "editor.insertSpaces": true, 
+    "editor.insertSpaces": true,
 
     // 選択範囲無しでのコピー 不許可
-    "editor.emptySelectionClipboard": false, 
+    "editor.emptySelectionClipboard": false,
     // ファイルの終端に空の行を追加
     "files.insertFinalNewline": true,
     // 文字コードを自動判別
-    "files.autoGuessEncoding": true, 
+    "files.autoGuessEncoding": true,
 
     // メニューバー(上端)の非表示
-    // "window.menuBarVisibility": "toggle",  
+    // "window.menuBarVisibility": "toggle",
     // 上段タブを表示
-    "workbench.editor.showTabs": true, 
+    "workbench.editor.showTabs": true,
     // アクティビティバー(左端)を表示に
-    "workbench.activityBar.visible": true, 
+    "workbench.activityBar.visible": true,
     // サイドバーを左に
-    "workbench.sideBar.location": "left", 
+    "workbench.sideBar.location": "left",
     // 下のステータスバーを表示
     "workbench.statusBar.visible": true,
 
@@ -79,7 +79,7 @@
     "terminal.integrated.tabs.enabled": false,
     // マルチカーソルのショートカットキー(ctrlCmd=WindowではCtrl)
     "editor.multiCursorModifier": "ctrlCmd",
-    
+
 
     // 開かれるエディターをプレビュー として表示するかどうか
     "workbench.editor.enablePreview": true,
@@ -96,7 +96,7 @@
 
     // 診断データを送信しない
     "telemetry.telemetryLevel": "off",
-    
+
     // スクロールに関数名を追従
     "editor.stickyScroll.enabled": true,
      // スクロールに関数名を追従する行数
@@ -113,13 +113,22 @@
     },
 
     // diff表示で行の前後空白を無視する
-    "diffEditor.ignoreTrimWhitespace": false, 
-    
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    // 余分なホワイトスペースを削除
+    "files.trimTrailingWhitespace": true,
+
+    // 単語間以外のホワイトスペースを常時表示
+    "editor.renderWhitespace": "boundary",
+
+    //全角空白などの基本的な ASCII 文字と混同される可能性のある文字を強調表示する
+    "editor.unicodeHighlight.ambiguousCharacters": true,
+
     // ====================デバック====================
 
     //ブレークポイントの表示
     "editor.glyphMargin": true,
-    
+
     // デバッグコンソールの表示方法
     "debug.internalConsoleOptions": "openOnSessionStart",
 
@@ -149,17 +158,11 @@
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "http://localhost:8080",
     "markdown-pdf.plantumlServer": "http://localhost:8080",
+    // ====================以下自動追加====================
+
 }
 
-
-
-
-
-
-
-
-
-// 拡張機能
+// インストール済み拡張機能
 
 // vscode-icons-team.vscode-icons
 // Compulim.vscode-clock
@@ -170,7 +173,6 @@
 // mechatroner.rainbow-csv
 // adamhartford.vscode-base64
 // ms-vscode.hexeditor
-// volkerdobler.insertnums
 
 // リモートVScode
 // ms-vscode-remote.remote-wsl
@@ -178,6 +180,8 @@
 // ms-vscode-remote.vscode-remote-extensionpack
 // ms-vscode-remote.remote-ssh-edit
 // ms-vscode-remote.remote-ssh
+
+
 
 // 言語拡張
 // ms-python.python
