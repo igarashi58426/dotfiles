@@ -33,8 +33,9 @@
 #Include SubScript_Mouse_Shortcut.ahk
 #Include SubScript_Shift_symbol.ahk
 #Include subScript_symbol_direct_input.ahk
+#Include SubScript_VScode_Shortcut.ahk
 ; #Include SubScript_View_mode.ahk
-; #Include SubScript_VScode_Shortcut.ahk
+
 ;***********************************************************************************************
 
 ;***********************例外モード**********************************************************
