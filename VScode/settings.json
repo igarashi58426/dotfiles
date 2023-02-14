@@ -1,104 +1,87 @@
 { 
-    // ##################################################
-
+    // ====================VScodeのカスタマイズ====================
+    // カラーテーマ:ライト
     "workbench.colorTheme": "Default Light+",
-
-
-    // ####################括弧記号色付け####################
-
-    // 括弧記号色付け有効無効
-    "editor.bracketPairColorization.enabled": true,
     
-    // 括弧編
-    // "workbench.colorCustomizations": {
-    //     "editorBracketHighlight.foreground1": "#202020", 
-    //     "editorBracketHighlight.foreground2": "#FF0000", 
-    //     "editorBracketHighlight.foreground3": "#1e90ff", 
-    //     "editorBracketHighlight.foreground4": "#008000", 
-    //     "editorBracketHighlight.foreground5": "#ffbf00", 
-    //     "editorBracketHighlight.foreground6": "#9400d3"  
-    // },
-    // "editor.guides.bracketPairs": true,
-    // 色線によるガイドの太さを指定 1
-    // "indentRainbow.lightIndicatorStyleLineWidth":2,
-
-    // インデント編
-    "indentRainbow.colors": [   
-        "rgba(0,     0,   0, 7)", // 黒
-        "rgba(128,  64,  64, 7)", // 赤
-        "rgba(128,  96,  32, 7)", // 橙
-        "rgba( 32, 128,  32, 7)", // 緑
-        "rgba( 32,  64, 128, 7)", // 青
-        "rgba(128,  64, 128, 7)"  // 紫
-    ],
-
-    // ####################VScodeのカスタマイズ####################
-
-    "workbench.iconTheme": "vscode-icons",
-
-    //ブレークポイントの表示
-    "editor.glyphMargin": true,
-
-    //ミニマップの非表示
-    // "editor.minimap.enabled": false,
-    "editor.minimap.maxColumn": 60,
-
-    // ミニマップのスライダーの表示方法
-    "editor.minimap.showSlider": "always",
-    // ミニマップのサイズ
-    "editor.minimap.size": "fit",
+    //  アイコン
+    "workbench.iconTheme": "vscode-icons",  
 
     //エクスプローラーから「開いている開いているエディター」非表示
     "explorer.openEditors.visible": 0,
+
     //行と行の文字の上下左右の間隔を変更する
     "editor.letterSpacing": -0.3,
     "editor.lineHeight": 20,
 
-    // .から始まる隠しフォルダを非表示にする
-    "files.exclude": {
-        // "**/.*": true
-    },
-
-    // ##################################################
-
-    // デバッグコンソールの表示方法
-    "debug.internalConsoleOptions": "openOnSessionStart",
-
-    // デバッグ中に行内に変数値を表示
-    "debug.inlineValues": "on",
-    // デバッグビューの表示方法
-    "debug.openDebug": "openOnSessionStart",
     // ドラッグアンドドロップで選択範囲のテキストを移動できるようにする
     "editor.dragAndDrop": false,
 
-    "window.title": "${dirty}${activeEditorShort} / ${rootName}", // タイトルバーの文字
-    "editor.renderLineHighlight": "all", // 選択中の行を強調する
-    // "editor.glyphMargin": true, // 行の左端に余白を作る
-    "editor.roundedSelection": true, // 選択範囲の角を丸める
-    "editor.scrollBeyondLastLine": true, // 最終行よりも下へのスクロールを許可
-    "editor.renderControlCharacters": true, // 制御文字の表示
-    "editor.insertSpaces": true, // Tabキーで半角スペースを入力
-    "editor.minimap.side": "right", // ミニマップを右に表示
-    "editor.emptySelectionClipboard": false, // 選択範囲無しでのコピー 不許可
-    "files.insertFinalNewline": true, // ファイルの終端に空の行を追加
-    "files.autoGuessEncoding": true, // 文字コードを自動判別
+    // 起動時ズームレベル
+    "window.zoomLevel": 1,
 
-    // "window.menuBarVisibility": "toggle",    // メニューバー(上端)の非表示
-    "workbench.editor.showTabs": true, // 上段タブを表示
-    "workbench.activityBar.visible": true, // アクティビティバー(左端)を表示に
-    "workbench.sideBar.location": "left", // サイドバーを左に
+    // ホイールによるズームを有効化
+    "editor.mouseWheelZoom": true,
 
+    // ====================エディター画面構成====================
+
+    // タイトルバーの文字
+    "window.title": "${dirty}${activeEditorShort} / ${rootName}",
+
+    //ミニマップの非表示
+    // "editor.minimap.enabled": false,
+
+    // ミニマップの最大幅
+    "editor.minimap.maxColumn": 60,
+
+    // ミニマップのスライダーの表示方法
+    "editor.minimap.showSlider": "always",
+
+    // ミニマップのサイズ
+    "editor.minimap.size": "fit",
+
+    // ミニマップを右に表示
+    "editor.minimap.side": "right", 
+    
+    // 選択中の行を強調する
+    "editor.renderLineHighlight": "all",
+    // 行の左端に余白を作る
+    // "editor.glyphMargin": true, 
+    // 選択範囲の角を丸める
+    "editor.roundedSelection": true, 
+    // 最終行よりも下へのスクロールを許可
+    "editor.scrollBeyondLastLine": true,
+    // 制御文字の表示
+    "editor.renderControlCharacters": true, 
+    // Tabキーで半角スペースを入力
+    "editor.insertSpaces": true, 
+
+    // 選択範囲無しでのコピー 不許可
+    "editor.emptySelectionClipboard": false, 
+    // ファイルの終端に空の行を追加
+    "files.insertFinalNewline": true,
+    // 文字コードを自動判別
+    "files.autoGuessEncoding": true, 
+
+    // メニューバー(上端)の非表示
+    // "window.menuBarVisibility": "toggle",  
+    // 上段タブを表示
+    "workbench.editor.showTabs": true, 
+    // アクティビティバー(左端)を表示に
+    "workbench.activityBar.visible": true, 
+    // サイドバーを左に
+    "workbench.sideBar.location": "left", 
+    // 下のステータスバーを表示
     "workbench.statusBar.visible": true,
 
-
+    // ワークスペース内のターミナル、デバッグコンソール、出力、問題の場所
     "workbench.panel.defaultLocation": "right",
+    // ターミナルの側面にターミナル タブを一覧として表示する(falseでプルダウン形式)
     "terminal.integrated.tabs.enabled": false,
+    // マルチカーソルのショートカットキー(ctrlCmd=WindowではCtrl)
     "editor.multiCursorModifier": "ctrlCmd",
     
-    // 開かれるエディターをプレビュー として表示するかどうかを制御します。
-    // "workbench.editor.enablePreview": false,
 
-    // 開かれるエディターをプレビュー として表示するかどうかを制御します。
+    // 開かれるエディターをプレビュー として表示するかどうか
     "workbench.editor.enablePreview": true,
 
     // Quick Open で開いたエディター をプレビューとして表示するかどうかを制御します。
@@ -113,7 +96,41 @@
 
     // 診断データを送信しない
     "telemetry.telemetryLevel": "off",
-    "indentRainbow.indicatorStyle": "light",
+    
+    // スクロールに関数名を追従
+    "editor.stickyScroll.enabled": true,
+     // スクロールに関数名を追従する行数
+    "editor.stickyScroll.maxLineCount": 3,
+
+    // テキストファイルをMarkdownとして開く
+    "files.associations": {
+        "*.txt": "markdown"
+    },
+
+    // 隠しフォルダを非表示にする
+    "files.exclude": {
+        // "**/.*": true
+    },
+
+    // diff表示で行の前後空白を無視する
+    "diffEditor.ignoreTrimWhitespace": false, 
+    
+    // ====================デバック====================
+
+    //ブレークポイントの表示
+    "editor.glyphMargin": true,
+    
+    // デバッグコンソールの表示方法
+    "debug.internalConsoleOptions": "openOnSessionStart",
+
+    // デバッグ中に行内に変数値を表示
+    "debug.inlineValues": "on",
+
+    // デバッグビューの表示方法
+    "debug.openDebug": "openOnSessionStart",
+
+
+    // ==================== remote SSH ====================
     "remote.SSH.remotePlatform": {
         "RaspberryPi-SSSS": "linux",
         "RaspberryPi-v4": "linux",
@@ -121,23 +138,54 @@
         "RaspberryPi-v6": "linux",
         "raspberrypi": "linux"
     },
-    "editor.mouseWheelZoom": true,
-    "window.zoomLevel": 1,
-    "remote.extensionKind": {
 
+    "remote.extensionKind": {
         "pub.name": [
             "ui"
         ]
     },
-    "vscode-ahk-plus.executePath": "C:/Program Files/AutoHotkey/v2/AutoHotkey64.exe",
-    "vscode-ahk-plus.documentPath": "C:/Program Files/AutoHotkey/v2/AutoHotkey.chm",
-    "vscode-ahk-plus.compilePath": "",
-    "files.associations": {
-        "*.txt": "markdown"
-    },
 
-    // ##################################################
-
-    
+    // ====================plantUML====================
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "http://localhost:8080",
+    "markdown-pdf.plantumlServer": "http://localhost:8080",
 }
 
+
+
+
+
+
+
+
+
+// 拡張機能
+
+// vscode-icons-team.vscode-icons
+// Compulim.vscode-clock
+// janisdd.vscode-edit-csv
+// ZainChen.json
+// yzane.markdown-pdf
+// vscode-pdf
+// mechatroner.rainbow-csv
+// adamhartford.vscode-base64
+// ms-vscode.hexeditor
+// volkerdobler.insertnums
+
+// リモートVScode
+// ms-vscode-remote.remote-wsl
+// ms-vscode.remote-explorer
+// ms-vscode-remote.vscode-remote-extensionpack
+// ms-vscode-remote.remote-ssh-edit
+// ms-vscode-remote.remote-ssh
+
+// 言語拡張
+// ms-python.python
+// ms-python.isort
+// ms-toolsai.jupyter
+// ms-toolsai.vscode-jupyter-cell-tags
+// ms-toolsai.jupyter-keymap
+// ms-toolsai.jupyter-renderers
+// ms-toolsai.vscode-jupyter-slideshow
+// vsciot-vscode.vscode-arduino
+// cweijan.vscode-autohotkey-plus

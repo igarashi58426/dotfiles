@@ -40,5 +40,12 @@
         "key": "ctrl+shift+j",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "!inSearchEditor && !searchViewletFocus"
+    },
+    {
+        // 新しい外部ターミナルを開くを無効化
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
     }
+
 ]
