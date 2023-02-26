@@ -1,10 +1,9 @@
-# レジストリによるcapslockキー書き換え
 import winreg
 import ctypes
 from sys import exit
 
 
-# 値の読み込み
+
 key_path = r'SYSTEM\CurrentControlSet\Control\Keyboard Layout'
 key_name = 'Scancode Map'
 key_data = b'\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00d\x00:\x00\x00\x00\x00\x00'
