@@ -58,6 +58,11 @@
         "key": "ctrl+b",
         "command": "-markdown.extension.editing.toggleBold",
         "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        // リモートエクスプローラーのサイドバーに移動
+        "key": "ctrl+shift+r",
+        "command": "remoteTargets.focus"
     }
-
+    // ================================================================================
 ]
