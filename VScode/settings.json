@@ -16,11 +16,11 @@
     // ドラッグアンドドロップで選択範囲のテキストを移動できるようにする
     "editor.dragAndDrop": false,
 
-    // 起動時ズームレベル
-    "window.zoomLevel": 1,
-
     // ホイールによるズームを有効化
     "editor.mouseWheelZoom": true,
+    
+    // カーソル移動アニメーション
+    "editor.cursorSmoothCaretAnimation": "on",
 
     // ====================エディター画面構成====================
 
@@ -102,11 +102,7 @@
      // スクロールに関数名を追従する行数
     "editor.stickyScroll.maxLineCount": 3,
 
-    // テキストファイルをMarkdownとして開く
-    "files.associations": {
-        "*.txt": "markdown"
-    },
-
+  
     // 隠しフォルダを非表示にする
     "files.exclude": {
         // "**/.*": true
@@ -116,13 +112,16 @@
     "diffEditor.ignoreTrimWhitespace": false,
 
     // 余分なホワイトスペースを削除
-    "files.trimTrailingWhitespace": true,
+    "files.trimTrailingWhitespace": false,
 
     // 単語間以外のホワイトスペースを常時表示
     "editor.renderWhitespace": "boundary",
 
     //全角空白などの基本的な ASCII 文字と混同される可能性のある文字を強調表示する
     "editor.unicodeHighlight.ambiguousCharacters": true,
+
+    // 自動保存 フォーカスを失うと実行
+    "files.autoSave": "onFocusChange",
 
     // ====================デバック====================
 
@@ -138,7 +137,18 @@
     // デバッグビューの表示方法
     "debug.openDebug": "openOnSessionStart",
 
+    // ====================マークダウン====================
+   // マークダウンの改行を反映
+   "markdown.preview.breaks": true, 
 
+    // テキストファイルをMarkdownとして開く
+    "files.associations": {
+        "*.txt": "markdown"
+    },
+
+    // マークダウンプレビューのスタイルシート
+    "markdown.styles": [],
+    
     // ==================== remote SSH ====================
     "remote.SSH.remotePlatform": {
         "RaspberryPi-SSSS": "linux",
@@ -158,6 +168,8 @@
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "http://localhost:8080",
     "markdown-pdf.plantumlServer": "http://localhost:8080",
+    "git.openRepositoryInParentFolders": "never",
+    "window.zoomLevel": -1,
     // ====================以下自動追加====================
 
 }
@@ -168,11 +180,16 @@
 // Compulim.vscode-clock
 // janisdd.vscode-edit-csv
 // ZainChen.json
-// yzane.markdown-pdf
 // vscode-pdf
 // mechatroner.rainbow-csv
 // adamhartford.vscode-base64
 // ms-vscode.hexeditor
+// christian-kohler.path-intellisense ファイル名を補完します。
+// soerenuhrbach.vscode-deepl Deepl翻訳
+
+// Markdown関係
+// yzane.markdown-pdf
+
 
 // リモートVScode
 // ms-vscode-remote.remote-wsl
