@@ -87,7 +87,6 @@
     // Quick Open で開いたエディター をプレビューとして表示するかどうかを制御します。
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "explorer.confirmDelete": false,
-    "bracket-pair-colorizer-2.depreciation-notice": false,
     "workbench.startupEditor": "none",
     "workbench.editor.untitled.hint": "hidden",
     // エディターの書式をコピー時に保持するか
@@ -102,7 +101,6 @@
      // スクロールに関数名を追従する行数
     "editor.stickyScroll.maxLineCount": 3,
 
-  
     // 隠しフォルダを非表示にする
     "files.exclude": {
         // "**/.*": true
@@ -138,17 +136,24 @@
     "debug.openDebug": "openOnSessionStart",
 
     // ====================マークダウン====================
-   // マークダウンの改行を反映
-   "markdown.preview.breaks": true, 
 
     // テキストファイルをMarkdownとして開く
     "files.associations": {
         "*.txt": "markdown"
     },
 
-    // マークダウンプレビューのスタイルシート
-    "markdown.styles": [],
+    // / マークダウンの改行を反映
+    "markdown.preview.breaks": true,
     
+    // プレビュー時にダブルクリックで文書に戻らない
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+
+    // プレビュー時のcssスタイル
+    // "markdown.styles":["~/Documents/dotfiles/Markdown_stylesheet/hachian.css"], // ←何故か「~」を含む設定できない なので拡張機能に頼る
+    
+    // pdf出力時のcssスタイル
+    "markdown-pdf.styles": ["~/Documents/dotfiles/Markdown_stylesheet/hachian.css"],
+
     // ==================== remote SSH ====================
     "remote.SSH.remotePlatform": {
         "RaspberryPi-SSSS": "linux",
@@ -167,29 +172,30 @@
     // ====================plantUML====================
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "http://localhost:8080",
-    "markdown-pdf.plantumlServer": "http://localhost:8080",
-    "git.openRepositoryInParentFolders": "never",
-    "window.zoomLevel": -1,
-    // ====================以下自動追加====================
-
+    "markdown-pdf.plantumlServer": "http://localhost:8080", // ←plantumlServerでない場合自動追加
 }
 
 // インストール済み拡張機能
+// vscode-icons-team.vscode-icons : エクスプローラービューアイコン
+// ms-vscode.vscode-serial-monitor : シリアルポート表示
+// Compulim.vscode-clock : 時刻表示
+// janisdd.vscode-edit-csv : CSVエディタ
+// mechatroner.rainbow-csv : CSVの行色表示
+// ZainChen.json : jsonの構造表示
+// tomoki1207.pdf : PDF表示
+// ms-vscode.hexeditor : バイナリエディタ
+// christian-kohler.path-intellisense : ファイル名を補完
+// ionutvmi.path-autocomplete : ファイルパス補完
+// mhutchie.git-graph : Git履歴表示
 
-// vscode-icons-team.vscode-icons
-// Compulim.vscode-clock
-// janisdd.vscode-edit-csv
-// ZainChen.json
-// vscode-pdf
-// mechatroner.rainbow-csv
-// adamhartford.vscode-base64
-// ms-vscode.hexeditor
-// christian-kohler.path-intellisense ファイル名を補完します。
-// soerenuhrbach.vscode-deepl Deepl翻訳
+// コマンドユーティリティ
+// adamhartford.vscode-base64 : base64変換
+// volkerdobler.insertnums : 連番数字入力
 
 // Markdown関係
-// yzane.markdown-pdf
-
+// yzhang.markdown-all-in-one : マークダウンユーティリティなど
+// bierner.markdown-preview-github-styles : github風スタイル適用
+// yzane.markdown-pdf : PDF出力
 
 // リモートVScode
 // ms-vscode-remote.remote-wsl
@@ -197,16 +203,23 @@
 // ms-vscode-remote.vscode-remote-extensionpack
 // ms-vscode-remote.remote-ssh-edit
 // ms-vscode-remote.remote-ssh
-
-
+// ms-vscode-remote.remote-containers
+// ms-vscode.remote-server
 
 // 言語拡張
+// MS-CEINTL.vscode-language-pack-ja
 // ms-python.python
 // ms-python.isort
+// ms-python.vscode-pylance
 // ms-toolsai.jupyter
 // ms-toolsai.vscode-jupyter-cell-tags
 // ms-toolsai.jupyter-keymap
 // ms-toolsai.jupyter-renderers
 // ms-toolsai.vscode-jupyter-slideshow
+// ms-azuretools.vscode-docker 
 // vsciot-vscode.vscode-arduino
 // cweijan.vscode-autohotkey-plus
+// ecmel.vscode-html-css
+// jebbs.plantuml 
+
+
