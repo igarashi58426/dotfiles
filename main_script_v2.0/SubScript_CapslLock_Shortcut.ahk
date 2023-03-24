@@ -19,22 +19,41 @@ F13 & 1::{
     return
 }
 
-F13 & 2::Send("{Blind}{F2}") ;[CapsLock] + [2] -> [F2]
+F13 & 2::{
+    key := "2"
+    long_press_timeout := KeyWait(key, "T0.25")
+    if(long_press_timeout) {
+        Send("{Blind}{F2}") ;[CapsLock] + [2(1回押し)] -> [F2]
+    }else{
+        Send("^{d}") 
+        Send("^{c}") ;[CapsLock] + [2--(長押し)] -> [Ctrl + d → c (単語選択とコピー)]
+    } 
+    KeyWait(key)
+    return
+}
 
 F13 & 3::{
     key := "3"
-    not_long_press := KeyWait(key, "T0.3")
-    if(not_long_press){
-        is_double_press := KeyWait(key, "D T0.2") 
-        if(is_double_press){
-            Send("{Blind}{End}") ;[CapsLock] + [33(2回押し)] -> [End]
+    if(KeyWait(key, "T0.3")){
+        if(KeyWait(key, "D T0.2")){
+            if(KeyWait(key, "T0.3") and KeyWait(key, "D T0.2") ){
+                if(KeyWait(key, "T0.3") and KeyWait(key, "D T0.2") ){
+                    if(KeyWait(key, "D T0.2") ){
+                        Send("{Blind}+{End}") ;[CapsLock] + [3333(4回押し)] -> [Shift + End(後方選択)]
+                    }
+                }else{
+                    Send("{Blind}+{Home}") ;[CapsLock] + [333(3回押し)] -> [Shift + Home(前方選択)]
+                }
+            }else{
+                Send("{Blind}{End}") ;[CapsLock] + [33(2回押し)] -> [End]
+            }
         }else{
             Send("{Blind}{Home}") ;[CapsLock] + [3(1回押し)] -> [Home]
         }
     }else{
         Send("{home}") 
         Send("+{End}") ;[CapsLock] + [3--(長押し)] -> [Shift + Home → End(1行選択)]
-
+        Send("^{c}") 
     }
     KeyWait(key)
     return
@@ -54,7 +73,25 @@ F13 & 4::{
     return
 }
 
-F13 & 5::Send "{Blind}{F5}" ;[CapsLock] + [5] -> [F5] 
+F13 & 5::{
+    key := "5"
+    if(KeyWait(key, "T0.3")){
+        if(KeyWait(key, "D T0.2")){
+            if(KeyWait(key, "T0.3") and KeyWait(key, "D T0.2") ){
+                Send("^{F5}") ;[CapsLock] + [555(3回押し)] -> [Ctrl + F5(VScodeデバックなし実行)(未実装)]
+            }else{
+                Send("+{F5}") ;[CapsLock] + [55(2回押し)] -> [Shift + F5(VScodeデバックの停止)]
+            }
+        }else{
+            Send("{Blind}{F5}") ;[CapsLock] + [5(1回押し)] -> [F5(再読み込み･VScode実行)]
+        }
+    }else{
+        Send("^+{F5}") ;[CapsLock] + [5--(長押し)] -> [Ctrl + Shift + F5(VScodeデバックの再起動)(未実装)]
+    }
+    KeyWait(key)
+    return
+}
+
 F13 & 6::Send "{Blind}^{l}" ;[CapsLock] + [6] -> [Ctrl+L (アドレスバーを選択)]
 F13 & 7::Send "{Blind}+{7}" ;[CapsLock] + [7] -> [ ' ]
 F13 & 8::Send "{Blind}+{8}" ;[CapsLock] + [8] -> [ ( ]
@@ -141,7 +178,7 @@ F13 & -::{
         If(is_double_press){
             InsertText("====================")  ;[CapsLock] + [--(2回押し)] -> [==========(20個)]   
         }else{
-            InsertText("-") ;[CapsLock] + [-(1回押し)] -> [ - ]        
+            InsertText("- ") ;[CapsLock] + [-(1回押し)] -> [ - ]        
         }
     }else{
         InsertText("--------------------")  ;[CapsLock] + [---(長押し)] -> [----------(20個)]        
@@ -184,7 +221,7 @@ F13 & Numpad9::Send("{WheelDown 3}") ;[CapsLock] + [テンキー9] -> [ホイー
 
 ;***********************[CapsLock] + [g]のサブルーチンラベル************************************************
 google_Search(){
-    Send("^c")  ;選択した内容をコピー
+    Send("^{c}")  ;選択した内容をコピー
     Sleep(1)   ;コピーを待機
     ClipWait(0)  ;クリップボードの内容がテキストとして読み取れるまで待機
     Run("https://www.google.co.jp/search?q=" A_Clipboard) ;既定のブラウザで検索
@@ -198,7 +235,7 @@ google_Search(){
 
 
 google_translation(){
-    Send("^c")  ;選択した内容をコピー
+    Send("^{c}")  ;選択した内容をコピー
     Sleep(1)   ;コピーを待機
     ClipWait(0)  ;クリップボードの内容がテキストとして読み取れるのを待機
 
@@ -213,12 +250,12 @@ google_translation(){
         WinWaitActive("Iron") ;アクティブ化完了を待機
         Sleep(100)
     }
-    Send("^1") ;左端タブに移動
+    Send("^{1}") ;左端タブに移動
     MouseMove(180, 350 ,0) ;翻訳入力部にマウス移動
     Send("{LButton}") ;翻訳入力部をマウス左クリック
-    Send("^a") ;翻訳入力部を全選択
+    Send("^{a}") ;翻訳入力部を全選択
     Send("{BackSpace}") ;翻訳入力部を削除
-    Send("^v")       ;翻訳入力部にコピーした内容貼り付け
+    Send("^{v}")       ;翻訳入力部にコピーした内容貼り付け
     return
 }
 ; Clipboard := RegExReplace(Clipboard, "\n", " ")   ;改行が邪魔になる場合に半角スペースに置換

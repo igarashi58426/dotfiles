@@ -30,10 +30,21 @@
     return
 }
 
-;[CapsLock] + [5(1回押し)] -> [F5(再読み込み･VScode実行)]
-;[CapsLock] + [55(2回押し)] -> [Shift + F5(VScodeデバックの停止)(未実装)]
-;[CapsLock] + [555(3回押し)] -> [Ctrl + F5(VScodeデバックなし実行)(未実装)]
-;[CapsLock] + [5--(長押し)] -> [Ctrl + Shift + F5(VScodeデバックの再起動)(未実装)]
+F12::{
+    key := "F12"
+    not_long_press := KeyWait(key, "T0.3")
+    if(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2")
+        if(!is_double_press){
+            Send("{F12}")   ;[Ctrl] + [j(1度押し)] -> [Ctrl + j (通常動作,出力パネルの表示/非表示)]
+        }
+    }else{
+		Send("!+{F12}")      ;[Ctrl] + [j--(長押し)] -> [Ctrl + shift + j (パネル最大化)]
+	}
+	KeyWait(key)
+    return
+}
+
 ;***********************************************************************************************
 
 ; ************装飾キーメモ**********/
