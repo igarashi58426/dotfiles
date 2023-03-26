@@ -11,7 +11,9 @@
 - vscodeの設定全般を定義する settings.json
 - キー設定を定義する keybindings.json
 - スニペットを定義する snippets/***.json
-- Markdown用CSS Markdown_stylesheet/***.css
+- Markdown用CSS Markdown_css/***.css
+
+※Github用スタイルシートの `github-markdown.css` は `.markdown-`の文字を削除している
 
 ## google日本語入力設定
 以下の3つにおいてエクスポートしたファイル

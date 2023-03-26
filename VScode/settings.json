@@ -135,6 +135,7 @@
     // デバッグビューの表示方法
     "debug.openDebug": "openOnSessionStart",
 
+    "git.autofetch": true,
     // ====================マークダウン====================
 
     // テキストファイルをMarkdownとして開く
@@ -152,7 +153,7 @@
     // "markdown.styles":["~/Documents/dotfiles/Markdown_stylesheet/hachian.css"], // ←何故か「~」を含む設定できない なので拡張機能に頼る
     
     // pdf出力時のcssスタイル
-    "markdown-pdf.styles": ["~/Documents/dotfiles/Markdown_stylesheet/hachian.css"],
+    "markdown-pdf.styles": ["~/Documents/dotfiles/VScode/Markdown_css/github-markdown.css"],
 
     // ==================== remote SSH ====================
     "remote.SSH.remotePlatform": {
@@ -175,8 +176,7 @@
     // ====================plantUML====================
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "http://localhost:8080",
-    "markdown-pdf.plantumlServer": "http://localhost:8080",
-    "git.autofetch": true, // ←plantumlServerでない場合自動追加
+    "markdown-pdf.plantumlServer": "http://localhost:8080",// ←plantumlServerでない場合自動追加
 
 }
 
