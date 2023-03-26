@@ -169,10 +169,15 @@
         ]
     },
 
+
+    "vscode-ahk-plus.executePath":"C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
+
     // ====================plantUML====================
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "http://localhost:8080",
-    "markdown-pdf.plantumlServer": "http://localhost:8080", // ←plantumlServerでない場合自動追加
+    "markdown-pdf.plantumlServer": "http://localhost:8080",
+    "git.autofetch": true, // ←plantumlServerでない場合自動追加
+
 }
 
 // インストール済み拡張機能
@@ -196,6 +201,7 @@
 // yzhang.markdown-all-in-one : マークダウンユーティリティなど
 // bierner.markdown-preview-github-styles : github風スタイル適用
 // yzane.markdown-pdf : PDF出力
+// csholmq.excel-to-markdown-table エクセル表コピペ入力
 
 // リモートVScode
 // ms-vscode-remote.remote-wsl
@@ -221,5 +227,5 @@
 // cweijan.vscode-autohotkey-plus
 // ecmel.vscode-html-css
 // jebbs.plantuml 
-
+// cweijan.vscode-autohotkey-plus
 

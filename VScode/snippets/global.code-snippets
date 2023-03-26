@@ -16,13 +16,28 @@
 	// 	"description": "Log output to console"
 	// }
 
+	"day_type1": {
+		"prefix": "day1_YYYY年MM月DD日",
+		"body": "$CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日",
+		"description": "日付出力 YYYY年MM月DD日 形式"
+	},
+	"day_type2": {
+		"prefix": "day2_YYYY/MM/DD",
+		"body": "$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
+		"description": "日付出力 YYYY/MM/DD 形式"
+	},
+	"day_type3": {
+		"prefix": "day3_YYYYMMDD",
+		"body": "$CURRENT_YEAR$CURRENT_MONTH$CURRENT_DATE",
+		"description": "日付出力 YYYYMMDD 形式"
+	},
 	"line_number": {
 		"prefix": "line_number",
 		"body": "$TM_LINE_NUMBER",
 		"description": "最初の行を１行目としたときの現在の行番号"
 	},
 	"file_and_line": {
-		"prefix": "file_and_line",
+		"prefix": "filename_and_line",
 		"body": "./$RELATIVE_FILEPATH#L$TM_LINE_NUMBER",
 		"description": "ファイル名と行番号"
 	},

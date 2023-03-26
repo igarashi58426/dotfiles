@@ -106,6 +106,7 @@
         "body": "np.array([[0$1, 0], [0, 0]])",
         "description": "2*2のnumpy配列生成"
     },
+    //==========mytemplate==========
     "matplotlib.myconfig": {
         "prefix": "plt_myconfig",
         "body": [

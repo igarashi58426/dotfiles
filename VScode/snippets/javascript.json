@@ -19,13 +19,14 @@
 		"description": "console.log()の標準的構文"
 
 	},
+
 	"clickEvent": {
 		"prefix": ".adc",  //.adcと入力すれば、"body"の中身が出力される
 		"body": [
 		".addEventListener('click', () => {",
 		 " $1",   //[$1] = スニペット実行後、始めにカーソルが当たる位置を指定。 $2 も設定可能
 		  "});"
-		]
-	   }
+		],
+	   },
 
 }
