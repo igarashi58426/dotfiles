@@ -250,9 +250,10 @@ F13 & Enter::{
 
 ;***********************[CapsLock] + [g]のサブルーチンラベル************************************************
 google_Search(){
+    A_Clipboard := "" 
+    Sleep(1)   ;コピー待機
     Send("^{c}")  ;選択した内容をコピー
-    Sleep(1)   ;コピーを待機
-    ClipWait(0)  ;クリップボードの内容がテキストとして読み取れるまで待機
+    ClipWait(3,1)  ;クリップボードの内容がテキストとして読み取れるのを待機
     Run("https://www.google.co.jp/search?q=" A_Clipboard) ;既定のブラウザで検索
     return
 }
@@ -264,9 +265,10 @@ google_Search(){
 
 
 google_translation(){
+    A_Clipboard := "" 
+    Sleep(1)   ;コピー待機
     Send("^{c}")  ;選択した内容をコピー
-    Sleep(1)   ;コピーを待機
-    ClipWait(0)  ;クリップボードの内容がテキストとして読み取れるのを待機
+    ClipWait(3,1)  ;クリップボードの内容がテキストとして読み取れるのを待機
 
     if WinExist("Iron"){ ;Ironブラウザが起動しているか確認
         WinActivate("Iron") ;起動済みの場合アクティブ化
@@ -277,7 +279,7 @@ google_translation(){
         WinWait("Iron") ;起動完了を待機
         WinActivate("Iron") ;アクティブ化
         WinWaitActive("Iron") ;アクティブ化完了を待機
-        Sleep(100)
+        Sleep(2000)
     }
     Send("^{1}") ;左端タブに移動
     MouseMove(180, 350 ,0) ;翻訳入力部にマウス移動
