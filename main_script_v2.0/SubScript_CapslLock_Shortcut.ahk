@@ -97,6 +97,19 @@ F13 & 7::Send "{Blind}+{7}" ;[CapsLock] + [7] -> [ ' ]
 F13 & 8::Send "{Blind}+{8}" ;[CapsLock] + [8] -> [ ( ]
 F13 & 9::Send "{Blind}+{9}" ;[CapsLock] + [9] -> [ ) ]
 
+F13 & 0::{
+    key := "0"
+    long_press_timeout := KeyWait(key, "T0.25")
+    if(long_press_timeout) {
+        InsertText("#########")    ;[CapsLock] + [0(1回押し)] -> [ ##### ##### ]
+        Send("{Left 5}") 
+    }else{
+        InsertText("####################")  ;[CapsLock] + [0--(長押し)] -> [####################(20個)]
+    } 
+    KeyWait(key)
+    return
+}
+
 F13 & F1::Send "{Volume_Mute}" ;[CapsLock] + [F1] -> [ミュート]
 F13 & F2::Send "{Volume_Down 1}" ;[CapsLock] + [F2] -> [音量↓ダウン]
 F13 & F3::Send "{Volume_Up 1}" ;[CapsLock] + [F3] -> [音量↑アップ]
