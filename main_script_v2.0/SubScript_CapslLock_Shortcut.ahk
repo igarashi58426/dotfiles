@@ -157,12 +157,12 @@ F13 & g::{
     if(not_long_press){
         is_double_press := KeyWait(key, "D T0.2") 
         if(is_double_press){
-            MsgBox "double_press"
+            return
         }else{
             google_Search() ;[CapsLock] + [g] -> [選択した文字をグーグル検索]
         }
     }else{
-        MsgBox "long_press"
+        return
     }
     KeyWait(key)
     return
