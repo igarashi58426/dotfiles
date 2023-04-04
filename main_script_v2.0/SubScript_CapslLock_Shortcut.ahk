@@ -92,10 +92,10 @@ F13 & 5::{
     return
 }
 
-F13 & 6::Send "{Blind}^{l}" ;[CapsLock] + [6] -> [Ctrl+L (アドレスバーを選択)]
-F13 & 7::Send "{Blind}+{7}" ;[CapsLock] + [7] -> [ ' ]
-F13 & 8::Send "{Blind}+{8}" ;[CapsLock] + [8] -> [ ( ]
-F13 & 9::Send "{Blind}+{9}" ;[CapsLock] + [9] -> [ ) ]
+F13 & 6::Send("{Blind}^{l}") ;[CapsLock] + [6] -> [Ctrl+L (アドレスバーを選択)]
+F13 & 7::Send("{Blind}+{7}") ;[CapsLock] + [7] -> [ ' ]
+F13 & 8::Send("{Blind}+{8}") ;[CapsLock] + [8] -> [ ( ]
+F13 & 9::Send("{Blind}+{9}") ;[CapsLock] + [9] -> [ ) ]
 
 F13 & 0::{
     key := "0"
@@ -110,10 +110,10 @@ F13 & 0::{
     return
 }
 
-F13 & F1::Send "{Volume_Mute}" ;[CapsLock] + [F1] -> [ミュート]
-F13 & F2::Send "{Volume_Down 1}" ;[CapsLock] + [F2] -> [音量↓ダウン]
-F13 & F3::Send "{Volume_Up 1}" ;[CapsLock] + [F3] -> [音量↑アップ]
-F13 & F4:: return
+F13 & F1::Send("{Volume_Mute}") ;[CapsLock] + [F1] -> [ミュート]
+F13 & F2::Send("{Volume_Down 1}") ;[CapsLock] + [F2] -> [音量↓ダウン]
+F13 & F3::Send("{Volume_Up 1}") ;[CapsLock] + [F3] -> [音量↑アップ]
+F13 & F4::return
 F13 & F5::Reload ;[CapsLock] + [F5] -> [スクリプトを再読込し、最初から実行し直す]
 F13 & F6::{
     Send("^{l}")                 ;[CapsLock] + [F6] -> [デスクトップディレクトリに移動  (アドレスバーを選択)]
