@@ -224,8 +224,9 @@ F13 & Enter::{
     }else{
         Loop(10)
         {
-            Send("{Enter}") 
-            Send("{Up}") ;[CapsLock] + [Enter--(長押し)] -> [改行 10行]
+            Send("{Blind}{Enter}") 
+            Sleep(30)
+            Send("{Blind}{Up}") ;[CapsLock] + [Enter--(長押し)] -> [改行 10行]
         }
     } 
     KeyWait(key)
