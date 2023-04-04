@@ -216,6 +216,21 @@ F13 & Numpad7::Send("{WheelUp 3}") ;[CapsLock] + [テンキー7] -> [ホイー�
 F13 & Numpad8::MButton ;[CapsLock] + [テンキー8] -> [ホイールクリック]
 F13 & Numpad9::Send("{WheelDown 3}") ;[CapsLock] + [テンキー9] -> [ホイール↓3回]
 
+F13 & Enter::{
+    key := "Enter"
+    long_press_timeout := KeyWait(key, "T0.25")
+    if(long_press_timeout) {
+        Send("{Enter}") ;[CapsLock] + [Enter] -> [Enter]
+    }else{
+        Loop(10)
+        {
+            Send("{Enter}") 
+            Send("{Up}") ;[CapsLock] + [Enter--(長押し)] -> [改行 10行]
+        }
+    } 
+    KeyWait(key)
+    return
+}
 
 ;********************************************************************************************
 
