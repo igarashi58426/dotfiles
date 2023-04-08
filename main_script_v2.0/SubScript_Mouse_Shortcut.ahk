@@ -1,17 +1,13 @@
 ﻿;***********************マウスショートカット**************************************************************
 
-; +XButton1::Send("^+{Tab}")                          ;[Shift] + [マウス戻る] -> [Ctrl+Shift+Tab(タブを左に移動)]
-; +XButton2::Send("^{Tab}")                           ;[Shift] + [マウス進む] -> [Ctrl+Tab(タブを右に移動)]
++XButton1::Send("^+{Tab}")                          ;[Shift] + [マウス戻る] -> [Ctrl+Shift+Tab(タブを左に移動)]
++XButton2::Send("^{Tab}")                           ;[Shift] + [マウス進む] -> [Ctrl+Tab(タブを右に移動)]
 
 ; LCtrl & XButton1::AltTab                         ;[左Ctrl] + [マウス戻る] -> [Alt + Tab (ウィンドウタブ切り替え)]
 ; LCtrl & XButton2::ShiftAltTab                    ;[左Ctrl] + [マウス進む] -> [Alt + Sift + Tab (ウィンドウタブ逆切り替え)]
 
 +WheelUp::Send("{WheelLeft 2}")                       ;[Shift] + [ホイール↑] -> [ホイール←左]
 +WheelDown::Send("{WheelRight 2}")                    ;[Shift] + [ホイール↓] -> [ホイール→右]
-
-^WheelRight::Send("{Blind}^{Tab}")                  ;[Ctrl] + [チルト右] -> [Alt + Tab (ウィンドウタブ切り替え)]
-^WheelLeft::Send("{Blind}^+{Tab}")                  ;[Ctrl] + [チルト左] -> [Alt + Sift + Tab (ウィンドウタブ逆切り替え)]
-
 
 ;***********************************************************************************************
 
@@ -30,7 +26,17 @@
     Sleep(500)
 }
 
+XButton1::send("{Blind}{XButton1}")                  ;[マウス戻る] -> [マウス戻る]
 
+XButton1 & MButton::{
+    send("^{w}")                                     ;[マウス戻る]  + [マウス中]  -> [ctrl + w (タブを閉じる)]
+}
+
+XButton2::send("{Blind}{XButton2}")                  ;[マウス進む] -> [マウス進む]
+
+XButton2 & MButton::{
+    send("^+{t}")                                    ;[マウス進む]  + [マウス中]  -> [ctrl + Shift + t (閉じたタブを復元)]
+}
 
 
 ;***装飾キーメモ***
