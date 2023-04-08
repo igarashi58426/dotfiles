@@ -38,6 +38,9 @@ XButton2 & MButton::{
     send("^+{t}")                                    ;[マウス進む]  + [マウス中]  -> [ctrl + Shift + t (閉じたタブを復元)]
 }
 
+F1 & WheelDown::Send("{Volume_Down}")
+F1 & WheelUp::Send("{Volume_Up}")
+
 
 ;***装飾キーメモ***
 ;キー名	説明                       
