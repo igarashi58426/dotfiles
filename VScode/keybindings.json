@@ -39,13 +39,16 @@
         // 表示: 最大化されるパネルの切り替え
         "key": "ctrl+shift+j",
         "command": "workbench.action.toggleMaximizedPanel",
-        "when": "!inSearchEditor && !searchViewletFocus"
     },
     {
         // 新しい外部ターミナルを開くを無効化
         "key": "ctrl+shift+c",
         "command": "-workbench.action.terminal.openNativeConsole",
-        "when": "!terminalFocus"
+    },
+    {
+        // マークダウンでの太字化のctrl+bを無効化
+        "key": "ctrl+b",
+        "command": "-markdown.extension.editing.toggleBold",
     },
     {
         // マークダウンでの太字化を再定義
@@ -54,15 +57,145 @@
         "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
     },
     {
-        // マークダウンでの太字化を無効化
-        "key": "ctrl+b",
-        "command": "-markdown.extension.editing.toggleBold",
-        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
-    },
-    {
-        // リモートエクスプローラーのサイドバーに移動
+        // リモートエクスプローラーのサイドバーに移動をctrl+shift+rに定義
         "key": "ctrl+shift+r",
         "command": "remoteTargets.focus"
-    }
-    // ================================================================================
+    },
+    {
+        // サイドバーエクスプローラーでの削除をDキーに再定義
+        "key": "d",
+        "command": "moveFileToTrash",
+        "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        // サイドバーエクスプローラーでの削除のdeleteを無効化
+        "key": "delete",
+        "command": "-moveFileToTrash",
+        "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        // エクスプローラーで表示するをRキーに再定義
+        "key": "r",
+        "command": "revealFileInOS",
+        "when": "!editorFocus && !inputFocus"
+    },
+    {
+        // エクスプローラーで表示するのshift+alt+rを無効化
+        "key": "shift+alt+r",
+        "command": "-revealFileInOS",
+    },
+    {
+        // エクスプローラービューで表示をEキーに再定義
+        "key": "e",
+        "command": "revealInExplorer",
+        "when": "!editorFocus && !inputFocus && !textInputFocus"
+    },
+    {
+        // 相対パスをコピーをGキーに再定義
+        "key": "g",
+        "command": "copyRelativeFilePath",
+        "when": "!editorFocus && !inputFocus && !textInputFocus"
+    },
+    {
+        // 相対パスをコピーのctrl+k ctrl+shift+cを無効化
+        "key": "ctrl+k ctrl+shift+c",
+        "command": "-copyRelativeFilePath",
+    },
+    {
+        // 絶対パスをコピーをTキーに再定義
+        "key": "t",
+        "command": "copyFilePath",
+        "when": "!editorFocus && !inputFocus && !textInputFocus"
+    },
+    {
+        // 絶対パスをコピーのshift+alt+cを無効化
+        "key": "shift+alt+c",
+        "command": "-copyFilePath",
+    },
+    {
+        // ウィンドウを閉じるのctrl+shift+wを無効化
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
+        // ctrl+e の連続系ショートカットキーを無効化
+        "key": "ctrl+e ctrl+d",
+        "command": "-extension.base64Decode",
+    },
+    {
+        // ctrl+e の連続系ショートカットキーを無効化
+        "key": "ctrl+e ctrl+e",
+        "command": "-extension.base64Encode",
+    },
+    {
+        // サイドバーが開いているならばサイドバーを閉じる
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarVisible"
+    },
+    {
+        // パネルが開いているのならばパネルを閉じる
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.togglePanel",
+        "when": "panelVisible"
+    },
+    {
+        // パネル内を右に移動
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextPanelView",
+        "when": "panelFocus"
+    },
+    {
+        // パネル内を左に移動
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousPanelView",
+        "when": "panelFocus"
+        // "when": "panelFocus || activePanel == 'workbench.view.extension.vscode-serial-monitor-tools'"
+    },
+    {
+        // サイドバーを下に移動
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextSideBarView",
+        "when": "sideBarFocus"
+        // "when": "sideBarFocus && activeViewlet =~ workbench.view.*"
+        // "when": "!editorFocus && && !activePanel"
+    },
+    {
+        // サイドバーを上に移動
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousSideBarView",
+        "when": "sideBarFocus"
+    },
+    {
+        // 新しいウィンドウの作成を無効化
+        "key": "ctrl+shift+n",
+        "command": "-workbench.action.newWindow"
+    },
+    {
+        // シンボル表示ctrl+oを再定義
+        "key": "ctrl+o",
+        "command": "workbench.action.gotoSymbol"
+    },
+    {
+        // ファイルを開くctrl+oを削除
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFile",
+        "when": "true"
+    },
+    {
+        // シンボル表示ctrl+shift+oを削除
+        "key": "ctrl+shift+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        // アウトラインを表示ctrl+shift+oを定義
+        "key": "ctrl+shift+o",
+        "command": "outline.focus"
+        // ================================================================================
+    },
+
 ]
+
+
+
+

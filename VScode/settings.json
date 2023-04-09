@@ -170,13 +170,12 @@
         ]
     },
 
-
     "vscode-ahk-plus.executePath":"C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
 
     // ====================plantUML====================
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "http://localhost:8080",
-    "markdown-pdf.plantumlServer": "http://localhost:8080",// ←plantumlServerでない場合自動追加
+    "markdown-pdf.plantumlServer": "http://localhost:8080" // ←plantumlServerでない場合自動追加
 
 }
 
