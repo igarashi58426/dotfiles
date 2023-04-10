@@ -1,12 +1,6 @@
 import shutil
 import os
 
-# src_file_path = '../VScode/*.json'
-# src_file_path2 = '../VScode/settings.json'
-# src_folder_path = '../VScode/snippets/.'
-# path = '../VScode/settings.json'
-# dst_folder_path = 'C:/Users/IG324/Desktop/snippets/.'
-
 # ユーザーファイル名取得
 userprofile = os.environ['USERPROFILE']
 
