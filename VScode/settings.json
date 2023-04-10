@@ -80,7 +80,6 @@
     // マルチカーソルのショートカットキー(ctrlCmd=WindowではCtrl)
     "editor.multiCursorModifier": "ctrlCmd",
 
-
     // 開かれるエディターをプレビュー として表示するかどうか
     "workbench.editor.enablePreview": true,
 
@@ -155,6 +154,16 @@
     // pdf出力時のcssスタイル
     "markdown-pdf.styles": ["~/Documents/dotfiles/VScode/Markdown_css/github-markdown.css"],
 
+
+    // ====================AHK====================
+
+    "vscode-ahk-plus.executePath":"C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
+
+    // ====================plantUML====================
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "http://localhost:8080",
+    "markdown-pdf.plantumlServer": "http://localhost:8080",
+
     // ==================== remote SSH ====================
     "remote.SSH.remotePlatform": {
         "RaspberryPi-SSSS": "linux",
@@ -168,15 +177,9 @@
         "pub.name": [
             "ui"
         ]
+    // ============================================================
     },
-
-    "vscode-ahk-plus.executePath":"C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
-
-    // ====================plantUML====================
-    "plantuml.render": "PlantUMLServer",
-    "plantuml.server": "http://localhost:8080",
-    "markdown-pdf.plantumlServer": "http://localhost:8080" // ←plantumlServerでない場合自動追加
-
+    
 }
 
 // インストール済み拡張機能
