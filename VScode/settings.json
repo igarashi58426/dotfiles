@@ -62,11 +62,9 @@
     // 文字コードを自動判別
     "files.autoGuessEncoding": true,
 
-    // メニューバー(上端)の非表示
-    // "window.menuBarVisibility": "toggle",
     // 上段タブを表示
     "workbench.editor.showTabs": true,
-    // アクティビティバー(左端)を表示に
+    // アクティビティバー(サイドバー)を左端に表示(falseで非表示化)
     "workbench.activityBar.visible": true,
     // サイドバーを左に
     "workbench.sideBar.location": "left",

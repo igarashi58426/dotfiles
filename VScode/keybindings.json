@@ -63,15 +63,25 @@
     },
     {
         // サイドバーエクスプローラーでの削除をDキーに再定義
-        "key": "d",
+        "key": "ctrl+d",
         "command": "moveFileToTrash",
-        "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+        "when": "(explorerResourceMoveableToTrash && !explorerResourceReadonly) && (filesExplorerFocus && foldersViewVisible && !inputFocus)"
     },
     {
         // サイドバーエクスプローラーでの削除のdeleteを無効化
         "key": "delete",
         "command": "-moveFileToTrash",
-        "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        // サイドバーエクスプローラーでの削除をDキーに再定義
+       "key": "ctrl+d",
+       "command": "deleteFile",
+       "when": "(!explorerResourceMoveableToTrash && !explorerResourceReadonly) && (filesExplorerFocus && foldersViewVisible && !inputFocus)"
+    },
+    {
+            // サイドバーエクスプローラーでの削除のdeleteを無効化
+        "key": "delete",
+        "command": "-deleteFile",
     },
     {
         // エクスプローラーで表示するをRキーに再定義
@@ -140,28 +150,37 @@
         "when": "panelVisible"
     },
     {
-        // パネル内を右に移動
+        // パネル内のアイクティブ要素右方向に移動
         "key": "ctrl+tab",
         "command": "workbench.action.nextPanelView",
-        "when": "panelFocus"
+        "when": "panelFocus || (focusedView == 'vscode-serial-monitor.monitor0' && panelVisible)",
     },
     {
-        // パネル内を左に移動
+        // パネル内のアイクティブ要素左方向に移動
         "key": "ctrl+shift+tab",
         "command": "workbench.action.previousPanelView",
-        "when": "panelFocus"
-        // "when": "panelFocus || activePanel == 'workbench.view.extension.vscode-serial-monitor-tools'"
+        "when": "panelFocus || (focusedView == 'vscode-serial-monitor.monitor0' && panelVisible)",
     },
     {
-        // サイドバーを下に移動
+        // アウトラインの場合はが表示されている場合はアクティブにする
+        "key": "ctrl+tab",
+        "command": "workbench.action.focusSideBar",
+        "when": "view.outline.visible"
+    },
+    {
+        // サイドバーのアイクティブ要素を下方向に移動
         "key": "ctrl+tab",
         "command": "workbench.action.nextSideBarView",
         "when": "sideBarFocus"
-        // "when": "sideBarFocus && activeViewlet =~ workbench.view.*"
-        // "when": "!editorFocus && && !activePanel"
     },
     {
-        // サイドバーを上に移動
+        // アウトラインの場合はが表示されている場合はアクティブにする
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.focusSideBar",
+        "when": "view.outline.visible"
+    },
+    {
+        // サイドバーのアイクティブ要素を上方向に移動
         "key": "ctrl+shift+tab",
         "command": "workbench.action.previousSideBarView",
         "when": "sideBarFocus"
@@ -193,6 +212,43 @@
         "command": "outline.focus"
         // ================================================================================
     },
+
+
+    // {
+        // "key": "p",
+        // "command": "workbench.action.terminal.openNativeConsole",
+        // "when":  "activeViewlet == 'workbench.views.service.sidebar.*'"
+
+
+        // "when": "sideBarFocus"
+        // "when": "editorFocus" //An editor has focus, either the text or a widget.
+        // "when": "editorTextFocus" //The text in an editor has focus (cursor is blinking).
+        // "when": "textInputFocus" //Any editor has focus (regular editor, debug REPL, etc.).
+        // "when": "inputFocus" //Any text input area has focus (editors or text boxes).
+        // "when": "editorTabMovesFocus" //Whether Tab will move focus out of the editor.
+
+        // isInEmbeddedEditor 	True when the focus is inside an embedded editor.
+        // listFocus 	A list has focus. リストに焦点が当てられています。
+        // listHasSelectionOrFocus 	A list has selection or focus. リストには選択またはフォーカスがあります。
+        // explorerViewletFocus 	True if Explorer view has keyboard focus.
+        // filesExplorerFocus 	True if File Explorer section has keyboard focus.
+        // openEditorsFocus 	True if OPEN EDITORS section has keyboard focus.
+        // terminalFocus 	An integrated terminal has focus.
+        // notificationFocus 	Notification has keyboard focus. 通知にはキーボードの焦点があります。
+        // sideBarFocus 	Side Bar has focus.
+        // panelFocus 	Panel has focus.
+        // focusedView 	The identifier of the currently focused view.
+        // inSearchEditor 	True when focus is inside a search editor.
+
+
+        // focusedView 	The identifier of the currently focused view.
+        // focusedView 	True when specific view is focused.
+        // Example: "focusedView == 'workbench.explorer.fileView'"
+
+        
+    // },
+
+
 
 ]
 
