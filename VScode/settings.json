@@ -135,6 +135,9 @@
     "git.autofetch": true,
     // ====================マークダウン====================
 
+    // カラーテーマをOSに合わせる
+    "markdown-preview-github-styles.colorTheme": "system",
+
     // テキストファイルをMarkdownとして開く
     "files.associations": {
         "*.txt": "markdown"
@@ -176,7 +179,7 @@
             "ui"
         ]
     // ============================================================
-    },
+    }
     
 }
 

@@ -3,22 +3,22 @@
     {
         // 行を下へ移動
         "key": "shift+alt+down",
-        "command": "editor.action.moveLinesDownAction",
+        "command": "editor.action.moveLinesDownAction"
     },
     {
         // 矩形選択 カーソルを下に挿入
         "key": "alt+down",
-        "command": "editor.action.insertCursorBelow",
+        "command": "editor.action.insertCursorBelow"
     },
     {
         // 行を上へ移動
         "key": "shift+alt+up",
-        "command": "editor.action.moveLinesUpAction",
+        "command": "editor.action.moveLinesUpAction"
     },
     {
         // 矩形選択 カーソルを上に挿入
         "key": "alt+up",
-        "command": "editor.action.insertCursorAbove",
+        "command": "editor.action.insertCursorAbove"
     },
     {
         // マルチカーソル修飾子の切り替え
@@ -38,17 +38,17 @@
     {
         // 表示: 最大化されるパネルの切り替え
         "key": "ctrl+shift+j",
-        "command": "workbench.action.toggleMaximizedPanel",
+        "command": "workbench.action.toggleMaximizedPanel"
     },
     {
         // 新しい外部ターミナルを開くを無効化
         "key": "ctrl+shift+c",
-        "command": "-workbench.action.terminal.openNativeConsole",
+        "command": "-workbench.action.terminal.openNativeConsole"
     },
     {
         // マークダウンでの太字化のctrl+bを無効化
         "key": "ctrl+b",
-        "command": "-markdown.extension.editing.toggleBold",
+        "command": "-markdown.extension.editing.toggleBold"
     },
     {
         // マークダウンでの太字化を再定義
@@ -70,7 +70,7 @@
     {
         // サイドバーエクスプローラーでの削除のdeleteを無効化
         "key": "delete",
-        "command": "-moveFileToTrash",
+        "command": "-moveFileToTrash"
     },
     {
         // サイドバーエクスプローラーでの削除をDキーに再定義
@@ -81,7 +81,7 @@
     {
             // サイドバーエクスプローラーでの削除のdeleteを無効化
         "key": "delete",
-        "command": "-deleteFile",
+        "command": "-deleteFile"
     },
     {
         // エクスプローラーで表示するをRキーに再定義
@@ -92,7 +92,7 @@
     {
         // エクスプローラーで表示するのshift+alt+rを無効化
         "key": "shift+alt+r",
-        "command": "-revealFileInOS",
+        "command": "-revealFileInOS"
     },
     {
         // エクスプローラービューで表示をEキーに再定義
@@ -109,7 +109,7 @@
     {
         // 相対パスをコピーのctrl+k ctrl+shift+cを無効化
         "key": "ctrl+k ctrl+shift+c",
-        "command": "-copyRelativeFilePath",
+        "command": "-copyRelativeFilePath"
     },
     {
         // 絶対パスをコピーをTキーに再定義
@@ -120,7 +120,7 @@
     {
         // 絶対パスをコピーのshift+alt+cを無効化
         "key": "shift+alt+c",
-        "command": "-copyFilePath",
+        "command": "-copyFilePath"
     },
     {
         // ウィンドウを閉じるのctrl+shift+wを無効化
@@ -130,12 +130,12 @@
     {
         // ctrl+e の連続系ショートカットキーを無効化
         "key": "ctrl+e ctrl+d",
-        "command": "-extension.base64Decode",
+        "command": "-extension.base64Decode"
     },
     {
         // ctrl+e の連続系ショートカットキーを無効化
         "key": "ctrl+e ctrl+e",
-        "command": "-extension.base64Encode",
+        "command": "-extension.base64Encode"
     },
     {
         // サイドバーが開いているならばサイドバーを閉じる
@@ -153,13 +153,13 @@
         // パネル内のアイクティブ要素右方向に移動
         "key": "ctrl+tab",
         "command": "workbench.action.nextPanelView",
-        "when": "panelFocus || (focusedView == 'vscode-serial-monitor.monitor0' && panelVisible)",
+        "when": "panelFocus || (focusedView == 'vscode-serial-monitor.monitor0' && panelVisible)"
     },
     {
         // パネル内のアイクティブ要素左方向に移動
         "key": "ctrl+shift+tab",
         "command": "workbench.action.previousPanelView",
-        "when": "panelFocus || (focusedView == 'vscode-serial-monitor.monitor0' && panelVisible)",
+        "when": "panelFocus || (focusedView == 'vscode-serial-monitor.monitor0' && panelVisible)"
     },
     {
         // アウトラインの場合はが表示されている場合はアクティブにする
@@ -211,7 +211,7 @@
         "key": "ctrl+shift+o",
         "command": "outline.focus"
         // ================================================================================
-    },
+    }
 
 
     // {
