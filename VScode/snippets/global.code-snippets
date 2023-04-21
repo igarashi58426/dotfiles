@@ -38,7 +38,7 @@
 	},
 	"file_and_line": {
 		"prefix": "filename_and_line",
-		"body": "./$RELATIVE_FILEPATH#L$TM_LINE_NUMBER",
+		"body": "$RELATIVE_FILEPATH#L$TM_LINE_NUMBER",
 		"description": "ファイル名と行番号"
 	},
 	"filename": {
