@@ -53,7 +53,6 @@ F13 & 3::{
     }else{
         Send("{home}") 
         Send("+{End}") ;[CapsLock] + [3--(長押し)] -> [Shift + Home → End(1行選択)]
-        Send("^{c}") 
     }
     KeyWait(key)
     return
