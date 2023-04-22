@@ -4,7 +4,7 @@
     "workbench.colorTheme": "Default Light+",
 
     //  アイコン
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "material-icon-theme",
 
     //エクスプローラーから「開いている開いているエディター」非表示
     "explorer.openEditors.visible": 0,
@@ -156,22 +156,47 @@
     "markdown-pdf.styles": ["~/Documents/dotfiles/VScode/Markdown_css/github-markdown.css"],
 
 
-    // ====================AHK====================
+    // ====================AHK拡張機能====================
 
     "vscode-ahk-plus.executePath":"C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
 
-    // ====================plantUML====================
+    // ====================plantUML拡張機能====================
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "http://localhost:8080",
     "markdown-pdf.plantumlServer": "http://localhost:8080",
 
+
+    // ====================スペルチェック拡張機能====================
+    // 辞書追加
+    "cSpell.userWords": [
+        "adamhartford", "autohotkey", "bierner", "charactercount", "Compulim", "janisdd", "mechatroner", "tomoki1207", "dconf", "logind", "raspberrypi", "plantuml", "dotfiles",
+        "autofetch", "styleSheet", "vsicons", "hexeditor", "extensionpack", "toolsai", "isort",
+    ],
+
+    // ====================multiCommand拡張機能====================
+    //  マルチコマンドショートカット
+    "multiCommand.commands": [
+        {
+            // サイドバーのアイクティブ要素を下方向に移動した後、サイドバーをフォーカス
+            "command": "nextSideBarView_and_focusSideBar",
+            "sequence": [
+                "workbench.action.nextSideBarView",
+                "workbench.action.focusSideBar",
+            ]
+        },
+        {
+            // サイドバーのアイクティブ要素を上方向に移動した後、サイドバーをフォーカス
+            "command": "previousSideBarView_and_focusSideBar",
+            "sequence": [
+                "workbench.action.previousSideBarView",
+                "workbench.action.focusSideBar",
+            ]
+        },
+    ],
+
     // ==================== remote SSH ====================
     "remote.SSH.remotePlatform": {
-        "RaspberryPi-SSSS": "linux",
-        "RaspberryPi-v4": "linux",
-        "RaspberryPi": "linux",
         "RaspberryPi-v6": "linux",
-        "raspberrypi": "linux"
     },
 
     "remote.extensionKind": {
