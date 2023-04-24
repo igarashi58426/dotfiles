@@ -268,17 +268,20 @@ google_translation(){
     Sleep(1)   ;コピー待機
     Send("^{c}")  ;選択した内容をコピー
     ClipWait(3,1)  ;クリップボードの内容がテキストとして読み取れるのを待機
-
     if WinExist("Iron"){ ;Ironブラウザが起動しているか確認
         WinActivate("Iron") ;起動済みの場合アクティブ化
-        WinWaitActive("Iron")  ;アクティブ化完了を待機
+        WinWaitActive("Iron",,3)  ;アクティブ化完了を3秒待機
 
     }else{
-        Run("C:\Program Files\SRWare Iron (64-Bit)\iron.exe") ;Ironブラウザを起動
+        ; ブラウザの起動
+        Run('"C:\Program Files\SRWare Iron (64-Bit)\chrome.exe" -incognito') ;Ironブラウザをプライベートで起動
         WinWait("Iron") ;起動完了を待機
         WinActivate("Iron") ;アクティブ化
-        WinWaitActive("Iron") ;アクティブ化完了を待機
-        Sleep(2000)
+        WinWaitActive("Iron",,3) ;アクティブ化完了を3秒待機
+        ; 翻訳ページへの遷移
+        InsertText("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate") ;google翻訳を開く
+        Send("{Enter}") ;ページ遷移
+        Sleep(1500) ;読み込み完了まで 1.5秒待機
     }
     Send("^{1}") ;左端タブに移動
     MouseMove(180, 350 ,0) ;翻訳入力部にマウス移動
@@ -291,8 +294,6 @@ google_translation(){
 ; Clipboard := RegExReplace(Clipboard, "\n", " ")   ;改行が邪魔になる場合に半角スペースに置換
 ; Clipboard := RegExReplace(Clipboard, "\n\r", " ") ;改行が邪魔になる場合に半角スペースに置換
 ; Clipboard := RegExReplace(Clipboard, "\r", " ")   ;改行が邪魔になる場合に半角スペースに置換
-
-
 
 ;***********************************************************************************************
 
