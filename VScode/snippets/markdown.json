@@ -42,5 +42,15 @@
 		"body": "<style>table{margin: auto;}</style>",
 		"description": "表を中央寄せにするスタイル"
 	},
-
+	"plantuml": {
+		"prefix": "plantuml_code",
+		"body": [
+			 "```plantuml",
+			 "@startuml",
+			 "$0",
+			 "@enduml",  
+			 "```"
+			],
+		"description": "plantuml用コードブロック"
+	}
 }
