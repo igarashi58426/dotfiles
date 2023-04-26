@@ -51,7 +51,7 @@ F13 & 3::{
             Send("{Blind}{Home}") ;[CapsLock] + [3(1回押し)] -> [Home]
         }
     }else{
-        Send("{home}") 
+        Send("{Home}") 
         Send("+{End}") ;[CapsLock] + [3--(長押し)] -> [Shift + Home → End(1行選択)]
     }
     KeyWait(key)
@@ -170,6 +170,9 @@ F13 & g::{
 F13 & t::google_translation() ;[CapsLock] + [t(1回押し)] -> [選択した文字をIronでグーグル翻訳]
 ;                             ;[CapsLock] + [tt(2回押し)] -> [選択した文字をIronでグーグル翻訳(改行削除)]
 
+
+F13 & h::Send("{Blind}^{Home}") ;[CapsLock] + [h] -> [ファイルの先頭へ]
+F13 & n::Send("{Blind}^{End}")  ;[CapsLock] + [n] -> [ファイルの末尾へ]
 
 F13 & u::Send("{Blind}{F6}") ;[CapsLock] + [u] -> [ひらがなに変換]
 F13 & i::Send("{Blind}{F7}") ;[CapsLock] + [i] -> [全角カタカナに変換]
