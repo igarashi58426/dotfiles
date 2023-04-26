@@ -181,7 +181,32 @@ F13 & o::Send("{Blind}{F10}") ;[CapsLock] + [o] -> [半角英数字に変換]
 F13 & j::Send("{SC070}") ;[CapsLock] + [j] -> [日本語入力モード]
 F13 & k::Send("+{F13}")  ;[CapsLock] + [k] -> [直接入力モード]
 
-F13 & b::Send("{Blind}^{/}")  ;[CapsLock] + [b] -> [Ctrl + / (コメントアウト)]
+F13 & b::{
+    key := "b"
+    not_long_press := KeyWait(key, "T0.3")
+    If(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2") 
+        If(is_double_press){
+            InsertText("````")  ;[CapsLock] + [bb(2回押し)] -> [``(2個)]
+            Send("{Left}")
+        }else{
+            Send("{Blind}^{/}")  ;[CapsLock] + [b(1回押し)] -> [Ctrl + / (コメントアウト)]
+        }
+    }else{
+        InsertText("```````n`n``````")  ;[CapsLock] + [b(長押し)] -> [```によるコードブロック]
+        Send("{Up}")
+    }
+    KeyWait(key)
+    Return
+}
+
+
+
+
+
+
+
+
 
 F13 & /::Send("{Blind}^{/}") ;[CapsLock] + [/] -> [Ctrl + / (コメントアウト)]
 
