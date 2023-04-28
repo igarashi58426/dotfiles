@@ -308,8 +308,9 @@ google_translation(){
         WinWaitActive("Iron",,3) ;アクティブ化完了を3秒待機
         ; 翻訳ページへの遷移
         InsertText("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate") ;google翻訳を開く
+        Sleep(1000) ;URL受け付けまで 1秒待機
         Send("{Enter}") ;ページ遷移
-        Sleep(1500) ;読み込み完了まで 1.5秒待機
+        Sleep(2000) ;読み込み完了まで 2秒待機
     }
     Send("^{1}") ;左端タブに移動
     MouseMove(180, 350 ,0) ;翻訳入力部にマウス移動
