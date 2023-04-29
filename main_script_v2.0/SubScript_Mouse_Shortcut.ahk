@@ -18,8 +18,9 @@
 #MButton::Send("{Blind}#{Tab}")                    ;[win] + [中央ボタン] -> [win + tab (デスクトップ一覧)]
 
 #WheelUp:: {
-    send("{Blind}#{Up}")                             ;[win] + [ホイール↑]  -> [win + ↑ (ウィンドウ最大化)]
-	Sleep(4000)
+    send("!{Space}")                             ;[win] + [ホイール↑]  -> [win + ↑ (ウィンドウ最大化)]
+    Sleep(50)
+    send("+{x}")
 }
 #WheelDown::{
     send("{Blind}#{d}")                             ;[win] + [ホイール↓]  -> [win + d (デスクトップ画面)]
