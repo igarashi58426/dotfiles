@@ -64,7 +64,7 @@ F13 & 4::{
     if(not_long_press){
         is_double_press := KeyWait(key, "D T0.2") 
         if(is_double_press){ 
-            Send("!{F4}")  ;[CapsLock] + [44(2回押し)] -> [Alt + F4(ウィンドウ終了)]
+            Send("!{F4}") ;[CapsLock] + [44(2回押し)] -> [Alt + F4(ウィンドウ終了)]
         }else{
             Send("{Blind}{Esc}") ;[CapsLock] + [4(1回押し)] -> [Esc] 
         }
@@ -100,10 +100,10 @@ F13 & 0::{
     key := "0"
     long_press_timeout := KeyWait(key, "T0.25")
     if(long_press_timeout) {
-        InsertText("#########")    ;[CapsLock] + [0(1回押し)] -> [ ##### ##### ]
+        InsertText("#########") ;[CapsLock] + [0(1回押し)] -> [ ##### ##### ]
         Send("{Left 5}") 
     }else{
-        InsertText("####################")  ;[CapsLock] + [0--(長押し)] -> [####################(20個)]
+        InsertText("####################") ;[CapsLock] + [0--(長押し)] -> [####################(20個)]
     } 
     KeyWait(key)
     return
@@ -115,7 +115,7 @@ F13 & F3::Send("{Volume_Up 1}") ;[CapsLock] + [F3] -> [音量↑アップ]
 F13 & F4::return
 F13 & F5::Reload ;[CapsLock] + [F5] -> [スクリプトを再読込し、最初から実行し直す]
 F13 & F6::{
-    Send("^{l}")                 ;[CapsLock] + [F6] -> [デスクトップディレクトリに移動  (アドレスバーを選択)]
+    Send("^{l}") ;[CapsLock] + [F6] -> [デスクトップディレクトリに移動  (アドレスバーを選択)]
     A_Clipboard := "%userprofile%\Desktop"
     Send("^{v}")
     Send("{Enter}")
@@ -170,16 +170,15 @@ F13 & g::{
 F13 & t::google_translation() ;[CapsLock] + [t(1回押し)] -> [選択した文字をIronでグーグル翻訳]
 ;                             ;[CapsLock] + [tt(2回押し)] -> [選択した文字をIronでグーグル翻訳(改行削除)]
 
-
 F13 & h::Send("{Blind}^{Home}") ;[CapsLock] + [h] -> [ファイルの先頭へ]
-F13 & n::Send("{Blind}^{End}")  ;[CapsLock] + [n] -> [ファイルの末尾へ]
+F13 & n::Send("{Blind}^{End}") ;[CapsLock] + [n] -> [ファイルの末尾へ]
 
 F13 & u::Send("{Blind}{F6}") ;[CapsLock] + [u] -> [ひらがなに変換]
 F13 & i::Send("{Blind}{F7}") ;[CapsLock] + [i] -> [全角カタカナに変換]
 F13 & o::Send("{Blind}{F10}") ;[CapsLock] + [o] -> [半角英数字に変換]
 
 F13 & j::Send("{SC070}") ;[CapsLock] + [j] -> [日本語入力モード]
-F13 & k::Send("+{F13}")  ;[CapsLock] + [k] -> [直接入力モード]
+F13 & k::Send("+{F13}") ;[CapsLock] + [k] -> [直接入力モード]
 
 F13 & b::{
     key := "b"
@@ -187,26 +186,18 @@ F13 & b::{
     If(not_long_press){
         is_double_press := KeyWait(key, "D T0.2") 
         If(is_double_press){
-            InsertText("````")  ;[CapsLock] + [bb(2回押し)] -> [``(2個)]
+            InsertText("````") ;[CapsLock] + [bb(2回押し)] -> [``(2個)]
             Send("{Left}")
         }else{
-            Send("{Blind}^{/}")  ;[CapsLock] + [b(1回押し)] -> [Ctrl + / (コメントアウト)]
+            Send("{Blind}^{/}") ;[CapsLock] + [b(1回押し)] -> [Ctrl + / (コメントアウト)]
         }
     }else{
-        InsertText("```````n`n``````")  ;[CapsLock] + [b(長押し)] -> [```によるコードブロック]
+        InsertText("```````n`n``````") ;[CapsLock] + [b(長押し)] -> [```によるコードブロック]
         Send("{Up}")
     }
     KeyWait(key)
     Return
 }
-
-
-
-
-
-
-
-
 
 F13 & /::Send("{Blind}^{/}") ;[CapsLock] + [/] -> [Ctrl + / (コメントアウト)]
 
@@ -216,12 +207,12 @@ F13 & -::{
     If(not_long_press){
         is_double_press := KeyWait(key, "D T0.2") 
         If(is_double_press){
-            InsertText("====================")  ;[CapsLock] + [--(2回押し)] -> [==========(20個)]   
+            InsertText("====================") ;[CapsLock] + [--(2回押し)] -> [==========(20個)]   
         }else{
             InsertText("- ") ;[CapsLock] + [-(1回押し)] -> [ - ]        
         }
     }else{
-        InsertText("--------------------")  ;[CapsLock] + [---(長押し)] -> [----------(20個)]        
+        InsertText("--------------------") ;[CapsLock] + [---(長押し)] -> [----------(20個)]        
     }
     KeyWait(key)
     Return
@@ -231,9 +222,9 @@ F13 & @::{
     key := "@"
     long_press_timeout := KeyWait(key, "T0.25")
     if(long_press_timeout) {
-        Send("{Blind}+{@}")    ;[CapsLock] + [@(1回押し)] -> [ ` ]
+        Send("{Blind}+{@}") ;[CapsLock] + [@(1回押し)] -> [ ` ]
     }else{
-        InsertText("````````````````````````````````````````````````````````````````````````````````")  ;[CapsLock] + [@--(長押し)] -> [````````````````````(40個)]
+        InsertText("````````````````````````````````````````````````````````````````````````````````") ;[CapsLock] + [@--(長押し)] -> [````````````````````(40個)]
     } 
     KeyWait(key)
     return
@@ -278,9 +269,9 @@ F13 & Enter::{
 ;***********************[CapsLock] + [g]のサブルーチンラベル************************************************
 google_Search(){
     A_Clipboard := "" 
-    Sleep(1)   ;コピー待機
-    Send("^{c}")  ;選択した内容をコピー
-    ClipWait(3,1)  ;クリップボードの内容がテキストとして読み取れるのを待機
+    Sleep(1) ;コピー待機
+    Send("^{c}") ;選択した内容をコピー
+    ClipWait(3,1) ;クリップボードの内容がテキストとして読み取れるのを待機
     Run("https://www.google.co.jp/search?q=" A_Clipboard) ;既定のブラウザで検索
     return
 }
@@ -289,16 +280,14 @@ google_Search(){
 
 ;***********************[CapsLock] + [t]のサブルーチンラベル************************************************
 
-
-
 google_translation(){
     A_Clipboard := "" 
-    Sleep(1)   ;コピー待機
-    Send("^{c}")  ;選択した内容をコピー
-    ClipWait(3,1)  ;クリップボードの内容がテキストとして読み取れるのを待機
+    Sleep(1) ;コピー待機
+    Send("^{c}") ;選択した内容をコピー
+    ClipWait(3,1) ;クリップボードの内容がテキストとして読み取れるのを待機
     if WinExist("Iron"){ ;Ironブラウザが起動しているか確認
         WinActivate("Iron") ;起動済みの場合アクティブ化
-        WinWaitActive("Iron",,3)  ;アクティブ化完了を3秒待機
+        WinWaitActive("Iron",,3) ;アクティブ化完了を3秒待機
 
     }else{
         ; ブラウザの起動
@@ -317,7 +306,7 @@ google_translation(){
     Send("{LButton}") ;翻訳入力部をマウス左クリック
     Send("^{a}") ;翻訳入力部を全選択
     Send("{BackSpace}") ;翻訳入力部を削除
-    Send("^{v}")       ;翻訳入力部にコピーした内容貼り付け
+    Send("^{v}") ;翻訳入力部にコピーした内容貼り付け
     return
 }
 ; Clipboard := RegExReplace(Clipboard, "\n", " ")   ;改行が邪魔になる場合に半角スペースに置換
