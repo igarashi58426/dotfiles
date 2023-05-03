@@ -39,8 +39,31 @@ XButton2 & MButton::{
     send("^+{t}")                                    ;[マウス進む]  + [マウス中]  -> [ctrl + Shift + t (閉じたタブを復元)]
 }
 
-F1 & WheelDown::Send("{Volume_Down}")
-F1 & WheelUp::Send("{Volume_Up}")
+F1 & WheelDown::Send("{Volume_Down}") ;[F1] + [ホイール↑] -> [音量アップ]
+F1 & WheelUp::Send("{Volume_Up}") ;[F1] + [ホイール↓] -> [音量ダウン]
+
+RButton::Send("{RButton}") 
+
+RButton & WheelUp::Send("^{Home}") ;[マウス右] + [ホイール↑] -> [ファイルの先頭へ]
+RButton & WheelDown::Send("^{End}")  ;[マウス右] + [ホイール↓] -> [ファイルの末尾へ]
+
+RButton & XButton1::Send("^{c}") ;[マウス右] + [マウス戻る] -> [Ctrl+c(コピー)]
+RButton & XButton2::{
+    key := "XButton2"
+    not_long_press := KeyWait(key, "T0.3")
+    if(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2") 
+        if(!is_double_press){
+            Send("^{v}") ;[マウス右] + [マウス進む] -> [Ctrl+v(貼り付け)]
+        }
+    }else{
+        Send("#{v}") ;[マウス右] + [マウス進む--(長押し)] -> [win+v(クリップボード履歴) ]
+    }
+    KeyWait(key)
+    return
+}
+
+
 
 
 ;***装飾キーメモ***
