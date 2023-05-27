@@ -182,22 +182,46 @@ F13 & k::Send("+{F13}") ;[CapsLock] + [k] -> [直接入力モード]
 
 F13 & b::{
     key := "b"
-    not_long_press := KeyWait(key, "T0.3")
-    If(not_long_press){
-        is_double_press := KeyWait(key, "D T0.2") 
-        If(is_double_press){
-            InsertText("````") ;[CapsLock] + [bb(2回押し)] -> [``(2個)]
-            Send("{Left}")
+    if(KeyWait(key, "T0.3")){
+        if(KeyWait(key, "D T0.2")){
+            if(KeyWait(key, "T0.3") and KeyWait(key, "D T0.2") ){
+                if(KeyWait(key, "T0.3") and KeyWait(key, "D T0.2") ){
+                    if(KeyWait(key, "D T0.2") ){
+                        Send("^{x}") ;[CapsLock] + [bbbb(4回押し)] -> [選択範囲を```コードブロックへ変換]
+                        sleep(100)
+                        InsertText("```````n`n``````") 
+                        Send("{Up}")
+                        A_Clipboard := strip_linebreaks(A_Clipboard)
+                        Send("^{v}")
+                    }
+                }else{
+                    Send("{Home}") ;[CapsLock] + [bbb(3回押し)] -> [カーソル行を```コードブロックへ変換]
+                    Send("+{Down}")
+                    sleep(10)
+                    Send("^{x}")
+                    sleep(100)
+                    InsertText("```````n`n``````") 
+                    Send("{Up}")
+                    A_Clipboard := strip_linebreaks(A_Clipboard)
+                    Send("^{v}")
+                }
+            }else{
+                InsertText("```````n`n``````") ;[CapsLock] + [bb(2回押し)] -> [```コードブロック生成]
+                Send("{Up}")
+            }
         }else{
             Send("{Blind}^{/}") ;[CapsLock] + [b(1回押し)] -> [Ctrl + / (コメントアウト)]
         }
     }else{
-        InsertText("```````n`n``````") ;[CapsLock] + [b(長押し)] -> [```によるコードブロック]
-        Send("{Up}")
+        InsertText("````") ;[CapsLock] + [b(長押し)] -> [``(2個)]
+        Send("{Left}")
     }
     KeyWait(key)
-    Return
+    return
 }
+
+
+
 
 F13 & /::Send("{Blind}^{/}") ;[CapsLock] + [/] -> [Ctrl + / (コメントアウト)]
 
