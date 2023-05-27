@@ -261,16 +261,6 @@ F13 & MButton::Send("{Blind}#{Tab}")
 F13 & WheelUp::Send("{WheelUp 4}") ;[CapsLock] + [ホイール↑] -> [ホイール↑4倍]
 F13 & WheelDown::Send("{WheelDown 4}") ;[CapsLock] + [ホイール↓] -> [ホイール↓4倍]
 
-F13 & Numpad5::MouseMove(0,-40,1,"R") ;[CapsLock] + [テンキー5] -> [マウスカーソル移動(上)]
-F13 & Numpad2::MouseMove(0,40,1,"R") ;[CapsLock] + [テンキー2] -> [マウスカーソル移動(下)]
-F13 & Numpad1::MouseMove(-40,0,1,"R") ;[CapsLock] + [テンキー1] -> [マウスカーソル移動(左)]
-F13 & Numpad3::MouseMove(40,0,1,"R") ;[CapsLock] + [テンキー3] -> [マウスカーソル移動(右)]
-F13 & Numpad4::LButton ;[CapsLock] + [テンキー4] -> [マウス左クリック]
-F13 & Numpad6::RButton ;[CapsLock] + [テンキー6] -> [マウス左クリック]
-F13 & Numpad7::Send("{WheelUp 3}") ;[CapsLock] + [テンキー7] -> [ホイール↑3回]
-F13 & Numpad8::MButton ;[CapsLock] + [テンキー8] -> [ホイールクリック]
-F13 & Numpad9::Send("{WheelDown 3}") ;[CapsLock] + [テンキー9] -> [ホイール↓3回]
-
 F13 & Enter::{
     key := "Enter"
     long_press_timeout := KeyWait(key, "T0.25")
