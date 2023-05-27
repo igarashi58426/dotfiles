@@ -16,7 +16,7 @@ F13 & 1::{
         Send("{Blind}{RButton}") ;[CapsLock] + [1--(長押し)] -> [マウス右クリック]
     } 
     KeyWait(key)
-    return
+    Return
 }
 
 F13 & 2::{
@@ -29,7 +29,7 @@ F13 & 2::{
         Send("^{c}") ;[CapsLock] + [2--(長押し)] -> [Ctrl + d → c (単語選択とコピー)]
     } 
     KeyWait(key)
-    return
+    Return
 }
 
 F13 & 3::{
@@ -55,7 +55,7 @@ F13 & 3::{
         Send("+{End}") ;[CapsLock] + [3--(長押し)] -> [Shift + Home → End(1行選択)]
     }
     KeyWait(key)
-    return
+    Return
 }
 
 F13 & 4::{
@@ -69,7 +69,7 @@ F13 & 4::{
             Send("{Blind}{Esc}") ;[CapsLock] + [4(1回押し)] -> [Esc] 
         }
     }
-    return
+    Return
 }
 
 F13 & 5::{
@@ -88,7 +88,7 @@ F13 & 5::{
         Send("^+{F5}") ;[CapsLock] + [5--(長押し)] -> [Ctrl + Shift + F5(VScodeデバックの再起動)(未実装)]
     }
     KeyWait(key)
-    return
+    Return
 }
 
 F13 & 6::Send("{Blind}^{l}") ;[CapsLock] + [6] -> [Ctrl+L (アドレスバーを選択)]
@@ -106,24 +106,24 @@ F13 & 0::{
         InsertText("####################") ;[CapsLock] + [0--(長押し)] -> [####################(20個)]
     } 
     KeyWait(key)
-    return
+    Return
 }
 
 F13 & F1::Send("{Volume_Mute}") ;[CapsLock] + [F1] -> [ミュート]
 F13 & F2::Send("{Volume_Down 1}") ;[CapsLock] + [F2] -> [音量↓ダウン]
 F13 & F3::Send("{Volume_Up 1}") ;[CapsLock] + [F3] -> [音量↑アップ]
-F13 & F4::return
+F13 & F4::Return
 F13 & F5::Reload ;[CapsLock] + [F5] -> [スクリプトを再読込し、最初から実行し直す]
 F13 & F6::{
     Send("^{l}") ;[CapsLock] + [F6] -> [デスクトップディレクトリに移動  (アドレスバーを選択)]
     A_Clipboard := "%userprofile%\Desktop"
     Send("^{v}")
     Send("{Enter}")
-    return
+    Return
 }
-F13 & F7:: return
-F13 & F8:: return
-F13 & F9:: return
+F13 & F7:: Return
+F13 & F8:: Return
+F13 & F9:: Return
 F13 & F10::Suspend ;[CapsLock] + [F10] -> [割り当てたホットキーを全て停止する]
 F13 & F11::Pause ;[CapsLock] + [F11] -> [スクリプトを一時停止する]
 F13 & F12::ExitApp ;[CapsLock] + [F12] -> [スクリプトを終了する]
@@ -148,7 +148,7 @@ F13 & v::{
         Send("{Blind}#v") ;[CapsLock] + [v--(長押し)] -> [win+v(クリップボード履歴) ]
     }
     KeyWait(key)
-    return
+    Return
 }
 F13 & g::{
     key := "g"
@@ -156,15 +156,15 @@ F13 & g::{
     if(not_long_press){
         is_double_press := KeyWait(key, "D T0.2") 
         if(is_double_press){
-            return
+            Return
         }else{
             google_Search() ;[CapsLock] + [g] -> [選択した文字をグーグル検索]
         }
     }else{
-        return
+        Return
     }
     KeyWait(key)
-    return
+    Return
 }
 
 F13 & t::google_translation() ;[CapsLock] + [t(1回押し)] -> [選択した文字をIronでグーグル翻訳]
@@ -217,7 +217,7 @@ F13 & b::{
         Send("{Left}")
     }
     KeyWait(key)
-    return
+    Return
 }
 
 
@@ -251,7 +251,7 @@ F13 & @::{
         InsertText("````````````````````````````````````````````````````````````````````````````````") ;[CapsLock] + [@--(長押し)] -> [````````````````````(40個)]
     } 
     KeyWait(key)
-    return
+    Return
 }
 
 F13 & XButton1::AltTab ;[CapsLock] + [マウス戻る] -> [Alt + Tab(ウィンドウ切り替え)]
@@ -285,7 +285,7 @@ F13 & Enter::{
         }
     } 
     KeyWait(key)
-    return
+    Return
 }
 
 ;********************************************************************************************
@@ -297,7 +297,7 @@ google_Search(){
     Send("^{c}") ;選択した内容をコピー
     ClipWait(3,1) ;クリップボードの内容がテキストとして読み取れるのを待機
     Run("https://www.google.co.jp/search?q=" A_Clipboard) ;既定のブラウザで検索
-    return
+    Return
 }
 
 ;***********************************************************************************************
@@ -331,7 +331,7 @@ google_translation(){
     Send("^{a}") ;翻訳入力部を全選択
     Send("{BackSpace}") ;翻訳入力部を削除
     Send("^{v}") ;翻訳入力部にコピーした内容貼り付け
-    return
+    Return
 }
 ; Clipboard := RegExReplace(Clipboard, "\n", " ")   ;改行が邪魔になる場合に半角スペースに置換
 ; Clipboard := RegExReplace(Clipboard, "\n\r", " ") ;改行が邪魔になる場合に半角スペースに置換

@@ -45,7 +45,7 @@
 InsertText(Content){
     All_Clip_Saved := ClipboardAll()
     A_Clipboard := Content
-    Send("^v")
+    Send("^{v}")
     Sleep(200)
     A_Clipboard := All_Clip_Saved
     }
