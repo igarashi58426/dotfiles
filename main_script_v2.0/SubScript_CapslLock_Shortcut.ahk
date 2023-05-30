@@ -191,11 +191,10 @@ F13 & b::{
                         sleep(100)
                         InsertText("```````n`n``````") 
                         Send("{Up}")
-                        A_Clipboard := strip_linebreaks(A_Clipboard)
                         Send("^{v}")
                     }
                 }else{
-                    Send("{Home}") ;[CapsLock] + [bbb(3回押し)] -> [カーソル行を```コードブロックへ変換]
+                    Send("{Home 2}") ;[CapsLock] + [bbb(3回押し)] -> [カーソル行を```コードブロックへ変換]
                     Send("+{Down}")
                     sleep(10)
                     Send("^{x}")
@@ -323,9 +322,6 @@ google_translation(){
     Send("^{v}") ;翻訳入力部にコピーした内容貼り付け
     Return
 }
-; Clipboard := RegExReplace(Clipboard, "\n", " ")   ;改行が邪魔になる場合に半角スペースに置換
-; Clipboard := RegExReplace(Clipboard, "\n\r", " ") ;改行が邪魔になる場合に半角スペースに置換
-; Clipboard := RegExReplace(Clipboard, "\r", " ")   ;改行が邪魔になる場合に半角スペースに置換
 
 ;***********************************************************************************************
 
