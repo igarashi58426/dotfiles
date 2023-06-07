@@ -1,9 +1,74 @@
 ﻿;***********************CapsLockショートカット*****************************************************
 ;CapsLockに各制御キーを設定
-F13 & w::Send("{Blind}{Up}") ;[CapsLock] + [w] -> [↑]
-F13 & s::Send("{Blind}{Down}") ;[CapsLock] + [s] -> [↓]
-F13 & d::Send("{Blind}{Right}") ;[CapsLock] + [d] -> [→]
-F13 & a::Send("{Blind}{Left}") ;[CapsLock] + [a] -> [←]
+F13 & w::{
+    If (GetKeyState("n","P") and GetKeyState("m","P")) {
+        Send("{Blind}+^{Up}") ;[CapsLock] + [n] + [m]  + [w] -> [Shift + Ctrl + ↑]
+        Return
+    }
+    If (GetKeyState("n","P")) {
+        Send("{Blind}+{Up}") ;[CapsLock] + [n] + [w] -> [Shift + ↑]
+        Return
+    }
+    If (GetKeyState("m","P")) {
+        Send("{Blind}^{Up}") ;[CapsLock] + [m] + [w] -> [Ctrl + ↑]
+        Return
+    }
+    Send("{Blind}{Up}") ;[CapsLock] + [w] -> [↑]
+    Return
+}
+
+F13 & s::{
+    If (GetKeyState("n","P") and GetKeyState("m","P")) {
+        Send("{Blind}+^{Down}") ;[CapsLock] + [n] + [m]  + [s] -> [Shift + Ctrl + ↓]
+        Return
+    }
+    If (GetKeyState("n","P")) {
+        Send("{Blind}+{Down}") ;[CapsLock] + [n] + [s] -> [Shift + ↓]
+        Return
+    }
+    If (GetKeyState("m","P")) {
+        Send("{Blind}^{Down}") ;[CapsLock] + [m] + [s] -> [Ctrl + ↓]
+        Return
+    }
+    Send("{Blind}{Down}") ;[CapsLock] + [s] -> [↓]
+    Return
+}
+
+F13 & d::{
+    If (GetKeyState("n","P") and GetKeyState("m","P")) {
+        Send("{Blind}+^{Right}") ;[CapsLock] + [n] + [m] + [d] -> [Shift + Ctrl + →]
+        Return
+    }
+    If (GetKeyState("n","P")) {
+        Send("{Blind}+{Right}") ;[CapsLock] + [n] + [d] -> [Shift + →]
+        Return
+    }
+    If (GetKeyState("m","P")) {
+        Send("{Blind}^{Right}") ;[CapsLock] + [m] + [d] -> [Ctrl + →]
+        Return
+    }
+    Send("{Blind}{Right}") ;[CapsLock] + [d] -> [→]
+    Return
+}
+
+
+F13 & a::{
+    If (GetKeyState("n","P") and GetKeyState("m","P")) {
+        Send("{Blind}+^{Left}") ;[CapsLock] + [n] + [m] + [a] -> [Shift + Ctrl + ←]
+        Return
+    }
+    If (GetKeyState("n","P")) {
+        Send("{Blind}+{Left}") ;[CapsLock] + [n] + [a] -> [Shift + ←]
+        Return
+    }
+    If (GetKeyState("m","P")) {
+        Send("{Blind}^{Left}") ;[CapsLock] + [m] + [a] -> [Ctrl + ←]
+        Return
+    }
+    Send("{Blind}{Left}") ;[CapsLock] + [a] -> [←]
+    Return
+}
+
 F13 & q::Send("{Blind}{Backspace}") ;[CapsLock] + [q] -> [Backspace]  
 F13 & e::Send("{Blind}{Enter}") ;[CapsLock] + [e] -> [Enter]
 
@@ -170,8 +235,23 @@ F13 & g::{
 F13 & t::google_translation() ;[CapsLock] + [t(1回押し)] -> [選択した文字をIronでグーグル翻訳]
 ;                             ;[CapsLock] + [tt(2回押し)] -> [選択した文字をIronでグーグル翻訳(改行削除)]
 
-F13 & h::Send("{Blind}^{Home}") ;[CapsLock] + [h] -> [ファイルの先頭へ]
-F13 & n::Send("{Blind}^{End}") ;[CapsLock] + [n] -> [ファイルの末尾へ]
+F13 & h::{
+    key := "h"
+    not_long_press := KeyWait(key, "T0.3")
+    If(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2") 
+        If(is_double_press){
+            Send("{Blind}^{End}")    ;[CapsLock] + [hh(2回押し)] -> [Ctrl + End (ファイルの末尾へ)]
+        }else{
+            Send("{Blind}^{Home}")    ;[CapsLock] + [h(1回押し)] -> [Ctrl + Home (ファイルの先頭へ)]
+        }
+    }
+    KeyWait(key)
+    Return
+}
+
+F13 & n::Return
+F13 & m::Return
 
 F13 & u::Send("{Blind}{F6}") ;[CapsLock] + [u] -> [ひらがなに変換]
 F13 & i::Send("{Blind}{F7}") ;[CapsLock] + [i] -> [全角カタカナに変換]
