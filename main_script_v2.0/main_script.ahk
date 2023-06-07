@@ -17,7 +17,8 @@
 ;Force	同じスクリプトを再実行した際は、確認なくリロードする
 #SingleInstance
 
-;プロセス優先度を最高にする
+;プロセス優先度を高にする
+ProcessSetPriority "High"
 
 ;無効化するソフトを設定
 ;#Include SubScript_exception_software.ahk
