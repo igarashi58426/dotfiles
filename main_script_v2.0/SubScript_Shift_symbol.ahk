@@ -19,22 +19,23 @@
 ; 記号キー[ @ ] → [ @ ] + [ ` ]
 ; 記号キー[ [ ] → [ [ ] + [ { ]
 ; 記号キー[ ] ] → [ ] ] + [ } ]
-; 記号キー[ ; ] → [ ; ] + [ + ] 
+; 記号キー[ ; ] → [ ; ] + [ + ]
 ; 記号キー[ : ] → [ : ] + [ * ]
 ; 記号キー[ , ] → [ , ] + [ < ]
 ; 記号キー[ . ] → [ . ] + [ > ]
 ; 記号キー[ / ] → [ / ] + [ ? ]
 ; 記号キー[ \ ] → [ _ ]
-;        
 
 ;キーフックを使用
 #UseHook
 ; ============================================================
 shift_symbol_by_long_press(key){
-    not_long_press := KeyWait(key, " T0.25")
+    Critical "On"
+    not_long_press := KeyWait(key, "T0.25")
+    Critical "Off"
     if(not_long_press){
         Send("{Blind}{" key "}") ;1回押しで実行
-    }else{ 
+    }else{
         Send("{Blind}+{" key "}") ;長押しで実行
     }
     KeyWait(key) ;離されるまで待機
