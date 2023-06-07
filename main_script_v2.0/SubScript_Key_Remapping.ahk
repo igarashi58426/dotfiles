@@ -15,6 +15,23 @@ SC07B::Send("+{F13}") ;無変換で直接入力に
 ;InsrtをDeleteに変更
 Insert::Send("{Blind}{Delete}") ;[Insrt] -> [Delete]
 
+
+^+c::{
+    key := "c"
+    not_long_press := KeyWait(key, "T0.3")
+    If(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2") 
+        If(is_double_press){
+            Send("{F12}")  ;[Ctrl] + [Shift] + [cc(2回押し)] -> [F12]
+        }else{
+            Send("{Blind}^+{c}") ;[Ctrl] + [Shift] + [c(1回押し)] -> [Ctrl] + [Shift] + [c]
+        }
+    }else{
+        Send("+{F12}") ;[Ctrl] + [Shift] + [c---(長押し)] -> [Shift] + [F12]
+    }
+    KeyWait(key)
+    Return
+}
 ;***********************************************************************************************
 
 ;************装飾キーメモ**************/
