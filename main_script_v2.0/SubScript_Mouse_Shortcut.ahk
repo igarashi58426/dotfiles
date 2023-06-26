@@ -39,8 +39,8 @@ XButton2 & MButton::{
     send("^+{t}") ;[マウス進む] + [マウス中] -> [ctrl + Shift + t (閉じたタブを復元)]
 }
 
-F1 & WheelDown::Send("{Volume_Down}") ;[F1] + [ホイール↑] -> [音量アップ]
-F1 & WheelUp::Send("{Volume_Up}") ;[F1] + [ホイール↓] -> [音量ダウン]
+#!WheelDown::Send("{Volume_Down}") ;[win] + [Alt] + [ホイール↑] -> [音量アップ]
+#!WheelUp::Send("{Volume_Up}") ;[win] + [Alt] + [ホイール↓] -> [音量ダウン]
 
 RButton::Send("{RButton}") 
 
@@ -60,6 +60,22 @@ RButton & XButton2::{
         Send("#{v}") ;[マウス右] + [マウス進む--(長押し)] -> [win+v(クリップボード履歴) ]
     }
     KeyWait(key)
+    return
+}
+
+AppsKey & WheelUp::{  ;[appキー] + [ホイール↑] -> [モニター輝度3増加]
+    Critical "On"
+    Run("python ./change_luminance_script/change_luminance.py +3","","Hide")
+    Critical "Off"
+    Sleep(200)
+    return
+}
+
+AppsKey & WheelDown::{ ;[appキー] + [ホイール↓] -> [モニター輝度3減少]
+    Critical "On"
+    Run("python ./change_luminance_script/change_luminance.py -3","","Hide")
+    Critical "Off"
+    Sleep(200)
     return
 }
 
