@@ -9,3 +9,5 @@ echo "alias l='ls -CF'" >> ~/.bashrc
 echo "alias gr='grep'" >> ~/.bashrc
 echo "alias start='sudo systemctl start'" >> ~/.bashrc
 echo "alias status='sudo systemctl status'" >> ~/.bashrc
+
+source ~/.bashrc
