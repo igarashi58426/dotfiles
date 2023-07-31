@@ -1,0 +1,9 @@
+{
+    "command": 
+    {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+    },
+    "keys": "ctrl+shift+\\"
+}
