@@ -380,25 +380,20 @@ google_translation(){
     if WinExist("Iron"){ ;Ironブラウザが起動しているか確認
         WinActivate("Iron") ;起動済みの場合アクティブ化
         WinWaitActive("Iron",,3) ;アクティブ化完了を3秒待機
-
     }else{
         ; ブラウザの起動
         Run('"C:\Program Files\SRWare Iron (64-Bit)\chrome.exe" -incognito') ;Ironブラウザをプライベートで起動
         WinWait("Iron") ;起動完了を待機
         WinActivate("Iron") ;アクティブ化
         WinWaitActive("Iron",,3) ;アクティブ化完了を3秒待機
-        ; 翻訳ページへの遷移
-        InsertText("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate") ;google翻訳を開く
-        Sleep(1000) ;URL受け付けまで 1秒待機
+        InsertText("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate&text=" A_Clipboard) ;google翻訳を開く
         Send("{Enter}") ;ページ遷移
-        Sleep(2000) ;読み込み完了まで 2秒待機
     }
     Send("^{1}") ;左端タブに移動
-    MouseMove(180, 350 ,0) ;翻訳入力部にマウス移動
-    Send("{LButton}") ;翻訳入力部をマウス左クリック
-    Send("^{a}") ;翻訳入力部を全選択
-    Send("{BackSpace}") ;翻訳入力部を削除
-    Send("^{v}") ;翻訳入力部にコピーした内容貼り付け
+    Send("^{l}") ;アドレスバーにフォーカス
+    Send("{Backspace}") ;元のアドレスを削除
+    InsertText("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate&text=" A_Clipboard) ;google翻訳を開く
+    Send("{Enter}") ;ページ遷移
     Return
 }
 
