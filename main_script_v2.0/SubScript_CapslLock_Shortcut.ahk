@@ -69,8 +69,38 @@ F13 & a::{
     Return
 }
 
-F13 & q::Send("{Blind}{Backspace}") ;[CapsLock] + [q] -> [Backspace]  
-F13 & e::Send("{Blind}{Enter}") ;[CapsLock] + [e] -> [Enter]
+
+F13 & q::{
+    If (GetKeyState("n","P") and GetKeyState("m","P")) {
+        Return
+    }
+    If (GetKeyState("n","P")) {
+        Send("{Blind}{Delete}") ;[CapsLock] + [n] + [q] -> [Delete]
+        Return
+    }
+    If (GetKeyState("m","P")) {
+        Send("{Blind}^{Backspace}}") ;[CapsLock] + [m] + [q] -> [Ctrl + Backspace]
+        Return
+    }
+    Send("{Blind}{Backspace}") ;[CapsLock] + [q] -> [Backspace]
+    Return
+}
+
+F13 & e::{
+    If (GetKeyState("n","P") and GetKeyState("m","P")) {
+        Return
+    }
+    If (GetKeyState("n","P")) {
+        Send("{Blind}+{Enter}") ;[CapsLock] + [n] + [e] -> [Shift + Enter]
+        Return
+    }
+    If (GetKeyState("m","P")) {
+        Send("{Blind}^{Enter}}") ;[CapsLock] + [m] + [e] -> [Ctrl + Enter]
+        Return
+    }
+    Send("{Blind}{Enter}") ;[CapsLock] + [e] -> [Enter]
+    Return
+}
 
 F13 & 1::{
     key := "1"
