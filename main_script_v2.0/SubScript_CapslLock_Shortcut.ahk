@@ -421,9 +421,12 @@ google_translation(){
     }
     Send("^{1}") ;左端タブに移動
     Send("^{l}") ;アドレスバーにフォーカス
+	Sleep(10)
     Send("{Backspace}") ;元のアドレスを削除
-    InsertText("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate&text=" A_Clipboard) ;google翻訳を開く
-    Send("{Enter}") ;ページ遷移
+    Sleep(10)
+	InsertText("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate&text=" A_Clipboard) ;google翻訳を開く
+    Sleep(10)
+	Send("{Enter}") ;ページ遷移
     Return
 }
 
