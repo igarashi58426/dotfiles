@@ -32,7 +32,8 @@ ProcessSetPriority "High"
 #Include SubScript_Shift_symbol.ahk
 #Include subScript_symbol_direct_input.ahk
 #Include SubScript_VScode_Shortcut.ahk
-#Include SubScript_Z_Shortcut.ahk
+; #Include SubScript_Z_Shortcut.ahk
+#Include SubScript_Q_Shortcut.ahk
 ; #Include SubScript_View_mode.ahk
 
 ;***********************************************************************************************
