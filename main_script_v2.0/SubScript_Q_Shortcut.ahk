@@ -1,13 +1,13 @@
 ﻿; ;***********************Qショートカット*****************************************************
-q & w::InsertText("'") ;[q] + [x] -> [']
-q & e::InsertText("=") ;[q] + [x] -> [=]
-q & r::InsertText("|") ;[q] + [x] -> [|]
+q & w::InsertText_in_critical("'") ;[q] + [x] -> [']
+q & e::InsertText_in_critical("=") ;[q] + [x] -> [=]
+q & r::InsertText_in_critical("|") ;[q] + [x] -> [|]
 
-q & 2::InsertText('"') ;[q] + [2] -> ["]
-q & 3::InsertText("#") ;[q] + [3] -> [#]
-q & 4::InsertText("$") ;[q] + [4] -> [$]
-q & 5::InsertText("%") ;[q] + [5] -> [%]
-q & 6::InsertText("&") ;[q] + [6] -> [&]
+q & 2::InsertText_in_critical('"') ;[q] + [2] -> ["]
+q & 3::InsertText_in_critical("#") ;[q] + [3] -> [#]
+q & 4::InsertText_in_critical("$") ;[q] + [4] -> [$]
+q & 5::InsertText_in_critical("%") ;[q] + [5] -> [%]
+q & 6::InsertText_in_critical("&") ;[q] + [6] -> [&]
 
 ;***********************Qキーデフォルト動作定義*****************************************************
 

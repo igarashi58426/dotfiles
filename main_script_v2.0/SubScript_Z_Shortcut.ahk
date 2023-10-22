@@ -1,18 +1,20 @@
 ﻿;***********************zショートカット*****************************************************
-z & x::InsertText(".") ;[z] + [x] -> [.]
-z & c::InsertText(",") ;[z] + [x] -> [,]
-z & v::InsertText("/") ;[z] + [x] -> [/]
+z & x::InsertText_in_critical(".") ;[z] + [x] -> [.]
+z & c::InsertText_in_critical(",") ;[z] + [x] -> [,]
+z & v::InsertText_in_critical("/") ;[z] + [x] -> [/]
 
-z & [::InsertText("[") ;[z] + ["["] -> ["["]
-z & ]::InsertText("]") ;[z] + ["]"] -> ["]"]
+z & [::InsertText_in_critical("[") ;[z] + ["["] -> ["["]
+z & ]::InsertText_in_critical("]") ;[z] + ["]"] -> ["]"]
 
 z & h::Send("{Blind}{←}") ;[z] + [h] -> [←]
 z & j::Send("{Blind}{↓}") ;[z] + [j] -> [↓]
 z & k::Send("{Blind}{↑}") ;[z] + [k] -> [↑]
 z & l::Send("{Blind}{→}") ;[z] + [l] -> [→]
 
-z & 8::Send("【") ;[z] + [8] -> [【]
-z & 9::Send("】") ;[z] + [9] -> [】]
+z & 8::InsertText_in_critical("【") ;[z] + [8] -> [【]
+z & 9::InsertText_in_critical("】") ;[z] + [9] -> [】]
+
+z & Space::Send("{Blind}{_}") ;[CapsLock] + ["_"] -> ["_"]
 
 ;***********************zキーデフォルト動作定義*****************************************************
 

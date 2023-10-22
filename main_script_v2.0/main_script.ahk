@@ -32,7 +32,7 @@ ProcessSetPriority "High"
 #Include SubScript_Shift_symbol.ahk
 #Include subScript_symbol_direct_input.ahk
 #Include SubScript_VScode_Shortcut.ahk
-; #Include SubScript_Z_Shortcut.ahk
+#Include SubScript_Z_Shortcut.ahk
 #Include SubScript_Q_Shortcut.ahk
 ; #Include SubScript_View_mode.ahk
 
@@ -61,7 +61,14 @@ strip_linebreaks(text){
     }
 ;***********************************************************************************************
 
-
+;***********************クリティカルセクション文字貼り付け************************************************
+InsertText_in_critical(Content){
+    Critical "On"
+    InsertText(Content)
+    Critical "Off"
+    Return
+}
+;***********************************************************************************************
 
 
 ;************装飾キーメモ**************/
