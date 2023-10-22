@@ -384,7 +384,7 @@ F13 & Enter::{
     Return
 }
 
-F13 & Space::Send("{Blind}{_}") ;[CapsLock] + [] -> [Ctrl + / (コメントアウト)]
+F13 & Space::Send("{Blind}{_}") ;[CapsLock] + ["_"] -> ["_"]
 
 ;********************************************************************************************
 
@@ -425,7 +425,7 @@ google_translation(){
     Send("{Backspace}") ;元のアドレスを削除
     Sleep(10)
 	InsertText("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate&text=" A_Clipboard) ;google翻訳を開く
-    Sleep(10)
+    Sleep(50)
 	Send("{Enter}") ;ページ遷移
     Return
 }
