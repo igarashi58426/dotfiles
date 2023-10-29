@@ -204,6 +204,8 @@ F13 & 0::{
     Return
 }
 
+F13 & Esc::Send("{Blind}{Delete}") ;[CapsLock] + [Esc] -> [Delete]
+
 F13 & F1::Send("{Volume_Mute}") ;[CapsLock] + [F1] -> [ミュート]
 F13 & F2::Send("{Volume_Down 1}") ;[CapsLock] + [F2] -> [音量↓ダウン]
 F13 & F3::Send("{Volume_Up 1}") ;[CapsLock] + [F3] -> [音量↑アップ]
