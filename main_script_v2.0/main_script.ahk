@@ -34,6 +34,7 @@ ProcessSetPriority "High"
 #Include SubScript_VScode_Shortcut.ahk
 #Include SubScript_Z_Shortcut.ahk
 #Include SubScript_Q_Shortcut.ahk
+#Include SubScript_Tab_Shortcut copy.ahk
 ; #Include SubScript_View_mode.ahk
 
 ;***********************************************************************************************
