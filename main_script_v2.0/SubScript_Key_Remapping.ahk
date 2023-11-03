@@ -20,7 +20,7 @@ Insert::Send("{Blind}{Delete}") ;[Insrt] -> [Delete]
     key := "c"
     not_long_press := KeyWait(key, "T0.3")
     If(not_long_press){
-        is_double_press := KeyWait(key, "D T0.2") 
+        is_double_press := KeyWait(key, "D T0.2")
         If(is_double_press){
             Send("{F12}")  ;[Ctrl] + [Shift] + [cc(2回押し)] -> [F12]
         }else{
@@ -34,11 +34,11 @@ Insert::Send("{Blind}{Delete}") ;[Insrt] -> [Delete]
 }
 ;***********************************************************************************************
 
-;************装飾キーメモ**************/
-;キー名	説明                        /
-; +	   shift                       /
-; ^	   control                     /
-; !	    alt                        /
-; #	   windows	                   /
+;***********装飾キーメモ************/
+;キー名 説明                        /
+; +    shift                       /
+; ^    control                     /
+; !     alt                        /
+; #    windows                     /
 ;**********************************/
 

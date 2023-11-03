@@ -9,7 +9,7 @@
 +WheelUp::Send("{WheelLeft 2}") ;[Shift] + [ホイール↑] -> [ホイール←左]
 +WheelDown::Send("{WheelRight 2}") ;[Shift] + [ホイール↓] -> [ホイール→右]
 
-RButton & WheelUp::Send("{WheelLeft 2}") 
+RButton & WheelUp::Send("{WheelLeft 2}")
 RButton & WheelDown::Send("{WheelRight 2}")
 
 ;***********************************************************************************************
@@ -57,7 +57,7 @@ XButton2 & MButton::{
 #!WheelDown::Send("{Volume_Down}") ;[win] + [Alt] + [ホイール↑] -> [音量アップ]
 #!WheelUp::Send("{Volume_Up}") ;[win] + [Alt] + [ホイール↓] -> [音量ダウン]
 
-RButton::Send("{RButton}") 
+RButton::Send("{RButton}")
 
 RButton & XButton1::Send("^{c}") ;[マウス右] + [マウス戻る] -> [Ctrl+c(コピー)]
 RButton & XButton2::{
@@ -91,10 +91,10 @@ AppsKey & WheelDown::{ ;[appキー] + [ホイール↓] -> [モニター輝度3�
     return
 }
 
-;***装飾キーメモ***
-;キー名	説明                       
-; +	   shift                       
-; ^	   control                     
-; !	    alt                        
-; #	   windows	                   
-;*****************
+;***********装飾キーメモ************/
+;キー名 説明                        /
+; +    shift                       /
+; ^    control                     /
+; !     alt                        /
+; #    windows                     /
+;**********************************/

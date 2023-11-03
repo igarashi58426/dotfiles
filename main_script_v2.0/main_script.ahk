@@ -14,7 +14,7 @@
 ;RegisterHotkeyを介さず、フックを使用してホットキーを定義する(処理速度向上のため)
 #UseHook
 
-;Force	同じスクリプトを再実行した際は、確認なくリロードする
+;Force 同じスクリプトを再実行した際は、確認なくリロードする
 #SingleInstance
 
 ;プロセス優先度を高にする
@@ -73,11 +73,11 @@ InsertText_in_critical(Content){
 
 
 ;************装飾キーメモ**************/
-;キー名	説明                        /
-; +	   shift                       /
-; ^	   control                     /
-; !	    alt                        /
-; #	   windows	                   /
+;キー名 説明                        /
+; +    shift                       /
+; ^    control                     /
+; !     alt                        /
+; #    windows                    /
 ;**********************************/
 
 

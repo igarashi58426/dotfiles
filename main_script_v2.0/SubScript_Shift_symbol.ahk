@@ -69,9 +69,10 @@ SC033::shift_symbol_by_long_press("SC033")
 SC073::Send("{Blind}+{SC073}")
 
 ;***********装飾キーメモ************/
-;キー名    説明                        /
-; +       shift                       /
-; ^       control                     /
-; !        alt                        /
-; #       windows                       /
+;キー名 説明                        /
+; +    shift                       /
+; ^    control                     /
+; !     alt                        /
+; #    windows                     /
+;**********************************/
 

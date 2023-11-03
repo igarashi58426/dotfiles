@@ -109,7 +109,7 @@ F13 & 1::{
         Send("{Blind}{LButton}") ;[CapsLock] + [1(1回押し)] -> [マウス左クリック]
     }else{
         Send("{Blind}{RButton}") ;[CapsLock] + [1--(長押し)] -> [マウス右クリック]
-    } 
+    }
     KeyWait(key)
     Return
 }
@@ -120,9 +120,9 @@ F13 & 2::{
     if(long_press_timeout) {
         Send("{Blind}{F2}") ;[CapsLock] + [2(1回押し)] -> [F2]
     }else{
-        Send("^{d}") 
+        Send("^{d}")
         Send("^{c}") ;[CapsLock] + [2--(長押し)] -> [Ctrl + d → c (単語選択とコピー)]
-    } 
+    }
     KeyWait(key)
     Return
 }
@@ -146,7 +146,7 @@ F13 & 3::{
             Send("{Blind}{Home}") ;[CapsLock] + [3(1回押し)] -> [Home]
         }
     }else{
-        Send("{Home}") 
+        Send("{Home}")
         Send("+{End}") ;[CapsLock] + [3--(長押し)] -> [Shift + Home → End(1行選択)]
     }
     KeyWait(key)
@@ -157,11 +157,11 @@ F13 & 4::{
     key := "4"
     not_long_press := KeyWait(key, "T0.3")
     if(not_long_press){
-        is_double_press := KeyWait(key, "D T0.2") 
-        if(is_double_press){ 
+        is_double_press := KeyWait(key, "D T0.2")
+        if(is_double_press){
             Send("!{F4}") ;[CapsLock] + [44(2回押し)] -> [Alt + F4(ウィンドウ終了)]
         }else{
-            Send("{Blind}{Esc}") ;[CapsLock] + [4(1回押し)] -> [Esc] 
+            Send("{Blind}{Esc}") ;[CapsLock] + [4(1回押し)] -> [Esc]
         }
     }
     Return
@@ -196,10 +196,10 @@ F13 & 0::{
     long_press_timeout := KeyWait(key, "T0.25")
     if(long_press_timeout) {
         InsertText("#########") ;[CapsLock] + [0(1回押し)] -> [ ##### ##### ]
-        Send("{Left 5}") 
+        Send("{Left 5}")
     }else{
         InsertText("####################") ;[CapsLock] + [0--(長押し)] -> [####################(20個)]
-    } 
+    }
     KeyWait(key)
     Return
 }
@@ -234,10 +234,10 @@ F13 & v::{
     key := "v"
     not_long_press := KeyWait(key, "T0.3")
     if(not_long_press){
-        is_double_press := KeyWait(key, "D T0.2") 
+        is_double_press := KeyWait(key, "D T0.2")
         if(is_double_press){
             A_Clipboard := RegExReplace(A_Clipboard, "(\n|\r|\r\n)", "")
-            Send("{Blind}^v") ;[CapsLock] + [vv(2回押し)] -> [Ctrl+v(改行を削除して貼り付け)]   
+            Send("{Blind}^v") ;[CapsLock] + [vv(2回押し)] -> [Ctrl+v(改行を削除して貼り付け)]
         }else{
             Send("{Blind}^v") ;[CapsLock] + [v(1回押し)] -> [Ctrl+v(貼り付け)]
         }
@@ -251,7 +251,7 @@ F13 & g::{
     key := "g"
     not_long_press := KeyWait(key, "T0.3")
     if(not_long_press){
-        is_double_press := KeyWait(key, "D T0.2") 
+        is_double_press := KeyWait(key, "D T0.2")
         if(is_double_press){
             Return
         }else{
@@ -271,7 +271,7 @@ F13 & h::{
     key := "h"
     not_long_press := KeyWait(key, "T0.3")
     If(not_long_press){
-        is_double_press := KeyWait(key, "D T0.2") 
+        is_double_press := KeyWait(key, "D T0.2")
         If(is_double_press){
             Send("{Blind}^{End}")    ;[CapsLock] + [hh(2回押し)] -> [Ctrl + End (ファイルの末尾へ)]
         }else{
@@ -301,7 +301,7 @@ F13 & b::{
                     if(KeyWait(key, "D T0.2") ){
                         Send("^{x}") ;[CapsLock] + [bbbb(4回押し)] -> [選択範囲を```コードブロックへ変換]
                         sleep(100)
-                        InsertText("```````n`n``````") 
+                        InsertText("```````n`n``````")
                         Send("{Up}")
                         Send("^{v}")
                     }
@@ -311,7 +311,7 @@ F13 & b::{
                     sleep(10)
                     Send("^{x}")
                     sleep(100)
-                    InsertText("```````n`n``````") 
+                    InsertText("```````n`n``````")
                     Send("{Up}")
                     A_Clipboard := strip_linebreaks(A_Clipboard)
                     Send("^{v}")
@@ -337,14 +337,14 @@ F13 & -::{
     key := "-"
     not_long_press := KeyWait(key, "T0.3")
     If(not_long_press){
-        is_double_press := KeyWait(key, "D T0.2") 
+        is_double_press := KeyWait(key, "D T0.2")
         If(is_double_press){
-            InsertText("====================") ;[CapsLock] + [--(2回押し)] -> [==========(20個)]   
+            InsertText("====================") ;[CapsLock] + [--(2回押し)] -> [==========(20個)]
         }else{
-            InsertText("- ") ;[CapsLock] + [-(1回押し)] -> [ - ]        
+            InsertText("- ") ;[CapsLock] + [-(1回押し)] -> [ - ]
         }
     }else{
-        InsertText("--------------------") ;[CapsLock] + [---(長押し)] -> [----------(20個)]        
+        InsertText("--------------------") ;[CapsLock] + [---(長押し)] -> [----------(20個)]
     }
     KeyWait(key)
     Return
@@ -357,7 +357,7 @@ F13 & @::{
         Send("{Blind}+{@}") ;[CapsLock] + [@(1回押し)] -> [ ` ]
     }else{
         InsertText("````````````````````````````````````````````````````````````````````````````````") ;[CapsLock] + [@--(長押し)] -> [````````````````````(40個)]
-    } 
+    }
     KeyWait(key)
     Return
 }
@@ -417,11 +417,11 @@ F13 & Enter::{
     }else{
         Loop(10)
         {
-            Send("{Blind}{Enter}") 
+            Send("{Blind}{Enter}")
             Sleep(30)
             Send("{Blind}{Up}") ;[CapsLock] + [Enter--(長押し)] -> [改行 10行]
         }
-    } 
+    }
     KeyWait(key)
     Return
 }
@@ -432,7 +432,7 @@ F13 & Space::Send("{Blind}{_}") ;[CapsLock] + ["_"] -> ["_"]
 
 ;***********************[CapsLock] + [g]のサブルーチンラベル************************************************
 google_Search(){
-    A_Clipboard := "" 
+    A_Clipboard := ""
     Sleep(1) ;コピー待機
     Send("^{c}") ;選択した内容をコピー
     ClipWait(3,1) ;クリップボードの内容がテキストとして読み取れるのを待機
@@ -445,7 +445,7 @@ google_Search(){
 ;***********************[CapsLock] + [t]のサブルーチンラベル************************************************
 
 google_translation(){
-    A_Clipboard := "" 
+    A_Clipboard := ""
     Sleep(1) ;コピー待機
     Send("^{c}") ;選択した内容をコピー
     ClipWait(3,1) ;クリップボードの内容がテキストとして読み取れるのを待機
@@ -463,22 +463,22 @@ google_translation(){
     }
     Send("^{1}") ;左端タブに移動
     Send("^{l}") ;アドレスバーにフォーカス
-	Sleep(10)
+    Sleep(10)
     Send("{Backspace}") ;元のアドレスを削除
     Sleep(10)
-	InsertText("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate&text=" A_Clipboard) ;google翻訳を開く
+    InsertText("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate&text=" A_Clipboard) ;google翻訳を開く
     Sleep(50)
-	Send("{Enter}") ;ページ遷移
+    Send("{Enter}") ;ページ遷移
     Return
 }
 
 ;***********************************************************************************************
 
 ;***********装飾キーメモ************/
-;キー名	説明                        /
-; +	   shift                       /
-; ^	   control                     /
-; !	    alt                        /
-; #	   windows	                   /
+;キー名 説明                        /
+; +    shift                       /
+; ^    control                     /
+; !     alt                        /
+; #    windows                     /
 ;**********************************/
 
