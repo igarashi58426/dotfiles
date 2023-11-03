@@ -203,10 +203,12 @@
         // アウトラインを表示ctrl+shift+oを定義
         "key": "ctrl+shift+o",
         "command": "outline.focus"
+    },
+    {
+        // サイドパネルでの検索を削除
+        "key": "ctrl+f",
+        "command": "-list.find",
+        "when": "listFocus && listSupportsFind"
         // ================================================================================
     }
 ]
-
-
-
-
