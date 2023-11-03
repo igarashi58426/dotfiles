@@ -75,6 +75,8 @@ RButton & XButton2::{
     return
 }
 
+AppsKey::Send("{Blind}{AppsKey}")
+
 AppsKey & WheelUp::{  ;[appキー] + [ホイール↑] -> [モニター輝度3増加]
     Critical "On"
     Run("python ./change_luminance_script/change_luminance.py +3","","Hide")

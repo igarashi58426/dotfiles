@@ -48,7 +48,7 @@ z & u::Send("{Blind}{z}{u}") ;[z] + [u] -> [zu]
 z & w::Send("{Blind}{z}{w}") ;[z] + [w] -> [zw]
 ; z & x::Send("{Blind}{z}{x}") ;[z] + [x] -> [zx]
 z & y::Send("{Blind}{z}{y}") ;[z] + [y] -> [zy]
-z & z::Send("{Blind}{z}{z}") ;[z] + [z] -> [zz]
+; z & z::Send("{Blind}{z}") ;[z] + [z] -> [zz]
 
 z & 1::Send("{Blind}{z}{1}") ;[z] + [1] -> [z1]
 z & 2::Send("{Blind}{z}{2}") ;[z] + [2] -> [z2]
