@@ -362,6 +362,46 @@ F13 & @::{
     Return
 }
 
+F13 & SC027::{
+    key := "SC027"
+    not_long_press := KeyWait(key, "T0.3")
+    If(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2")
+        If(is_double_press){
+            now_day := FormatTime(, "yyyy年MM月dd日")
+            InsertText(now_day) ;[CapsLock] + [;;(2回押し)] -> [yyyy年MM月dd日]
+        }else{
+            now_day := FormatTime(, "yyyy/MM/dd")
+            InsertText(now_day) ;[CapsLock] + [;(1回押し)] -> [yyyy/MM/dd]
+        }
+    }else{
+        iso_time := FormatTime(, "yyyy-MM-ddTHH:mm:ss+09:00")
+        InsertText(iso_time) ;[CapsLock] + [;--(長押し)] -> [yyyy-MM-ddTHH:mm:ss+09:00 (iso8601)]
+    }
+    KeyWait(key)
+    Return
+}
+
+F13 & SC028::{
+    key := "SC028"
+    not_long_press := KeyWait(key, "T0.3")
+    If(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2")
+        If(is_double_press){
+            now_time := FormatTime(, "HH:mm:ss")
+            InsertText(now_time) ;[CapsLock] + [:: (2回押し)] -> [HH:mm:ss]
+        }else{
+            now_time := FormatTime(, "HH:mm")
+            InsertText(now_time) ;[CapsLock] + [:(1回押し)] -> [HH:mm:ss]
+        }
+    }else{
+        now_time := FormatTime(, "HH:mm:ss")
+        InsertText(now_time) ;[CapsLock] + [:--(長押し)] -> [HH:mm:ss]
+    }
+    KeyWait(key)
+    Return
+}
+
 F13 & XButton1::AltTab ;[CapsLock] + [マウス戻る] -> [Alt + Tab(ウィンドウ切り替え)]
 F13 & XButton2::ShiftAltTab ;[CapsLock] + [マウス進む] -> [Alt + Sift + Tab(ウィンドウ逆切り替え)]
 F13 & MButton::Send("{Blind}#{Tab}")

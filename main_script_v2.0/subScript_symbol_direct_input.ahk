@@ -50,10 +50,6 @@ F13 & \::InsertText("\")
 F13 & [::InsertText("[")
 ; 記号キー[ ] ] + [capslock] → [ ] ]
 F13 & ]::InsertText("]")
-; 記号キー[ ; ] + [capslock] → [ ; ]
-F13 & SC027::InsertText(";")
-; 記号キー[ : ] + [capslock] → [ : ]
-F13 & SC028::InsertText(":")
 ; 記号キー[ , ] + [capslock] → [ , ]
 F13 & SC033::InsertText(",")
 ; 記号キー[ . ] + [capslock] → [ . ]
