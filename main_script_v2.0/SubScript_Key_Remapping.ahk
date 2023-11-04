@@ -6,8 +6,7 @@ F13 & Tab::Send("{SC070}") ;[CapsLock] + [Tab] -> [ひらがな入力]
 ;+F13::直接入力                                  ;[Shift] + [CapsLock] -> [直接入力(googl日本語入力側で設定)]
 LShift & F13::Send("+{F13}") ;[Ctrl] + [Shift] + [Alt] + [CapsLock] -> [CapsLock]
 
-SC070::Send("{SC070}") ;変換を日本語入力に
-SC07B::Send("+{F13}") ;無変換で直接入力に
+SC079::Send("{SC070}") ;[変換] -> [日本語入力モード]
 
 ;CapsLockを再設定
 !^F13::Send("{CapsLock}") ;[Ctrl] + [Shift] + [Alt] + [CapsLock] -> [CapsLock]
