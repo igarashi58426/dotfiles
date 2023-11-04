@@ -31,6 +31,14 @@ Insert::Send("{Blind}{Delete}") ;[Insrt] -> [Delete]
     KeyWait(key)
     Return
 }
+
+;[Alt] + [w] -> [Ctrl + hift + ← + backspace(単語削除)]
+!w::{
+    Send("^+{Left}")
+    Send("{Backspace}")
+    Return
+}
+
 ;***********************************************************************************************
 
 ;***********装飾キーメモ************/
