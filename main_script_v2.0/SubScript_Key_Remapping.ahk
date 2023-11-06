@@ -7,6 +7,12 @@ F13 & Tab::Send("{SC070}") ;[CapsLock] + [Tab] -> [ひらがな入力]
 LShift & F13::Send("+{F13}") ;[Ctrl] + [Shift] + [Alt] + [CapsLock] -> [CapsLock]
 
 SC079::Send("{SC070}") ;[変換] -> [日本語入力モード]
+;[Esc] -> [Esc → 直接入力]
+Esc::{
+    Send("{Esc}")
+    Send("+{F13}")
+    Return
+}
 
 ;CapsLockを再設定
 !^F13::Send("{CapsLock}") ;[Ctrl] + [Shift] + [Alt] + [CapsLock] -> [CapsLock]
