@@ -36,6 +36,7 @@ ProcessSetPriority "High"
 #Include SubScript_Q_Shortcut.ahk
 #Include SubScript_Tab_Shortcut copy.ahk
 #Include SubScript_muhenkan_Shortcut.ahk
+#Include IMEv2.ahk
 ; #Include SubScript_View_mode.ahk
 
 ;***********************************************************************************************
@@ -68,6 +69,13 @@ InsertText_in_critical(Content){
     Critical "On"
     InsertText(Content)
     Critical "Off"
+    Return
+}
+;***********************************************************************************************
+;***********************直接入力での文字入力************************************************
+send_as_direct_input_IME(key_text){
+    IME_SET(0)
+    Send(key_text)
     Return
 }
 ;***********************************************************************************************

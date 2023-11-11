@@ -1,18 +1,18 @@
 ﻿;***********************zショートカット*****************************************************
-z & x::InsertText_in_critical(".") ;[z] + [x] -> [.]
-z & c::InsertText_in_critical(",") ;[z] + [x] -> [,]
-z & v::InsertText_in_critical("/") ;[z] + [x] -> [/]
+z & x::send_as_direct_input_IME("{Blind}{.}") ;[z] + [x] -> [.]
+z & c::send_as_direct_input_IME("{Blind}{,}") ;[z] + [x] -> [,]
+z & v::send_as_direct_input_IME("{Blind}{/}") ;[z] + [x] -> [/]
 
-z & [::InsertText_in_critical("[") ;[z] + ["["] -> ["["]
-z & ]::InsertText_in_critical("]") ;[z] + ["]"] -> ["]"]
+z & [::send_as_direct_input_IME("{Blind}{[}") ;[z] + ["["] -> ["["]
+z & ]::send_as_direct_input_IME("{Blind}{]}") ;[z] + ["]"] -> ["]"]
 
 z & h::Send("{Blind}{←}") ;[z] + [h] -> [←]
 z & j::Send("{Blind}{↓}") ;[z] + [j] -> [↓]
 z & k::Send("{Blind}{↑}") ;[z] + [k] -> [↑]
 z & l::Send("{Blind}{→}") ;[z] + [l] -> [→]
 
-z & 8::InsertText_in_critical("【") ;[z] + [8] -> [【]
-z & 9::InsertText_in_critical("】") ;[z] + [9] -> [】]
+z & 8::Send("【") ;[z] + [8] -> [【]
+z & 9::Send("】") ;[z] + [9] -> [】]
 
 z & Space::Send("{Blind}{_}") ;[CapsLock] + ["_"] -> ["_"]
 
