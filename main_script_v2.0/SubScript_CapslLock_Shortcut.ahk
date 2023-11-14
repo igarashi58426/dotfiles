@@ -116,12 +116,25 @@ F13 & 1::{
 
 F13 & 2::{
     key := "2"
-    long_press_timeout := KeyWait(key, "T0.25")
-    if(long_press_timeout) {
-        Send("{Blind}{F2}") ;[CapsLock] + [2(1回押し)] -> [F2]
+    if(KeyWait(key, "T0.3")){
+        if(KeyWait(key, "D T0.2")){
+            if(KeyWait(key, "T0.3") and KeyWait(key, "D T0.2") ){
+                if(KeyWait(key, "T0.3") and KeyWait(key, "D T0.2") ){
+                    if(KeyWait(key, "D T0.2") ){
+                        Send("^{d 3}") ;[CapsLock] + [2222(4回押し)] -> [Ctrl + ddd (周辺単語選択)]
+                    }
+                }else{
+                    Send("^{d 2}") ;[CapsLock] + [222(3回押し)] -> [Ctrl + dd (周辺単語選択)]
+                }
+            }else{
+                Send("^{d}") ;[CapsLock] + [22(2回押し)] -> [Ctrl + d (単語選択)]
+            }
+        }else{
+            Send("{Blind}{F2}") ;[CapsLock] + [2(1回押し)] -> [F2]
+        }
     }else{
         Send("^{d}")
-        Send("^{c}") ;[CapsLock] + [2--(長押し)] -> [Ctrl + d → c (単語選択とコピー)]
+        Send("^+{l}") ;[CapsLock] + [2--(長押し)] -> [Ctrl + d → Ctrl + Shift + l (単語選択とマルチカーソル)]
     }
     KeyWait(key)
     Return
