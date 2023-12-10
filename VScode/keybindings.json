@@ -209,6 +209,24 @@
         "key": "ctrl+f",
         "command": "-list.find",
         "when": "listFocus && listSupportsFind"
+    },
+    {
+        // 行を下に挿入を削除
+        "key": "ctrl+enter",
+        "command": "-editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        // 行を下へコピーのデフォルを削除
+        "key": "shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        // 行を下へコピーctrl+Enterで再定義
+        "key": "ctrl+enter",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
         // ================================================================================
     }
 ]

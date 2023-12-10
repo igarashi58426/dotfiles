@@ -116,9 +116,6 @@ Conversion	Shift Down	ConvertNextPage
 Suggestion	Shift Enter	CommitFirstSuggestion
 Composition	Shift ESC	Cancel
 Conversion	Shift ESC	Cancel
-Precomposition	Shift F13	IMEOff
-Composition	Shift F13	IMEOff
-Conversion	Shift F13	IMEOff
 Conversion	Shift Henkan	ConvertPrev
 Composition	Shift Left	MoveCursorLeft
 Conversion	Shift Left	SegmentWidthShrink
