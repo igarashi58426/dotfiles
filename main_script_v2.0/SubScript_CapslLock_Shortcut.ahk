@@ -131,22 +131,15 @@ F13 & 2::{
     if(KeyWait(key, "T0.3")){
         if(KeyWait(key, "D T0.2")){
             if(KeyWait(key, "T0.3") and KeyWait(key, "D T0.2") ){
-                if(KeyWait(key, "T0.3") and KeyWait(key, "D T0.2") ){
-                    if(KeyWait(key, "D T0.2") ){
-                        Send("^{d 3}") ;[CapsLock] + [2222(4回押し)] -> [Ctrl + ddd (周辺単語選択)]
-                    }
-                }else{
-                    Send("^{d 2}") ;[CapsLock] + [222(3回押し)] -> [Ctrl + dd (周辺単語選択)]
-                }
+                Send("^{d}") ;[CapsLock] + [222(3回押し)] -> [Ctrl + d (単語選択)]
             }else{
-                Send("^{d}") ;[CapsLock] + [22(2回押し)] -> [Ctrl + d (単語選択)]
+                Send("^{Left}^+{Right}") ;[CapsLock] + [22(2回押し)] -> [Ctrl← + CtrlShift→ (Ctrlによる単語選択)]
             }
         }else{
             Send("{Blind}{F2}") ;[CapsLock] + [2(1回押し)] -> [F2]
         }
     }else{
-        Send("^{d}")
-        Send("^+{l}") ;[CapsLock] + [2--(長押し)] -> [Ctrl + d → Ctrl + Shift + l (単語選択とマルチカーソル)]
+        Send("^{d}^+{l}") ;[CapsLock] + [2--(長押し)] -> [Ctrl + d → Ctrl + Shift + l (単語選択とマルチカーソル)]
     }
     KeyWait(key)
     Return
@@ -220,8 +213,7 @@ F13 & 0::{
     key := "0"
     long_press_timeout := KeyWait(key, "T0.25")
     if(long_press_timeout) {
-        InsertText("#########") ;[CapsLock] + [0(1回押し)] -> [ ##### ##### ]
-        Send("{Left 5}")
+        Send("{# 10}{Left 5}") ;[CapsLock] + [0(1回押し)] -> [ ##### ##### ]
     }else{
         InsertText("####################") ;[CapsLock] + [0--(長押し)] -> [####################(20個)]
     }
