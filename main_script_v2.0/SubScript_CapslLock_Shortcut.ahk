@@ -1,53 +1,63 @@
 ﻿;***********************CapsLockショートカット*****************************************************
-;CapsLockに各制御キーを設定
+;CapsLockを再設定
+^!F13::Send("{Blind}{CapsLock}") ;[Ctrl] + [Alt] + [CapsLock] -> [CapsLock]
+
+F13 & Tab::Send("{SC070}") ;[CapsLock] + [Tab] -> [ひらがな入力]
+
 F13 & w::{
     If (GetKeyState("n","P") and GetKeyState("m","P")) {
-        Send("{Blind}+^{Up}") ;[CapsLock] + [n] + [m]  + [w] -> [Shift + Ctrl + ↑]
-        Return
+            Send("{Blind}+^{Up}") ;[CapsLock] + [n] + [m] + [w] -> [Shift + Ctrl + ↑]
     }
-    If (GetKeyState("n","P")) {
+    Else If (GetKeyState("n","P")) {
         Send("{Blind}+{Up}") ;[CapsLock] + [n] + [w] -> [Shift + ↑]
-        Return
     }
-    If (GetKeyState("m","P")) {
+    Else If (GetKeyState("m","P")) {
         Send("{Blind}^{Up}") ;[CapsLock] + [m] + [w] -> [Ctrl + ↑]
-        Return
     }
-    Send("{Blind}{Up}") ;[CapsLock] + [w] -> [↑]
+    Else If (GetKeyState("SC07B","P")) {
+        Send("{Blind}^{Up}") ;[CapsLock] + [無変換] + [w] -> [Ctrl + ↑]
+    }
+    Else {
+        Send("{Blind}{Up}") ;[CapsLock] + [w] -> [↑]
+    }
     Return
 }
 
 F13 & s::{
     If (GetKeyState("n","P") and GetKeyState("m","P")) {
         Send("{Blind}+^{Down}") ;[CapsLock] + [n] + [m]  + [s] -> [Shift + Ctrl + ↓]
-        Return
     }
-    If (GetKeyState("n","P")) {
+    Else If (GetKeyState("n","P")) {
         Send("{Blind}+{Down}") ;[CapsLock] + [n] + [s] -> [Shift + ↓]
-        Return
     }
-    If (GetKeyState("m","P")) {
+    Else If (GetKeyState("m","P")) {
         Send("{Blind}^{Down}") ;[CapsLock] + [m] + [s] -> [Ctrl + ↓]
-        Return
     }
-    Send("{Blind}{Down}") ;[CapsLock] + [s] -> [↓]
+    Else If (GetKeyState("SC07B","P")) {
+        Send("{Blind}^{Down}") ;[CapsLock] + [無変換] + [s] -> [Ctrl + ↓]
+    }
+    Else{
+        Send("{Blind}{Down}") ;[CapsLock] + [s] -> [↓]
+    }
     Return
 }
 
 F13 & d::{
     If (GetKeyState("n","P") and GetKeyState("m","P")) {
         Send("{Blind}+^{Right}") ;[CapsLock] + [n] + [m] + [d] -> [Shift + Ctrl + →]
-        Return
     }
-    If (GetKeyState("n","P")) {
+    Else If (GetKeyState("n","P")) {
         Send("{Blind}+{Right}") ;[CapsLock] + [n] + [d] -> [Shift + →]
-        Return
     }
-    If (GetKeyState("m","P")) {
+    Else If (GetKeyState("m","P")) {
         Send("{Blind}^{Right}") ;[CapsLock] + [m] + [d] -> [Ctrl + →]
-        Return
     }
-    Send("{Blind}{Right}") ;[CapsLock] + [d] -> [→]
+    Else If (GetKeyState("SC07B","P")) {
+        Send("^{Right}") ;[CapsLock] + [無変換] + [d] -> [Ctrl + →]
+    }
+    Else {
+        Send("{Blind}{Right}") ;[CapsLock] + [d] -> [→]
+    }
     Return
 }
 
@@ -55,50 +65,50 @@ F13 & d::{
 F13 & a::{
     If (GetKeyState("n","P") and GetKeyState("m","P")) {
         Send("{Blind}+^{Left}") ;[CapsLock] + [n] + [m] + [a] -> [Shift + Ctrl + ←]
-        Return
     }
-    If (GetKeyState("n","P")) {
+    Else If (GetKeyState("n","P")) {
         Send("{Blind}+{Left}") ;[CapsLock] + [n] + [a] -> [Shift + ←]
-        Return
     }
-    If (GetKeyState("m","P")) {
+    Else If (GetKeyState("m","P")) {
         Send("{Blind}^{Left}") ;[CapsLock] + [m] + [a] -> [Ctrl + ←]
-        Return
     }
-    Send("{Blind}{Left}") ;[CapsLock] + [a] -> [←]
+    Else If (GetKeyState("SC07B","P")) {
+        Send("^{Left}") ;[CapsLock] + [無変換] + [a] -> [Ctrl + ←]
+    }
+    Else {
+        Send("{Blind}{Left}") ;[CapsLock] + [a] -> [←]
+    }
     Return
 }
 
 
 F13 & q::{
     If (GetKeyState("n","P") and GetKeyState("m","P")) {
-        Return
     }
-    If (GetKeyState("n","P")) {
+    Else If (GetKeyState("n","P")) {
         Send("{Blind}{Delete}") ;[CapsLock] + [n] + [q] -> [Delete]
-        Return
     }
-    If (GetKeyState("m","P")) {
+    Else If (GetKeyState("m","P")) {
         Send("{Blind}^{Backspace}}") ;[CapsLock] + [m] + [q] -> [Ctrl + Backspace]
-        Return
     }
-    Send("{Blind}{Backspace}") ;[CapsLock] + [q] -> [Backspace]
+    Else {
+        Send("{Blind}{Backspace}") ;[CapsLock] + [q] -> [Backspace]
+    }
     Return
 }
 
 F13 & e::{
     If (GetKeyState("n","P") and GetKeyState("m","P")) {
-        Return
     }
-    If (GetKeyState("n","P")) {
+    Else If (GetKeyState("n","P")) {
         Send("{Blind}+{Enter}") ;[CapsLock] + [n] + [e] -> [Shift + Enter]
-        Return
     }
-    If (GetKeyState("m","P")) {
+    Else If (GetKeyState("m","P")) {
         Send("{Blind}^{Enter}}") ;[CapsLock] + [m] + [e] -> [Ctrl + Enter]
-        Return
     }
-    Send("{Blind}{Enter}") ;[CapsLock] + [e] -> [Enter]
+    Else {
+        Send("{Blind}{Enter}") ;[CapsLock] + [e] -> [Enter]
+    }
     Return
 }
 

@@ -1,33 +1,80 @@
 ; ;***********************無変換ショートカット*****************************************************
-SC07B::Send("+{F13}") ;[無変換] -> [日本語入力モード]
+SC07B & a::{
+    normal_and_3rd_key_function("{Blind}^{a}", "F13", "^{Left}")
+    ;[無変換] + [a] -> [ctrl + a]
+    ;[CapsLock] + [無変換] + [a] -> [Ctrl + ←]
+}
+
+SC07B & s::{
+    normal_and_3rd_key_function("{Blind}^{s}", "F13", "^{Down}")
+    ;[無変換] + [s] -> [ctrl + s]
+    ;[CapsLock] + [無変換] + [s] -> [Ctrl + ↓]
+}
+
+SC07B & d::{
+    normal_and_3rd_key_function("{Blind}^{d}", "F13", "^{Right}")
+    ;[無変換] + [d] -> [ctrl + d]
+    ;[CapsLock] + [無変換] + [d] -> [Ctrl + →]
+}
+
+SC07B & w::{
+    normal_and_3rd_key_function("{Blind}^{w}", "F13", "^{Up}")
+    ;[無変換] + [w] -> [ctrl + w]
+    ;[CapsLock] + [無変換] + [w] -> [Ctrl + ↑]
+}
+
+SC07B & q::{
+    normal_and_3rd_key_function("{Blind}^{q}", "F13", "+^{Left}{Backspace}")
+    ;[無変換] + [q] -> [ctrl + q]
+    ;[CapsLock] + [無変換] + [q] -> [Shift + Ctrl + ← + Backspace]
+}
+
+SC07B & e::{
+    normal_and_3rd_key_function("{Blind}^{e}", "F13", "^{Enter}")
+    ;[無変換] + [e] -> [ctrl + e]
+    ;[CapsLock] + [無変換] + [e] -> [Ctrl + Enter]
+}
+
+;*****************************関数定義*****************************************************
+normal_and_3rd_key_function(send_parm_normal, comb_key_1st , send_parm_1st){
+    If (GetKeyState(comb_key_1st,"P")) {
+        Send(send_parm_1st)
+    }
+    Else {
+        Send(send_parm_normal)
+    }
+    Return
+}
 
 ;***********************無変換キー基本動作定義*****************************************************
-SC07B & a::Send("{Blind}^{a}") ;[無変換] + [a] -> [ctrla]
-SC07B & b::Send("{Blind}^{b}") ;[無変換] + [b] -> [ctrlb]
-SC07B & c::Send("{Blind}^{c}") ;[無変換] + [c] -> [ctrlc]
-SC07B & d::Send("{Blind}^{d}") ;[無変換] + [d] -> [ctrld]
-SC07B & e::Send("{Blind}^{e}") ;[無変換] + [e] -> [ctrle]
-SC07B & f::Send("{Blind}^{f}") ;[無変換] + [f] -> [ctrlf]
-SC07B & g::Send("{Blind}^{g}") ;[無変換] + [g] -> [ctrlg]
-SC07B & h::Send("{Blind}^{h}") ;[無変換] + [h] -> [ctrlh]
-SC07B & i::Send("{Blind}^{i}") ;[無変換] + [i] -> [ctrli]
-SC07B & j::Send("{Blind}^{j}") ;[無変換] + [j] -> [ctrlj]
-SC07B & k::Send("{Blind}^{k}") ;[無変換] + [k] -> [ctrlk]
-SC07B & l::Send("{Blind}^{l}") ;[無変換] + [l] -> [ctrll]
-SC07B & m::Send("{Blind}^{m}") ;[無変換] + [m] -> [ctrlm]
-SC07B & n::Send("{Blind}^{n}") ;[無変換] + [n] -> [ctrln]
-SC07B & o::Send("{Blind}^{o}") ;[無変換] + [o] -> [ctrlo]
-SC07B & p::Send("{Blind}^{p}") ;[無変換] + [p] -> [ctrlp]
-SC07B & q::Send("{Blind}^{q}") ;[無変換] + [q] -> [ctrlq]
-SC07B & r::Send("{Blind}^{r}") ;[無変換] + [r] -> [ctrlr]
-SC07B & s::Send("{Blind}^{s}") ;[無変換] + [s] -> [ctrls]
-SC07B & t::Send("{Blind}^{t}") ;[無変換] + [t] -> [ctrlt]
-SC07B & u::Send("{Blind}^{u}") ;[無変換] + [u] -> [ctrlu]
-SC07B & v::Send("{Blind}^{v}") ;[無変換] + [v] -> [ctrlv]
-SC07B & w::Send("{Blind}^{w}") ;[無変換] + [w] -> [ctrlw]
-SC07B & x::Send("{Blind}^{x}") ;[無変換] + [x] -> [ctrlx]
-SC07B & y::Send("{Blind}^{y}") ;[無変換] + [y] -> [ctrly]
-SC07B & z::Send("{Blind}^{z}") ;[無変換] + [z] -> [ctrlz]
+SC07B & Tab::Send("{Blind}^{Tab}") ;[無変換] + [tab] -> [ctrl + tab]
+
+; SC07B & a::Send("{Blind}^{a}") ;[無変換] + [a] -> [ctrl + a]
+SC07B & b::Send("{Blind}^{b}") ;[無変換] + [b] -> [ctrl + b]
+SC07B & c::Send("{Blind}^{c}") ;[無変換] + [c] -> [ctrl + c]
+; SC07B & d::Send("{Blind}^{d}") ;[無変換] + [d] -> [ctrl + d]
+; SC07B & e::Send("{Blind}^{e}") ;[無変換] + [e] -> [ctrl + e]
+SC07B & f::Send("{Blind}^{f}") ;[無変換] + [f] -> [ctrl + f]
+SC07B & g::Send("{Blind}^{g}") ;[無変換] + [g] -> [ctrl + g]
+SC07B & h::Send("{Blind}^{h}") ;[無変換] + [h] -> [ctrl + h]
+SC07B & i::Send("{Blind}^{i}") ;[無変換] + [i] -> [ctrl + i]
+SC07B & j::Send("{Blind}^{j}") ;[無変換] + [j] -> [ctrl + j]
+SC07B & k::Send("{Blind}^{k}") ;[無変換] + [k] -> [ctrl + k]
+SC07B & l::Send("{Blind}^{l}") ;[無変換] + [l] -> [ctrl + l]
+SC07B & m::Send("{Blind}^{m}") ;[無変換] + [m] -> [ctrl + m]
+SC07B & n::Send("{Blind}^{n}") ;[無変換] + [n] -> [ctrl + n]
+SC07B & o::Send("{Blind}^{o}") ;[無変換] + [o] -> [ctrl + o]
+SC07B & p::Send("{Blind}^{p}") ;[無変換] + [p] -> [ctrl + p]
+; SC07B & q::Send("{Blind}^{q}") ;[無変換] + [q] -> [ctrl + q]
+SC07B & r::Send("{Blind}^{r}") ;[無変換] + [r] -> [ctrl + r]
+; SC07B & s::Send("{Blind}^{s}") ;[無変換] + [s] -> [ctrl + s]
+SC07B & t::Send("{Blind}^{t}") ;[無変換] + [t] -> [ctrl + t]
+SC07B & u::Send("{Blind}^{u}") ;[無変換] + [u] -> [ctrl + u]
+SC07B & v::Send("{Blind}^{v}") ;[無変換] + [v] -> [ctrl + v]
+; SC07B & w::Send("{Blind}^{w}") ;[無変換] + [w] -> [ctrl + w]
+SC07B & x::Send("{Blind}^{x}") ;[無変換] + [x] -> [ctrl + x]
+SC07B & y::Send("{Blind}^{y}") ;[無変換] + [y] -> [ctrl + y]
+SC07B & z::Send("{Blind}^{z}") ;[無変換] + [z] -> [ctrl + z]
 
 SC07B & 1::Send("{Blind}^{1}") ;[無変換] + [1] -> [ctrl + 1]
 SC07B & 2::Send("{Blind}^{2}") ;[無変換] + [2] -> [ctrl + 2]
