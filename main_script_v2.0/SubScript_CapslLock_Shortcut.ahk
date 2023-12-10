@@ -7,16 +7,19 @@ F13 & Tab::Send("{SC070}") ;[CapsLock] + [Tab] -> [ひらがな入力]
 Shift & F13::set_direct_input_mode() ; [Shift] + [CapsLock] -> [直直接入力モード接入力]
 
 F13 & w::{
-    If (GetKeyState("n","P") and GetKeyState("m","P")) {
-            Send("{Blind}+^{Up}") ;[CapsLock] + [n] + [m] + [w] -> [Shift + Ctrl + ↑]
+    like_ctrl_key := "n"
+    like_shift_key := "m"
+    like_ctrl_key_2nd := "SC07B" ;「SC07B」は「無変換」キー
+    If (GetKeyState(like_shift_key,"P") and GetKeyState(like_ctrl_key,"P")) {
+            Send("{Blind}+^{Up}") ;[CapsLock] + [,] + [m] + [w] -> [Shift + Ctrl + ↑]
     }
-    Else If (GetKeyState("n","P")) {
-        Send("{Blind}+{Up}") ;[CapsLock] + [n] + [w] -> [Shift + ↑]
+    Else If (GetKeyState(like_shift_key,"P")) {
+        Send("{Blind}+{Up}") ;[CapsLock] + [,] + [w] -> [Shift + ↑]
     }
-    Else If (GetKeyState("m","P")) {
+    Else If (GetKeyState(like_ctrl_key,"P")) {
         Send("{Blind}^{Up}") ;[CapsLock] + [m] + [w] -> [Ctrl + ↑]
     }
-    Else If (GetKeyState("SC07B","P")) {
+    Else If (GetKeyState(like_ctrl_key_2nd,"P")) {
         Send("{Blind}^{Up}") ;[CapsLock] + [無変換] + [w] -> [Ctrl + ↑]
     }
     Else {
@@ -26,16 +29,19 @@ F13 & w::{
 }
 
 F13 & s::{
-    If (GetKeyState("n","P") and GetKeyState("m","P")) {
-        Send("{Blind}+^{Down}") ;[CapsLock] + [n] + [m]  + [s] -> [Shift + Ctrl + ↓]
+    like_ctrl_key := "n"
+    like_shift_key := "m"
+    like_ctrl_key_2nd := "SC07B" ;「SC07B」は「無変換」キー
+    If (GetKeyState(like_shift_key,"P") and GetKeyState(like_ctrl_key,"P")) {
+        Send("{Blind}+^{Down}") ;[CapsLock] + [,] + [m]  + [s] -> [Shift + Ctrl + ↓]
     }
-    Else If (GetKeyState("n","P")) {
-        Send("{Blind}+{Down}") ;[CapsLock] + [n] + [s] -> [Shift + ↓]
+    Else If (GetKeyState(like_shift_key,"P")) {
+        Send("{Blind}+{Down}") ;[CapsLock] + [,] + [s] -> [Shift + ↓]
     }
-    Else If (GetKeyState("m","P")) {
+    Else If (GetKeyState(like_ctrl_key,"P")) {
         Send("{Blind}^{Down}") ;[CapsLock] + [m] + [s] -> [Ctrl + ↓]
     }
-    Else If (GetKeyState("SC07B","P")) {
+    Else If (GetKeyState(like_ctrl_key_2nd,"P")) {
         Send("{Blind}^{Down}") ;[CapsLock] + [無変換] + [s] -> [Ctrl + ↓]
     }
     Else{
@@ -45,16 +51,19 @@ F13 & s::{
 }
 
 F13 & d::{
-    If (GetKeyState("n","P") and GetKeyState("m","P")) {
-        Send("{Blind}+^{Right}") ;[CapsLock] + [n] + [m] + [d] -> [Shift + Ctrl + →]
+    like_ctrl_key := "n"
+    like_shift_key := "m"
+    like_ctrl_key_2nd := "SC07B" ;「SC07B」は「無変換」キー
+    If (GetKeyState(like_shift_key,"P") and GetKeyState(like_ctrl_key,"P")) {
+        Send("{Blind}+^{Right}") ;[CapsLock] + [,] + [m] + [d] -> [Shift + Ctrl + →]
     }
-    Else If (GetKeyState("n","P")) {
-        Send("{Blind}+{Right}") ;[CapsLock] + [n] + [d] -> [Shift + →]
+    Else If (GetKeyState(like_shift_key,"P")) {
+        Send("{Blind}+{Right}") ;[CapsLock] + [,] + [d] -> [Shift + →]
     }
-    Else If (GetKeyState("m","P")) {
+    Else If (GetKeyState(like_ctrl_key,"P")) {
         Send("{Blind}^{Right}") ;[CapsLock] + [m] + [d] -> [Ctrl + →]
     }
-    Else If (GetKeyState("SC07B","P")) {
+    Else If (GetKeyState(like_ctrl_key_2nd,"P")) {
         Send("^{Right}") ;[CapsLock] + [無変換] + [d] -> [Ctrl + →]
     }
     Else {
@@ -65,16 +74,19 @@ F13 & d::{
 
 
 F13 & a::{
-    If (GetKeyState("n","P") and GetKeyState("m","P")) {
-        Send("{Blind}+^{Left}") ;[CapsLock] + [n] + [m] + [a] -> [Shift + Ctrl + ←]
+    like_ctrl_key := "n"
+    like_shift_key := "m"
+    like_ctrl_key_2nd := "SC07B" ;「SC07B」は「無変換」キー
+    If (GetKeyState(like_shift_key,"P") and GetKeyState(like_ctrl_key,"P")) {
+        Send("{Blind}+^{Left}") ;[CapsLock] + [,] + [m] + [a] -> [Shift + Ctrl + ←]
     }
-    Else If (GetKeyState("n","P")) {
-        Send("{Blind}+{Left}") ;[CapsLock] + [n] + [a] -> [Shift + ←]
+    Else If (GetKeyState(like_shift_key,"P")) {
+        Send("{Blind}+{Left}") ;[CapsLock] + [,] + [a] -> [Shift + ←]
     }
-    Else If (GetKeyState("m","P")) {
+    Else If (GetKeyState(like_ctrl_key,"P")) {
         Send("{Blind}^{Left}") ;[CapsLock] + [m] + [a] -> [Ctrl + ←]
     }
-    Else If (GetKeyState("SC07B","P")) {
+    Else If (GetKeyState(like_ctrl_key_2nd,"P")) {
         Send("^{Left}") ;[CapsLock] + [無変換] + [a] -> [Ctrl + ←]
     }
     Else {
@@ -85,13 +97,19 @@ F13 & a::{
 
 
 F13 & q::{
-    If (GetKeyState("n","P") and GetKeyState("m","P")) {
+    like_ctrl_key := "n"
+    like_shift_key := "m"
+    like_ctrl_key_2nd := "SC07B" ;「SC07B」は「無変換」キー
+    If (GetKeyState(like_shift_key,"P") and GetKeyState(like_ctrl_key,"P")) {
     }
-    Else If (GetKeyState("n","P")) {
-        Send("{Blind}{Delete}") ;[CapsLock] + [n] + [q] -> [Delete]
+    Else If (GetKeyState(like_shift_key,"P")) {
+        Send("{Blind}{Delete}") ;[CapsLock] + [,] + [q] -> [Delete]
     }
-    Else If (GetKeyState("m","P")) {
+    Else If (GetKeyState(like_ctrl_key,"P")) {
         Send("{Blind}^{Backspace}}") ;[CapsLock] + [m] + [q] -> [Ctrl + Backspace]
+    }
+    Else If (GetKeyState(like_ctrl_key_2nd,"P")) {
+        Send("{Blind}^{Backspace}}") ;[CapsLock] + [無変換] + [q] -> [Ctrl + Backspace]
     }
     Else {
         Send("{Blind}{Backspace}") ;[CapsLock] + [q] -> [Backspace]
@@ -100,13 +118,19 @@ F13 & q::{
 }
 
 F13 & e::{
-    If (GetKeyState("n","P") and GetKeyState("m","P")) {
+    like_ctrl_key := "n"
+    like_shift_key := "m"
+    like_ctrl_key_2nd := "SC07B" ;「SC07B」は「無変換」キー
+    If (GetKeyState(like_shift_key,"P") and GetKeyState(like_ctrl_key,"P")) {
     }
-    Else If (GetKeyState("n","P")) {
-        Send("{Blind}+{Enter}") ;[CapsLock] + [n] + [e] -> [Shift + Enter]
+    Else If (GetKeyState(like_shift_key,"P")) {
+        Send("{Blind}+{Enter}") ;[CapsLock] + [,] + [e] -> [Shift + Enter]
     }
-    Else If (GetKeyState("m","P")) {
+    Else If (GetKeyState(like_ctrl_key,"P")) {
         Send("{Blind}^{Enter}}") ;[CapsLock] + [m] + [e] -> [Ctrl + Enter]
+    }
+    Else If (GetKeyState(like_ctrl_key_2nd,"P")) {
+        Send("{Blind}^{Enter}}") ;[CapsLock] + [無変換] + [e] -> [Ctrl + Enter]
     }
     Else {
         Send("{Blind}{Enter}") ;[CapsLock] + [e] -> [Enter]
