@@ -4,6 +4,8 @@
 
 F13 & Tab::Send("{SC070}") ;[CapsLock] + [Tab] -> [ひらがな入力]
 
+Shift & F13::set_direct_input_mode() ; [Shift] + [CapsLock] -> [直直接入力モード接入力]
+
 F13 & w::{
     If (GetKeyState("n","P") and GetKeyState("m","P")) {
             Send("{Blind}+^{Up}") ;[CapsLock] + [n] + [m] + [w] -> [Shift + Ctrl + ↑]
@@ -313,7 +315,7 @@ F13 & i::Send("{Blind}{F7}") ;[CapsLock] + [i] -> [全角カタカナに変換]
 F13 & o::Send("{Blind}{F10}") ;[CapsLock] + [o] -> [半角英数字に変換]
 
 F13 & j::Send("{SC070}") ;[CapsLock] + [j] -> [日本語入力モード]
-F13 & k::Send("+{F13}") ;[CapsLock] + [k] -> [直接入力モード]
+F13 & k::set_direct_input_mode() ;[CapsLock] + [k] -> [直接入力モード]
 
 F13 & b::{
     key := "b"

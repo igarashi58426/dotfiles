@@ -1,25 +1,15 @@
 ;***********************キーの移し替え・再適用**********************************************************
 
-;半角/全角を設定
-
-F13 & Tab::Send("{SC070}") ;[CapsLock] + [Tab] -> [ひらがな入力]
-+F13::IME_SET(0) ;[Shift] + [CapsLock] -> [直接入力]
-LShift & F13::Send("+{F13}") ;[Ctrl] + [Shift] + [Alt] + [CapsLock] -> [CapsLock]
-
 SC079::Send("{SC070}") ;[変換] -> [日本語入力モード]
 
 Esc::{
     Send("{Esc}") ; [Esc] -> [Esc → 直接入力]
-    IME_SET(0)
+    set_direct_input_mode()
     Return
 }
 
-;CapsLockを再設定
-!^F13::Send("{CapsLock}") ;[Ctrl] + [Shift] + [Alt] + [CapsLock] -> [CapsLock]
-
 ;InsrtをDeleteに変更
 Insert::Send("{Blind}{Delete}") ;[Insrt] -> [Delete]
-
 
 ^+c::{
     key := "c"
