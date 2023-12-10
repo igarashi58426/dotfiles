@@ -243,9 +243,18 @@ F13 & F6::{
     Send("{Enter}")
     Return
 }
-F13 & F7:: Return
-F13 & F8:: Return
-F13 & F9:: Return
+F13 & F7:: {
+    Run("explorer.exe " A_WorkingDir) ;[CapsLock] + [F7] -> [スクリプトをエクスプローラーで表示]
+}
+
+F13 & F8::{
+    ListHotkeys ;[CapsLock] + [F8] -> [定義済みホットキーListHotkeysを起動する]
+}
+
+F13 & F9:: {
+    KeyHistory ;[CapsLock] + [F9] -> [キー入力履歴ビュアーKeyHistoryを起動]
+}
+
 F13 & F10::Suspend ;[CapsLock] + [F10] -> [割り当てたホットキーを全て停止する]
 F13 & F11::Pause ;[CapsLock] + [F11] -> [スクリプトを一時停止する]
 F13 & F12::ExitApp ;[CapsLock] + [F12] -> [スクリプトを終了する]

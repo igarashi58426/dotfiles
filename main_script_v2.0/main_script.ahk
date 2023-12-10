@@ -20,6 +20,10 @@
 ;プロセス優先度を高にする
 ProcessSetPriority "High"
 
+; キーピート制限 1000msあたり200回以上で警告
+A_HotkeyInterval := 1000
+A_MaxHotkeysPerInterval := 200
+
 ;無効化するソフトを設定
 ;#Include SubScript_exception_software.ahk
 
