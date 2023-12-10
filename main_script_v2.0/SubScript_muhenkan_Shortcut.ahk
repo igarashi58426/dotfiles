@@ -26,7 +26,15 @@ SC07B & w::{
 }
 
 SC07B & q::{
-    normal_and_3rd_key_function("{Blind}^{q}", "F13", "+^{Left}{Backspace}")
+    If (GetKeyState("F13","P")) {
+        Send( "+^{Left}")
+        Sleep(10)
+        Send("{Backspace}")
+    }
+    Else {
+        Send("{Blind}^{q}")
+    }
+    Return
     ;[無変換] + [q] -> [ctrl + q]
     ;[CapsLock] + [無変換] + [q] -> [Shift + Ctrl + ← + Backspace]
 }
