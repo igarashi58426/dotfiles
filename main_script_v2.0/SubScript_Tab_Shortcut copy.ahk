@@ -17,7 +17,7 @@ Tab & t::{
     key := "t"
     long_press_timeout := KeyWait(key, "T0.2")
     if(long_press_timeout) {
-        send_as_direct_input_IME("{[}") ;[Tab] + [t(1回押し)] -> ["["]
+        send_as_direct_input_IME("{[}") ;[Tab] + [[t](1回押し)] -> ["["]
     }else{
         send_as_direct_input_IME("{]}") ;[Tab] + [t--(長押し)] -> ["]"]
     }
@@ -25,10 +25,10 @@ Tab & t::{
     Return
 }
 
-Tab & a::send_as_direct_input_IME("=") ;[Tab] + [a] -> [=]
-Tab & s::send_as_direct_input_IME("~") ;[Tab] + [s] -> [~]
-Tab & d::send_as_direct_input_IME("|") ;[Tab] + [d] -> [|]
-Tab & f::send_as_direct_input_IME(";")
+Tab & a::send_as_direct_input_IME("{=}") ;[Tab] + [a] -> [=]
+Tab & s::send_as_direct_input_IME("{~}") ;[Tab] + [s] -> [~]
+Tab & d::send_as_direct_input_IME("{|}") ;[Tab] + [d] -> [|]
+Tab & f::send_as_direct_input_IME("{;}")
 Tab & g::{
     key := "g"
     long_press_timeout := KeyWait(key, "T0.2")
@@ -36,6 +36,21 @@ Tab & g::{
         Send("{{}") ;[Tab] + [g(1回押し)] -> ["{"]
     }else{
         Send("{}}") ;[Tab] + [g--(長押し)] -> ["}"]
+    }
+    KeyWait(key)
+    Return
+}
+
+Tab & z::send_as_direct_input_IME("{@}") ;[Tab] + [z] -> [@]
+Tab & x::send_as_direct_input_IME("{+}") ;[Tab] + [x] -> [+]
+Tab & c::send_as_direct_input_IME("{*}") ;[Tab] + [c] -> [*]
+Tab & v::{
+    key := "v"
+    long_press_timeout := KeyWait(key, "T0.2")
+    if(long_press_timeout) {
+        Send("{<}") ;[Tab] + [v(1回押し)] -> ["<"]
+    }else{
+        Send("{}>}") ;[Tab] + [v--(長押し)] -> [">"]
     }
     KeyWait(key)
     Return
