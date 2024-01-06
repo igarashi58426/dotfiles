@@ -9,8 +9,8 @@
 +WheelUp::Send("{WheelLeft 2}") ;[Shift] + [ホイール↑] -> [ホイール←左]
 +WheelDown::Send("{WheelRight 2}") ;[Shift] + [ホイール↓] -> [ホイール→右]
 
-RButton & WheelUp::Send("{WheelLeft 2}")
-RButton & WheelDown::Send("{WheelRight 2}")
+MButton & WheelUp::Send("{WheelLeft 2}") ;[ホイール中] + [ホイール↑] -> [ホイール←左]
+MButton & WheelDown::Send("{WheelRight 2}") ;[ホイール中] + [ホイール↓] -> [ホイール→右]
 
 ;***********************************************************************************************
 
@@ -32,32 +32,28 @@ RButton & WheelDown::Send("{WheelRight 2}")
 }
 
 XButton1::send("{Blind}{XButton1}") ;[マウス戻る] -> [マウス戻る]
-
-XButton1 & MButton::{
-    key := "MButton"
-    not_long_press := KeyWait(key, "T0.25")
-    if(not_long_press){
-        send("^{w}") ;[マウス戻る]  + [マウス中]  -> [ctrl + w (タブを閉じる)]
-    }else{
-        send("^+{t}") ;[マウス戻る(長押し)] + [マウス中] -> [ctrl + Shift + t (閉じたタブを復元)]
-    }
-    KeyWait(key)
-    return
-}
-
-XButton1 & WheelDown::Send("^{End}") ;[マウス戻る] + [ホイール↓] -> [ファイルの末尾へ]
-XButton1 & WheelUp::Send("^{Home}") ;[マウス戻る] + [ホイール↑] -> [ファイルの先頭へ]
-
 XButton2::send("{Blind}{XButton2}") ;[マウス進む] -> [マウス進む]
-
-XButton2 & MButton::{
-    send("^+{t}") ;[マウス進む] + [マウス中] -> [ctrl + Shift + t (閉じたタブを復元)]
-}
 
 #!WheelDown::Send("{Volume_Down}") ;[win] + [Alt] + [ホイール↑] -> [音量アップ]
 #!WheelUp::Send("{Volume_Up}") ;[win] + [Alt] + [ホイール↓] -> [音量ダウン]
 
 RButton::Send("{RButton}")
+
+
+RButton & MButton::{
+    key := "MButton"
+    not_long_press := KeyWait(key, "T0.35")
+    if(not_long_press){
+        send("^{w}") ;[マウス右] + [マウス中] -> [ctrl + w (タブを閉じる)]
+    }else{
+        send("^+{t}") ;[マウス右] + [マウス中(長押し)] -> [ctrl + Shift + t (閉じたタブを復元)]
+    }
+    KeyWait(key)
+    return
+}
+
+RButton & WheelDown::Send("^{End}") ;[マウス右] + [ホイール↓] -> [ファイルの末尾へ]
+RButton & WheelUp::Send("^{Home}") ;[マウス右] + [ホイール↑] -> [ファイルの先頭へ]
 
 RButton & XButton1::Send("^{c}") ;[マウス右] + [マウス戻る] -> [Ctrl+c(コピー)]
 RButton & XButton2::{
