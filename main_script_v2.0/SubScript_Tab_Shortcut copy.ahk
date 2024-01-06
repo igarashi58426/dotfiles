@@ -64,7 +64,7 @@ Tab::Send("{Blind}{Tab}") ;[Tab] -> [Tab]
 ^Tab::Send("{Blind}^{Tab}") ;[Ctrl] + [Tab] -> [Ctrl + Tab]
 +Tab::Send("{Blind}+{Tab}") ;[shift] + [Tab] -> [shift + Tab]
 !Tab::Send("{Blind}!{tab}") ;[alt] + [Tab] -> [alt + Tab]
-
+#Tab::Send("{Blind}#{Tab}") ;[win] + [Tab] -> [win + tab (デスクトップ一覧)]
 
 ;***********************************************************************************************
 
