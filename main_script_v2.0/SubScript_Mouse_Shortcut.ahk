@@ -1,44 +1,7 @@
-﻿;***********************マウスショートカット**************************************************************
+﻿; ***********************マウスショートカット***********************************************************
 
-+XButton1::Send("^+{Tab}") ;[Shift] + [マウス戻る] -> [Ctrl+Shift+Tab(タブを左に移動)]
-+XButton2::Send("^{Tab}") ;[Shift] + [マウス進む] -> [Ctrl+Tab(タブを右に移動)]
-
-; LCtrl & XButton1::AltTab                         ;[左Ctrl] + [マウス戻る] -> [Alt + Tab (ウィンドウタブ切り替え)]
-; LCtrl & XButton2::ShiftAltTab                    ;[左Ctrl] + [マウス進む] -> [Alt + Sift + Tab (ウィンドウタブ逆切り替え)]
-
-+WheelUp::Send("{WheelLeft 2}") ;[Shift] + [ホイール↑] -> [ホイール←左]
-+WheelDown::Send("{WheelRight 2}") ;[Shift] + [ホイール↓] -> [ホイール→右]
-
-MButton & WheelUp::Send("{WheelLeft 2}") ;[ホイール中] + [ホイール↑] -> [ホイール←左]
-MButton & WheelDown::Send("{WheelRight 2}") ;[ホイール中] + [ホイール↓] -> [ホイール→右]
-
-;***********************************************************************************************
-
-;***********************winキー+マウス*****************************************************
-
-#XButton1::Send("{Blind}#^{Right}") ;[win] + [Ctrl] + [マウス戻る] -> [win + Ctrl + → (仮想デスクトップ移動)]
-#XButton2::Send("{Blind}#^{Left}") ;[win] + [Ctrl] + [マウス進む] -> [win + Ctrl + ← (仮想デスクトップ移動)]
-#MButton::Send("{Blind}#{Tab}") ;[win] + [中央ボタン] -> [win + tab (デスクトップ一覧)]
-
-#WheelUp:: {
-    send("!{Space}") ;[win] + [ホイール↑] -> [win + ↑ (ウィンドウ最大化)]
-    Sleep(50)
-    send("+{x}")
-    Sleep(1000)
-}
-#WheelDown::{
-    send("{Blind}#{d}") ;[win] + [ホイール↓] -> [win + d (デスクトップ画面)]
-    Sleep(1000)
-}
-
-XButton1::send("{Blind}{XButton1}") ;[マウス戻る] -> [マウス戻る]
-XButton2::send("{Blind}{XButton2}") ;[マウス進む] -> [マウス進む]
-
-#!WheelDown::Send("{Volume_Down}") ;[win] + [Alt] + [ホイール↑] -> [音量アップ]
-#!WheelUp::Send("{Volume_Up}") ;[win] + [Alt] + [ホイール↓] -> [音量ダウン]
-
-RButton::Send("{RButton}")
-
+; *********************** 右クリック ***********************************************************
+RButton::Send("{RButton}") ;[右クリック] -> [右クリック]
 
 RButton & MButton::{
     key := "MButton"
@@ -71,6 +34,50 @@ RButton & XButton2::{
     return
 }
 
+; *********************** ホイール中 ***********************************************************
+MButton::send("{Blind}{MButton}") ;[ホイール中] -> [ホイール中]
+
+MButton & WheelUp::Send("{WheelLeft 2}") ;[ホイール中] + [ホイール↑] -> [ホイール←左]
+MButton & WheelDown::Send("{WheelRight 2}") ;[ホイール中] + [ホイール↓] -> [ホイール→右]
+
+
+#MButton::Send("{Blind}#{Tab}") ;[win] + [中央ボタン] -> [win + tab (デスクトップ一覧)]
+
+#WheelUp:: {
+    send("!{Space}") ;[win] + [ホイール↑] -> [win + ↑ (ウィンドウ最大化)]
+    Sleep(50)
+    send("+{x}")
+    Sleep(1000)
+}
+
+#WheelDown::{
+    send("{Blind}#{d}") ;[win] + [ホイール↓] -> [win + d (デスクトップ画面)]
+    Sleep(1000)
+}
+
+; *********************** ホイール↑↓ ***********************************************************
+
++WheelUp::Send("{WheelLeft 2}") ;[Shift] + [ホイール↑] -> [ホイール←左]
++WheelDown::Send("{WheelRight 2}") ;[Shift] + [ホイール↓] -> [ホイール→右]
+
+#!WheelDown::Send("{Volume_Down}") ;[win] + [Alt] + [ホイール↑] -> [音量アップ]
+#!WheelUp::Send("{Volume_Up}") ;[win] + [Alt] + [ホイール↓] -> [音量ダウン]
+
+
+; *********************** マウス戻る進む ***********************************************************
+XButton1::send("{Blind}{XButton1}") ;[マウス戻る] -> [マウス戻る]
+XButton2::send("{Blind}{XButton2}") ;[マウス進む] -> [マウス進む]
+
++XButton1::Send("^+{Tab}") ;[Shift] + [マウス戻る] -> [Ctrl+Shift+Tab(タブを左に移動)]
++XButton2::Send("^{Tab}") ;[Shift] + [マウス進む] -> [Ctrl+Tab(タブを右に移動)]
+
+; LCtrl & XButton1::AltTab                         ;[左Ctrl] + [マウス戻る] -> [Alt + Tab (ウィンドウタブ切り替え)]
+; LCtrl & XButton2::ShiftAltTab                    ;[左Ctrl] + [マウス進む] -> [Alt + Sift + Tab (ウィンドウタブ逆切り替え)]
+
+#XButton1::Send("{Blind}#^{Right}") ;[win] + [Ctrl] + [マウス戻る] -> [win + Ctrl + → (仮想デスクトップ移動)]
+#XButton2::Send("{Blind}#^{Left}") ;[win] + [Ctrl] + [マウス進む] -> [win + Ctrl + ← (仮想デスクトップ移動)]
+
+; *********************** Appキー ***********************************************************
 AppsKey::Send("{Blind}{AppsKey}")
 
 AppsKey & WheelUp::{  ;[appキー] + [ホイール↑] -> [モニター輝度3増加]
