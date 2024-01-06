@@ -30,13 +30,28 @@ SC07B & q::{
         Send( "+^{Left}")
         Sleep(10)
         Send("{Backspace}")
+        ;[CapsLock] + [無変換] + [q] -> [Shift + Ctrl + ← + Backspace (単語削除)]
+    }
+    Else If (GetKeyState("Shift","P")) {
+        key := "q"
+        not_long_press := KeyWait(key, "T0.3")
+        if(not_long_press){
+            is_double_press := KeyWait(key, "D T0.2")
+            if(is_double_press){
+                Send("^{j}") ;[無変換] + [無変換] + [qq(2回押し)] -> [Ctrl + j (出力パネルの表示/非表示)]
+            }else{
+                Send("^{b}") ;[無変換] + [q(1回押し)] -> [Ctrl + b (サイドパネルの表示/非表示)]
+            }
+        }else{
+            Send("^+{j}") ;[無変換] + [j--(長押し)] -> [Ctrl + shift + j (パネル最大化)]
+        }
+        KeyWait(key)
     }
     Else {
         Send("{Blind}^{q}")
+        ;[無変換] + [q] -> [ctrl + q]
     }
     Return
-    ;[無変換] + [q] -> [ctrl + q]
-    ;[CapsLock] + [無変換] + [q] -> [Shift + Ctrl + ← + Backspace]
 }
 
 SC07B & e::{
@@ -44,6 +59,8 @@ SC07B & e::{
     ;[無変換] + [e] -> [ctrl + e]
     ;[CapsLock] + [無変換] + [e] -> [Ctrl + Enter]
 }
+
+SC07B & XButton1::AltTab ;[CapsLock] + [マウス戻る] -> [Alt + Tab(ウィンドウ切り替え)]
 
 ;*****************************関数定義*****************************************************
 normal_and_3rd_key_function(send_parm_normal, comb_key_1st , send_parm_1st){
