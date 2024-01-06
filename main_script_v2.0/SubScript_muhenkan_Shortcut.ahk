@@ -60,7 +60,9 @@ SC07B & e::{
     ;[CapsLock] + [無変換] + [e] -> [Ctrl + Enter]
 }
 
-SC07B & XButton1::AltTab ;[CapsLock] + [マウス戻る] -> [Alt + Tab(ウィンドウ切り替え)]
+SC07B & XButton1::AltTab ;[無変換] + [マウス戻る] -> [Alt + Tab(ウィンドウ切り替え)]
+
+SC07B & Tab::AltTab ;[無変換] + [Tab] -> [Alt + Tab(ウィンドウ切り替え)]
 
 ;*****************************関数定義*****************************************************
 normal_and_3rd_key_function(send_parm_normal, comb_key_1st , send_parm_1st){
@@ -74,8 +76,6 @@ normal_and_3rd_key_function(send_parm_normal, comb_key_1st , send_parm_1st){
 }
 
 ;***********************無変換キー基本動作定義*****************************************************
-SC07B & Tab::Send("{Blind}^{Tab}") ;[無変換] + [tab] -> [ctrl + tab]
-
 ; SC07B & a::Send("{Blind}^{a}") ;[無変換] + [a] -> [ctrl + a]
 SC07B & b::Send("{Blind}^{b}") ;[無変換] + [b] -> [ctrl + b]
 SC07B & c::Send("{Blind}^{c}") ;[無変換] + [c] -> [ctrl + c]
