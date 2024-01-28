@@ -35,12 +35,6 @@ RButton & XButton2::{
 }
 
 ; *********************** ホイール中 ***********************************************************
-MButton::send("{Blind}{MButton}") ;[ホイール中] -> [ホイール中]
-
-MButton & WheelUp::Send("{WheelLeft 2}") ;[ホイール中] + [ホイール↑] -> [ホイール←左]
-MButton & WheelDown::Send("{WheelRight 2}") ;[ホイール中] + [ホイール↓] -> [ホイール→右]
-
-
 #MButton::Send("{Blind}#{Tab}") ;[win] + [中央ボタン] -> [win + tab (デスクトップ一覧)]
 
 #WheelUp:: {
