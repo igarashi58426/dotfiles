@@ -77,10 +77,9 @@ XButton2::send("{Blind}{XButton2}") ;[マウス進む] -> [マウス進む]
 #XButton1::Send("{Blind}#^{Right}") ;[win] + [Ctrl] + [マウス戻る] -> [win + Ctrl + → (仮想デスクトップ移動)]
 #XButton2::Send("{Blind}#^{Left}") ;[win] + [Ctrl] + [マウス進む] -> [win + Ctrl + ← (仮想デスクトップ移動)]
 
-; *********************** Appキー ***********************************************************
-AppsKey::Send("{Blind}{AppsKey}")
+; *********************** 右Altキー ***********************************************************
 
-AppsKey & WheelUp::{  ;[appキー] + [ホイール↑] -> [モニター輝度3増加]
+RAlt & WheelUp::{  ;[右Alt] + [ホイール↑] -> [モニター輝度3増加]
     Critical "On"
     Run("python ./change_luminance_script/change_luminance.py +3","","Hide")
     Critical "Off"
@@ -88,7 +87,7 @@ AppsKey & WheelUp::{  ;[appキー] + [ホイール↑] -> [モニター輝度3�
     return
 }
 
-AppsKey & WheelDown::{ ;[appキー] + [ホイール↓] -> [モニター輝度3減少]
+RAlt & WheelDown::{ ;[右Alt] + [ホイール↓] -> [モニター輝度3減少]
     Critical "On"
     Run("python ./change_luminance_script/change_luminance.py -3","","Hide")
     Critical "Off"
