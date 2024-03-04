@@ -227,6 +227,35 @@
         "key": "ctrl+enter",
         "command": "editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        // ctrl+Shift+mのデフォルトを削除
+        "key": "ctrl+shift+m",
+        "command": "-workbench.actions.view.problems",
+        "when": "workbench.panel.markers.view.active"
+    },
+    {
+        // Ctrl+Shift+mで「言語設定を開く」を定義
+        "key": "ctrl+shift+m",
+        "command": "workbench.action.editor.changeLanguageMode",
+    },
+    {
+        // Ctrl+Shift+xで「すべてのコマンド」を定義
+        "key": "ctrl+shift+x",
+        "command": "workbench.action.showCommands",
+        "when": "editorTextFocus"
+    },
+    {
+        // Ctrl+Shift+|で「エディタを水平分割」を定義
+        "key": "ctrl+shift+oem_5",
+        "command": "workbench.action.splitEditor",
+        "when": "editorTextFocus"
+    },
+    {
+        // Ctrl+Shift+で「エディタを垂直分割」を定義
+        "key": "ctrl+shift+oem_7",
+        "command": "workbench.action.splitEditorOrthogonal",
+        "when": "editorTextFocus"
         // ================================================================================
     }
 ]
