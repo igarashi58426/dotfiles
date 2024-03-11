@@ -185,14 +185,14 @@
         "command": "-workbench.action.newWindow"
     },
     {
-        // シンボル表示ctrl+oを再定義
+        // ctrl+o で パンくずリストのプルダウンを表示
         "key": "ctrl+o",
-        "command": "workbench.action.gotoSymbol"
+        "command": "breadcrumbs.toggleToOn"
     },
     {
         // ファイルを開くctrl+oを削除
         "key": "ctrl+o",
-        "command": "-workbench.action.files.openFile",
+        "command": "-workbench.action.files.openFile"
     },
     {
         // シンボル表示ctrl+shift+oを削除
@@ -246,16 +246,27 @@
         "when": "editorTextFocus"
     },
     {
-        // Ctrl+Shift+|で「エディタを水平分割」を定義
+        // Ctrl+Shift+|で「エディタを垂直分割」を定義
         "key": "ctrl+shift+oem_5",
         "command": "workbench.action.splitEditor",
         "when": "editorTextFocus"
     },
     {
-        // Ctrl+Shift+で「エディタを垂直分割」を定義
+        // Ctrl+Shift+^で「エディタを水平分割」を定義
         "key": "ctrl+shift+oem_7",
         "command": "workbench.action.splitEditorOrthogonal",
         "when": "editorTextFocus"
+    },
+    {
+        // ctrl+t で パンくずリストのプルダウンを表示
+        "key": "ctrl+t",
+        "command": "breadcrumbs.toggleToOn",
+    },
+    {
+        // ctrl+q で差分ビュワーの場合、元のファイルを開く
+        "key": "ctrl+q",
+        "command": "workbench.action.compareEditor.openSide",
+        "when": "inDiffEditor"
         // ================================================================================
     }
 ]
