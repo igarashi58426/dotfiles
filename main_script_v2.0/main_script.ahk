@@ -41,6 +41,7 @@ A_MaxHotkeysPerInterval := 200
 #Include SubScript_Tab_Shortcut copy.ahk
 #Include SubScript_muhenkan_Shortcut.ahk
 #Include IMEv2.ahk
+#Include SubScript_RightShift.ahk
 ; #Include SubScript_View_mode.ahk
 
 ;***********************************************************************************************
