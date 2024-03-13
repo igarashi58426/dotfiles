@@ -1,9 +1,14 @@
-{
-    "command": 
+[
     {
-        "action": "splitPane",
-        "split": "auto",
-        "splitMode": "duplicate"
+        "command": {
+            "action": "splitPane",
+            "split": "auto",
+            "splitMode": "duplicate"
+        },
+        "keys": "ctrl+shift+\\"
     },
-    "keys": "ctrl+shift+\\"
-}
+    {
+        "command": "unbound",
+        "keys": "ctrl+v"
+    }
+]
