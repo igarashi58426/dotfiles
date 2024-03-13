@@ -63,9 +63,7 @@
     "files.autoGuessEncoding": true,
 
     // 上段タブを表示
-    "workbench.editor.showTabs": true,
-    // アクティビティバー(サイドバー)を左端に表示(falseで非表示化)
-    "workbench.activityBar.visible": true,
+    "workbench.editor.showTabs": "multiple",
     // サイドバーを左に
     "workbench.sideBar.location": "left",
     // 下のステータスバーを表示
@@ -85,10 +83,13 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "explorer.confirmDelete": false,
     "workbench.startupEditor": "none",
-    "workbench.editor.untitled.hint": "hidden",
+    "workbench.editor.empty.hint": "hidden",
     // エディターの書式をコピー時に保持するか
     "editor.copyWithSyntaxHighlighting": true,
     "vsicons.dontShowNewVersionMessage": true,
+
+    // アウトラインで初期状態を収納とする
+    "outline.collapseItems": "alwaysCollapse",
 
     // 診断データを送信しない
     "telemetry.telemetryLevel": "off",
@@ -204,8 +205,6 @@
 
     // ==================== remote SSH ====================
     "remote.SSH.remotePlatform": {
-        "RaspberryPi-v6": "linux",
-        "raspi": "linux"
-        // ============================================================
+    // ============================================================
     }
 }
