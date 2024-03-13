@@ -1,0 +1,25 @@
+# 管理者昇格コマンド
+# Start-Process powershell.exe " -File "$PSScriptRoot"" -Verb RunAs
+# 実行コマンド
+# PowerShell -ExecutionPolicy RemoteSigned .\install.ps1
+
+$script_dir=$PSScriptRoot
+$dotfiles_dir=$script_dir+"\..\"
+
+# 設定ファイル
+$path=$env:APPDATA+"\Code\User\settings.json"
+$target=$dotfiles_dir+"\VScode\settings.json"
+New-Item -ItemType SymbolicLink -Path $path -Target $target
+
+# キー設定ファイル
+$path=$env:APPDATA+"\Code\User\keybindings.json"
+$target=$dotfiles_dir+"\VScode\keybindings.json"
+New-Item -ItemType SymbolicLink -Path $path -Target $target
+
+# スニペットフォルダ
+$path=$env:APPDATA+"\Code\User\snippets"
+$target=$dotfiles_dir+"\VScode\snippets"
+New-Item -ItemType SymbolicLink -Path $path -Target $target
+
+
+
