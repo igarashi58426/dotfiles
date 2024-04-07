@@ -141,7 +141,8 @@
 
     // テキストファイルをMarkdownとして開く
     "files.associations": {
-        "*.txt": "markdown"
+        "*.txt": "markdown",
+        "*.env": "shellscript"
     },
 
     // / マークダウンの改行を反映
@@ -166,6 +167,8 @@
     "plantuml.server": "http://localhost:8080",
     "markdown-pdf.plantumlServer": "http://localhost:8080",
 
+    // ====================yaml拡張機能====================
+    "yaml.validate":false,
 
     // ====================スペルチェック拡張機能====================
     // 辞書追加
