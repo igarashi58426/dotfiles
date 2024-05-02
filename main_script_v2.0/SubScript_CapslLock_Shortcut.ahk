@@ -351,8 +351,9 @@ F13 & b::{
                     if(KeyWait(key, "D T0.2") ){
                         Send("^{x}") ;[CapsLock] + [bbbb(4回押し)] -> [選択範囲を```コードブロックへ変換]
                         sleep(100)
-                        InsertText("```````n`n``````")
-                        Send("{Up}")
+                        A_Clipboard := RegExReplace(A_Clipboard, "[\n|\r|\r\n]$", "")
+                        InsertText("```````n`n```````n")
+                        Send("{Up 2}")
                         Send("^{v}")
                     }
                 }else{
@@ -361,14 +362,14 @@ F13 & b::{
                     sleep(10)
                     Send("^{x}")
                     sleep(100)
-                    InsertText("```````n`n``````")
-                    Send("{Up}")
+                    InsertText("```````n`n```````n")
+                    Send("{Up 2}")
                     A_Clipboard := strip_linebreaks(A_Clipboard)
                     Send("^{v}")
                 }
             }else{
-                InsertText("```````n`n``````") ;[CapsLock] + [bb(2回押し)] -> [```コードブロック生成]
-                Send("{Up}")
+                InsertText("```````n`n```````n") ;[CapsLock] + [bb(2回押し)] -> [```コードブロック生成]
+                Send("{Up 2}")
             }
         }else{
             Send("{Blind}^{/}") ;[CapsLock] + [b(1回押し)] -> [Ctrl + / (コメントアウト)]
