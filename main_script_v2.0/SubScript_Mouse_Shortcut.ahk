@@ -1,4 +1,4 @@
-; ***********************マウスショートカット***********************************************************
+﻿; ***********************マウスショートカット***********************************************************
 
 ; *********************** 右クリック ***********************************************************
 RButton::Send("{RButton}") ;[右クリック] -> [右クリック]
@@ -18,17 +18,31 @@ RButton & MButton::{
 RButton & WheelDown::Send("^{End}") ;[マウス右] + [ホイール↓] -> [ファイルの末尾へ]
 RButton & WheelUp::Send("^{Home}") ;[マウス右] + [ホイール↑] -> [ファイルの先頭へ]
 
-RButton & XButton1::Send("^{c}") ;[マウス右] + [マウス戻る] -> [Ctrl+c(コピー)]
 RButton & XButton2::{
     key := "XButton2"
     not_long_press := KeyWait(key, "T0.3")
     if(not_long_press){
-        is_double_press := KeyWait(key, "D T0.2") 
+        is_double_press := KeyWait(key, "D T0.2")
         if(!is_double_press){
-            Send("^{v}") ;[マウス右] + [マウス進む] -> [Ctrl+v(貼り付け)]
+            Send("^{c}") ;[マウス右] + [マウス進む] -> [Ctrl+c(コピー)]
         }
     }else{
-        Send("#{v}") ;[マウス右] + [マウス進む--(長押し)] -> [win+v(クリップボード履歴) ]
+        Send("^{x}") ;[マウス右] + [マウス進む--(長押し)] -> [Ctrl+c(切り取り)]
+    }
+    KeyWait(key)
+    return
+}
+
+RButton & XButton1::{
+    key := "XButton1"
+    not_long_press := KeyWait(key, "T0.3")
+    if(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2")
+        if(!is_double_press){
+            Send("^{v}") ;[マウス右] + [マウス戻る] -> [Ctrl+v(貼り付け)]
+        }
+    }else{
+        Send("#{v}") ;[マウス右] + [マウス戻る--(長押し)] -> [win+v(クリップボード履歴) ]
     }
     KeyWait(key)
     return
@@ -81,6 +95,36 @@ $XButton2::{
 
 #XButton1::Send("{Blind}#^{Right}") ;[win] + [Ctrl] + [マウス戻る] -> [win + Ctrl + → (仮想デスクトップ移動)]
 #XButton2::Send("{Blind}#^{Left}") ;[win] + [Ctrl] + [マウス進む] -> [win + Ctrl + ← (仮想デスクトップ移動)]
+
+XButton1 & RButton::{
+    key := "RButton"
+    not_long_press := KeyWait(key, "T0.3")
+    if(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2")
+        if(!is_double_press){
+            Send("^{v}") ;[マウス進む] + [マウス右] -> [Ctrl+v(貼り付け)]
+        }
+    }else{
+        Send("#{v}") ;[マウス進む] + [マウス右--(長押し)] -> [win+v(クリップボード履歴) ]
+    }
+    KeyWait(key)
+    return
+}
+
+XButton1 & LButton::{
+    key := "LButton"
+    not_long_press := KeyWait(key, "T0.3")
+    if(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2")
+        if(!is_double_press){
+            Send("^{c}") ;[マウス戻る] + [マウス左] -> [Ctrl+c(コピー)]
+        }
+    }else{
+        Send("^{x}") ;[マウス戻る] + [マウス左--(長押し)] -> [Ctrl+x(切り取り)]
+    }
+    KeyWait(key)
+    return
+}
 
 ; *********************** 右Altキー ***********************************************************
 
