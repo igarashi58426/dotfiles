@@ -505,7 +505,13 @@ google_translation(){
         WinWaitActive("Iron",,3) ;アクティブ化完了を3秒待機
     }else{
         ; ブラウザの起動
-        Run('"C:\Program Files\SRWare Iron (64-Bit)\chrome.exe" -incognito') ;Ironブラウザをプライベートで起動
+        Try
+        {
+            Run('"C:\Program Files\SRWare Iron (64-Bit)\chrome.exe" -incognito') ;Ironブラウザをプライベートで起動
+        }catch {
+            Run("https://translate.google.com/?hl=ja&sl=en&tl=ja&op=translate&text=" A_Clipboard) ;デフォルトブラウザでgoogle翻訳を開く
+            Return
+        }
         WinWait("Iron") ;起動完了を待機
         WinActivate("Iron") ;アクティブ化
         WinWaitActive("Iron",,3) ;アクティブ化完了を3秒待機
