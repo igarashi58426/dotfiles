@@ -58,8 +58,40 @@ Tab & v::{
 
 Tab & Space::Send("{Blind}{_}") ;[Tab] + [Space] -> ["_"]
 
-Tab & n::Send("^+{Tab}")
+Tab & n::Send("^+{Ta    b}")
 Tab & m::Send("^{Tab}")
+
+;==================== マウス系 ====================
+tab & MButton::send("{Blind}#{d}") ;[Tab] + [中央ボタン] -> [win + d (デスクトップ画面)]
+
+tab & WheelUp:: {
+    WinMaximize("A") ;[Tab] + [ホイール↑] -> [win + ↑ (ウィンドウ最大化)]
+}
+
+tab & WheelDown::{
+    send("{Blind}#{down}") ;[Tab] + [ホイール↓] -> [win + ↓ (ウィンドウ縮小)]
+    Sleep(1000)
+}
+
+tab & RButton::EWD_MoveWindow() ;[Tab] + [左クリック長押し] -> [ウィンドウの移動]
+
+tab & LButton::{ ;[Tab] + [左クリック長押し] -> [ウィンドウのサイズ変更]
+    win_size := WinGetMinMax("A")
+    if ( win_size = 0) {
+        WinGetPos(&X, &Y, &W, &H, "A") ;対象ウィンドウの領域の座標取得
+        SM_CYFULLSCREEN := SysGet(17) ;フルスクリーン領域の下限座標取得
+        CoordMode("Mouse", "Screen") ;マウス動作を絶対座標系へ
+        if Y+H-1 < SM_CYFULLSCREEN ;ウィンドウの下が画面からはみ出していない
+        {
+            MouseMove(X+W-1, Y+H-1) ;ウィンドウの右下を選択
+        }
+        else
+        {
+            MouseMove(X+W-1, Y+1)   ;ウィンドウの右下を選択
+        }
+        Send("{Blind}{LButton down}") ;クリック押し下げ
+    }
+}
 
 ;***********************Tabキーデフォルト動作定義*****************************************************
 
@@ -71,6 +103,49 @@ Tab::Send("{Blind}{Tab}") ;[Tab] -> [Tab]
 
 ;***********************************************************************************************
 
+; Easy Window Dragging
+; https://www.autohotkey.com
+; Normally, a window can only be dragged by clicking on its title bar.
+; This script extends that so that any point inside a window can be dragged.
+; To activate this mode, hold down CapsLock or the middle mouse button while
+; clicking, then drag the window to a new position.
+
+; Note: You can optionally release CapsLock or the middle mouse button after
+; pressing down the mouse button rather than holding it down the whole time.
+EWD_MoveWindow(*){
+    key := "RButton"
+    CoordMode "Mouse"  ; Switch to screen/absolute coordinates.
+    MouseGetPos &EWD_MouseStartX, &EWD_MouseStartY, &EWD_MouseWin
+    WinGetPos &EWD_OriginalPosX, &EWD_OriginalPosY,,, EWD_MouseWin
+    WinRestore "A"
+    if !WinGetMinMax(EWD_MouseWin)  ; Only if the window isn't maximized
+        SetTimer EWD_WatchMouse, 10 ; Track the mouse as the user drags it.
+
+    EWD_WatchMouse()
+    {
+        if !GetKeyState(key, "P") ; Button has been released, so drag is complete.
+        {
+            SetTimer , 0
+            return
+        }
+        if GetKeyState("Escape", "P") ; Escape has been pressed, so drag is cancelled.
+        {
+            SetTimer , 0
+            WinMaximize("A")
+            return
+        }
+        ; Otherwise, reposition the window to match the change in mouse coordinates
+        ; caused by the user having dragged the mouse:
+        CoordMode "Mouse"
+        MouseGetPos &EWD_MouseX, &EWD_MouseY
+        WinGetPos &EWD_WinX, &EWD_WinY,,, EWD_MouseWin
+        SetWinDelay -1   ; Makes the below move faster/smoother.
+        WinMove EWD_WinX + EWD_MouseX - EWD_MouseStartX, EWD_WinY + EWD_MouseY - EWD_MouseStartY,,, EWD_MouseWin
+        EWD_MouseStartX := EWD_MouseX  ; Update for the next timer-call to this subroutine.
+        EWD_MouseStartY := EWD_MouseY
+    }
+}
+
 ;***********装飾キーメモ************/
 ;キー名 説明                        /
 ; +    shift                       /
@@ -78,4 +153,6 @@ Tab::Send("{Blind}{Tab}") ;[Tab] -> [Tab]
 ; !     alt                        /
 ; #    windows                     /
 ;**********************************/
+
+
 

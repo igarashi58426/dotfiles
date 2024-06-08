@@ -49,17 +49,14 @@ RButton & XButton1::{
 }
 
 ; *********************** ホイール中 ***********************************************************
-#MButton::Send("{Blind}#{Tab}") ;[win] + [中央ボタン] -> [win + tab (デスクトップ一覧)]
+#MButton::send("{Blind}#{d}") ;[win] + [中央ボタン] -> [win + d (デスクトップ画面)]
 
 #WheelUp:: {
-    send("!{Space}") ;[win] + [ホイール↑] -> [win + ↑ (ウィンドウ最大化)]
-    Sleep(50)
-    send("+{x}")
-    Sleep(1000)
+    WinMaximize("A") ;[win] + [ホイール↑] -> [win + ↑ (ウィンドウ最大化)]
 }
 
 #WheelDown::{
-    send("{Blind}#{d}") ;[win] + [ホイール↓] -> [win + d (デスクトップ画面)]
+    send("{Blind}#{down}") ;[win] + [ホイール↓] -> [win + ↓ (ウィンドウ縮小)]
     Sleep(1000)
 }
 
