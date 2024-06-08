@@ -30,21 +30,6 @@
     return
 }
 
-F12::{
-    key := "F12"
-    not_long_press := KeyWait(key, "T0.3")
-    if(not_long_press){
-        is_double_press := KeyWait(key, "D T0.2")
-        if(!is_double_press){
-            Send("{F12}") ;[Ctrl] + [j(1度押し)] -> [Ctrl + j (通常動作,出力パネルの表示/非表示)]
-        }
-    }else{
-        Send("!+{F12}") ;[Ctrl] + [j--(長押し)] -> [Ctrl + shift + j (パネル最大化)]
-    }
-    KeyWait(key)
-    return
-}
-
 ;***********************************************************************************************
 
 ;***********装飾キーメモ************/

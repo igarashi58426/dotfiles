@@ -31,6 +31,20 @@ Insert::Send("{Blind}{Delete}") ;[Insrt] -> [Delete]
 ; Appキー代用
 RAlt::Send("{Blind}{AppsKey}") ;[右Alt(単押し)] -> [Appキー]
 
+F12::{
+    key := "F12"
+    Critical "On"
+    not_long_press := KeyWait(key, "T0.3")
+    Critical "Off"
+    if(not_long_press){
+        Send("{Blind}{" key "}") ;[F12(1回押し)] -> [F12]
+    }else{
+        DllCall("LockWorkStation") ;[F12--(長押し)] -> [ウィンドウロック]
+    }
+    KeyWait(key)
+    Return
+}
+
 ;***********************************************************************************************
 
 ;***********装飾キーメモ************/
