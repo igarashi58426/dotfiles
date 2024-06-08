@@ -61,9 +61,6 @@ Tab & Space::Send("{Blind}{_}") ;[Tab] + [Space] -> ["_"]
 Tab & n::Send("^+{Tab}")
 Tab & m::Send("^{Tab}")
 
-Tab & u::ShiftAltTab
-Tab & i::AltTab
-
 ;***********************Tabキーデフォルト動作定義*****************************************************
 
 Tab::Send("{Blind}{Tab}") ;[Tab] -> [Tab]

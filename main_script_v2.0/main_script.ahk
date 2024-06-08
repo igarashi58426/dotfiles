@@ -24,26 +24,31 @@ ProcessSetPriority "High"
 A_HotkeyInterval := 1000
 A_MaxHotkeysPerInterval := 200
 
+
+;***********************ライブラリ読み込み**********************************************************
+#Include IMEv2.ahk
+
 ;無効化するソフトを設定
-;#Include SubScript_exception_software.ahk
+GroupAdd "IgnoreTargets", "タスク マネージャー"
+GroupAdd "IgnoreTargets", "FINAL FANTASY XIV"
+GroupAdd "IgnoreTargets", "ARMORED CORE"
+
 
 ;***********************ショートカットスクリプトの読み込み**********************************************************
-; #IfWinNotExist, Exit_Window             ;無効化ウィンドウが存在しない場合
-#Include SubScript_Key_Remapping.ahk
-#Include SubScript_CapslLock_Shortcut.ahk
-#Include SubScript_winkey_Shortcut.ahk
-#Include SubScript_Mouse_Shortcut.ahk
-#Include SubScript_Shift_symbol.ahk
-#Include subScript_symbol_direct_input.ahk
-#Include SubScript_VScode_Shortcut.ahk
-#Include SubScript_Z_Shortcut.ahk
-#Include SubScript_Q_Shortcut.ahk
-#Include SubScript_Tab_Shortcut copy.ahk
-#Include SubScript_muhenkan_Shortcut.ahk
-#Include IMEv2.ahk
-#Include SubScript_RightShift.ahk
-#Include SubScript_A_Shortcut.ahk
-; #Include SubScript_View_mode.ahk
+#HotIf not WinActive("ahk_group IgnoreTargets")
+    #Include SubScript_Key_Remapping.ahk
+    #Include SubScript_CapslLock_Shortcut.ahk
+    #Include SubScript_winkey_Shortcut.ahk
+    #Include SubScript_Mouse_Shortcut.ahk
+    #Include SubScript_Shift_symbol.ahk
+    #Include subScript_symbol_direct_input.ahk
+    #Include SubScript_VScode_Shortcut.ahk
+    #Include SubScript_Z_Shortcut.ahk
+    #Include SubScript_Q_Shortcut.ahk
+    #Include SubScript_Tab_Shortcut.ahk
+    #Include SubScript_muhenkan_Shortcut.ahk
+    #Include SubScript_RightShift.ahk
+#HotIf
 
 ;***********************************************************************************************
 
@@ -117,3 +122,5 @@ set_direct_input_mode(){
 ;[Shift] + [CapsLock] + [r]でホイール↑4回
 ;となる
 
+
+; #HotIf not WinExist("ahk_group DisableGroup")
