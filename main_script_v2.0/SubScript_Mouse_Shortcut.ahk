@@ -125,17 +125,27 @@ XButton1 & LButton::{
 
 ; *********************** 右Altキー ***********************************************************
 
-RAlt & WheelUp::{  ;[右Alt] + [ホイール↑] -> [モニター輝度3増加]
+AppsKey & WheelUp::{ ;[右Alt] + [ホイール↑] -> [モニター輝度3増加]
     Critical "On"
-    Run("python ./change_luminance_script/change_luminance.py +3","","Hide")
+    Try
+    {
+        Run("python ./external_script/change_luminance/script/change_luminance.py +3","","Hide")
+    }catch {
+        Run("./external_script/change_luminance/executable/change_luminance.exe +3")
+    }
     Critical "Off"
     Sleep(200)
     return
 }
 
-RAlt & WheelDown::{ ;[右Alt] + [ホイール↓] -> [モニター輝度3減少]
+AppsKey & WheelDown::{ ;[右Alt] + [ホイール↓] -> [モニター輝度3減少]
     Critical "On"
-    Run("python ./change_luminance_script/change_luminance.py -3","","Hide")
+    Try
+    {
+        Run("python ./external_script/change_luminance/script/change_luminance.py -3","","Hide")
+    }catch {
+        Run("./external_script/change_luminance/executable/change_luminance.exe -3")
+    }
     Critical "Off"
     Sleep(200)
     return
