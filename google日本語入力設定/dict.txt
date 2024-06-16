@@ -1,4 +1,1 @@
-
-うぶんつ	ubuntu	名詞	
-ちゃんねる	channel	名詞	
 h	https://	名詞	
