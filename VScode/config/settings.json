@@ -18,7 +18,7 @@
 
     // ホイールによるズームを有効化
     "editor.mouseWheelZoom": true,
-    
+
     // カーソル移動アニメーション
     "editor.cursorSmoothCaretAnimation": "on",
 
@@ -181,8 +181,7 @@
         "htmlpath","mdfile","htmlname","mdpath","switchbot","numstat","oneline","scandir","pygmentize","codehilite","Alexa","echoshow","Realtek","icmplib","multiping","rtts","Mbits",
         "Retr","Cwnd","hoge","userland","WSGI","journalctl","hwmon","Undervoltage","uwsgi","Referer","iframe","pyfile","SMBC","prerouting","postrouting","DNAT","dport","uart","inet",
         "napt","proto","nmcli","ssid","snat","dnat","ifname","autoconnect","nmap","upnp","upnpd","Linksys","dnsmasq","Rcvd","dns-nsid","dhcpd","qdisc","qlen","pfifo","hostdocker","vethf",
-        "ADDRTYPE","ctstate","SIGINT","linkdown","linkup","Datagram","","","","","",""
-    
+        "ADDRTYPE","ctstate","SIGINT","linkdown","linkup","Datagram","hoge","fuga","","","",""
     ],
 
     // ====================multiCommand拡張機能====================
