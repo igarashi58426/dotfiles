@@ -1,6 +1,6 @@
 ﻿;====================無効化するソフトを設定====================
-GroupAdd "Game_group", "FINAL FANTASY XIV"
-GroupAdd "Game_group", "ARMORED CORE"
+GroupAdd("Game_group", "ahk_class FFXIVGAME")
+GroupAdd("Game_group", "ahk_class ARMORED CORE VI FIRES OF RUBICON")
 
 
 

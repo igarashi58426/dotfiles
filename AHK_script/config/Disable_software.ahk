@@ -1,8 +1,7 @@
 ﻿;====================無効化するソフトを設定====================
-GroupAdd "Disable_software", "タスク マネージャー"
-GroupAdd "Disable_software", "FINAL FANTASY XIV"
-GroupAdd "Disable_software", "ARMORED CORE"
-
+GroupAdd("Disable_software", "ahk_class TaskManagerWindow")
+GroupAdd("Disable_software", "ahk_class FFXIVGAME")
+GroupAdd("Disable_software", "ahk_class ARMORED CORE VI FIRES OF RUBICON")
 
 
 ;***********装飾キーメモ************/
