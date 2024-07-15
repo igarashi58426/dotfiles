@@ -60,10 +60,6 @@ SC07B & e::{
     ;[CapsLock] + [無変換] + [e] -> [Ctrl + Enter]
 }
 
-SC07B & XButton1::AltTab ;[無変換] + [マウス戻る] -> [Alt + Tab(ウィンドウ切り替え)]
-
-SC07B & Tab::AltTab ;[無変換] + [Tab] -> [Alt + Tab(ウィンドウ切り替え)]
-
 ;*****************************関数定義*****************************************************
 normal_and_3rd_key_function(send_parm_normal, comb_key_1st , send_parm_1st){
     If (GetKeyState(comb_key_1st,"P")) {
