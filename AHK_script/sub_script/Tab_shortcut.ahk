@@ -73,25 +73,12 @@ tab & WheelDown::{
     Sleep(1000)
 }
 
-tab & RButton::EWD_MoveWindow() ;[Tab] + [左クリック長押し] -> [ウィンドウの移動]
+tab & RButton::EWD_MoveWindow("RButton") ;[Tab] + [左クリック長押し] -> [ウィンドウの移動]
 
-tab & LButton::{ ;[Tab] + [左クリック長押し] -> [ウィンドウのサイズ変更]
-    win_size := WinGetMinMax("A")
-    if ( win_size = 0) {
-        WinGetPos(&X, &Y, &W, &H, "A") ;対象ウィンドウの領域の座標取得
-        SM_CYFULLSCREEN := SysGet(17) ;フルスクリーン領域の下限座標取得
-        CoordMode("Mouse", "Screen") ;マウス動作を絶対座標系へ
-        if Y+H-1 < SM_CYFULLSCREEN ;ウィンドウの下が画面からはみ出していない
-        {
-            MouseMove(X+W-1, Y+H-1) ;ウィンドウの右下を選択
-        }
-        else
-        {
-            MouseMove(X+W-1, Y+1)   ;ウィンドウの右下を選択
-        }
-        Send("{Blind}{LButton down}") ;クリック押し下げ
-    }
-}
+tab & LButton::ResizeWindow("LButton") ;[Tab] + [左クリック長押し] -> [ウィンドウのサイズ変更]
+
+
+
 
 ;***********************Tabキーデフォルト動作定義*****************************************************
 
@@ -103,6 +90,37 @@ Tab::Send("{Blind}{Tab}") ;[Tab] -> [Tab]
 
 ;***********************************************************************************************
 
+;*********************** ウィンドウサイズ変更 *****************************************************
+
+ResizeWindow(trigger_key){
+    ; 動作中の場合は、押し上げの終了処理を行う
+    if(GetKeyState(trigger_key)){
+        Send("{Blind}{LButton up}")
+        Return
+    }
+    ; 最大化されている場合は何もしない
+    if ( !WinGetMinMax("A") ) {
+        Return
+    }
+
+    WinGetPos(&X, &Y, &W, &H, "A") ;対象ウィンドウの領域の座標取得
+    SM_CYFULLSCREEN := SysGet(17) ;フルスクリーン領域の下限座標取得
+    CoordMode("Mouse", "Screen") ;マウス動作を絶対座標系へ
+    if Y+H-1 < SM_CYFULLSCREEN ;ウィンドウの下が画面からはみ出していない
+    {
+        MouseMove(X+W-1, Y+H-1) ;ウィンドウの右下を選択
+    }
+    else
+    {
+        MouseMove(X+W-1, Y+1)   ;ウィンドウの右下を選択
+    }
+    Send("{Blind}{LButton down}") ;クリック押し下げ
+    
+}
+
+
+;***********************************************************************************************
+;*********************** ウィンドウ移動 *****************************************************
 ; Easy Window Dragging
 ; https://www.autohotkey.com
 ; Normally, a window can only be dragged by clicking on its title bar.
@@ -112,25 +130,26 @@ Tab::Send("{Blind}{Tab}") ;[Tab] -> [Tab]
 
 ; Note: You can optionally release CapsLock or the middle mouse button after
 ; pressing down the mouse button rather than holding it down the whole time.
-EWD_MoveWindow(*){
-    key := "RButton"
+EWD_MoveWindow(trigger_key){
     CoordMode "Mouse"  ; Switch to screen/absolute coordinates.
     MouseGetPos &EWD_MouseStartX, &EWD_MouseStartY, &EWD_MouseWin
     WinGetPos &EWD_OriginalPosX, &EWD_OriginalPosY,,, EWD_MouseWin
-    WinRestore "A"
-    if !WinGetMinMax(EWD_MouseWin)  ; Only if the window isn't maximized
-        SetTimer EWD_WatchMouse, 10 ; Track the mouse as the user drags it.
+    WinRestore("A") ;最大化解除
+    ;最大化されていない場合に実行
+    if !WinGetMinMax(EWD_MouseWin){
+        ; ユーザーがドラッグするときにマウスを追跡します。
+        SetTimer(EWD_WatchMouse, 10)
+    }
 
-    EWD_WatchMouse()
-    {
-        if !GetKeyState(key, "P") ; Button has been released, so drag is complete.
+    EWD_WatchMouse(){
+        if !GetKeyState(trigger_key, "P") ; Button has been released, so drag is complete.
         {
-            SetTimer , 0
+            SetTimer(, 0)
             return
         }
         if GetKeyState("Escape", "P") ; Escape has been pressed, so drag is cancelled.
         {
-            SetTimer , 0
+            SetTimer(, 0)
             WinMaximize("A")
             return
         }
