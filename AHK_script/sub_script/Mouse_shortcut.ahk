@@ -48,6 +48,30 @@ RButton & XButton1::{
     return
 }
 
+RButton & 0::{
+    key := "0"
+    not_long_press := KeyWait(key, "T0.3")
+    if(not_long_press){
+        is_double_press := KeyWait(key, "D T0.2")
+        Send("{Blind}^{z}") ;[マウス右] + [0] -> [Ctrl+z (戻る)]
+    }else{
+        Send("{Blind}{Esc}") ;[マウス右] + [0--(長押し)] -> [Esc]
+    }
+    KeyWait(key)
+    return
+}
+
+RButton & 5::Send("{Blind}{Up}") ;[マウス右] + [5] -> [↑]
+RButton & 8::Send("{Blind}{Down}") ;[マウス右] + [8] -> [↓]
+RButton & 7::Send("{Blind}{Left}") ;[マウス右] + [7] -> [←]
+RButton & 9::Send("{Blind}{Right}") ;[マウス右] + [9] -> [→]
+RButton & 4::Send("{Blind}{Backspace}") ;[マウス右] + [4] -> [Backspace]
+RButton & 6::Send("{Blind}{Enter}") ;[マウス右] + [6] -> Enter
+
+RButton & 1::Send("{Blind}^{x}") ;[マウス右] + [x] -> [Ctrl+x (切り取り)]
+RButton & 2::Send("{Blind}^{c}") ;[マウス右] + [c] -> [Ctrl+c (コピー)]
+RButton & 3::Send("{Blind}^{v}") ;[マウス右] + [v] -> [Ctrl+v (貼り付け)]
+
 ; *********************** ホイール中 ***********************************************************
 #MButton::send("{Blind}#{d}") ;[win] + [中央ボタン] -> [win + d (デスクトップ画面)]
 
