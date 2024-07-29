@@ -1,11 +1,11 @@
 ﻿;***********************zショートカット*****************************************************
-z & x::send_as_direct_input_IME("{Blind}{.}") ;[z] + [x] -> [.]
-z & c::send_as_direct_input_IME("{Blind}{,}") ;[z] + [x] -> [,]
-z & v::send_as_direct_input_IME("{Blind}{/}") ;[z] + [x] -> [/]
+z & x::Send("{Blind}{.}") ;[z] + [x] -> [.]
+z & c::Send("{Blind}{,}") ;[z] + [x] -> [,]
+z & v::Send("{Blind}{/}") ;[z] + [x] -> [/]
 
 
-z & [::send_as_direct_input_IME("{Blind}{[}") ;[z] + ["["] -> ["["]
-z & ]::send_as_direct_input_IME("{Blind}{]}") ;[z] + ["]"] -> ["]"]
+z & [::Send("{Blind}{[}") ;[z] + ["["] -> ["["]
+z & ]::Send("{Blind}{]}") ;[z] + ["]"] -> ["]"]
 
 z & s::Send("{Blind}{$}") ;[z] + [s] -> [$]
 z & d::Send("{Blind}{%}") ;[z] + [d] -> [%]
