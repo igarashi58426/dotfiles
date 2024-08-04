@@ -263,6 +263,36 @@
         "command": "breadcrumbs.toggleToOn",
     },
     {
+        // ctrl+backspace で 単語単位削除
+        "key": "ctrl+backspace",
+        "command": "deleteInsideWord",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        // ctrl+shift+backspace で 行削除
+        "key": "ctrl+shift+backspace",
+        "command": "editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        // 既存のctrl+shift+iを削除
+        "key": "ctrl+shift+i",
+        "command": "-workbench.action.quickchat.toggle",
+        "when": "chatIsEnabled"
+    },
+    {
+        // ctrl+shift+u で Git変更差分表示
+        "key": "ctrl+shift+u",
+        "command": "git.openChange",
+        "when": "textInputFocus"
+    },
+    {
+        // ctrl+shift+i で クリップボードと変更差分表示
+        "key": "ctrl+shift+i",
+        "command": "workbench.files.action.compareWithClipboard",
+        "when": "textInputFocus"
+    },
+    {
         // ctrl+q で差分ビュワーの場合、元のファイルを開く
         "key": "ctrl+q",
         "command": "workbench.action.compareEditor.openSide",
