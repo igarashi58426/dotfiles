@@ -7,9 +7,8 @@ z & v::Send("{Blind}{/}") ;[z] + [x] -> [/]
 z & [::Send("{Blind}{[}") ;[z] + ["["] -> ["["]
 z & ]::Send("{Blind}{]}") ;[z] + ["]"] -> ["]"]
 
-z & s::Send("{Blind}{$}") ;[z] + [s] -> [$]
-z & d::Send("{Blind}{%}") ;[z] + [d] -> [%]
-z & f::Send("{Blind}{&}") ;[z] + [f] -> [&]
+z & s::Send("{Blind}{+}") ;[z] + [s] -> [+]
+z & d::Send("{Blind}{*}") ;[z] + [d] -> [*]
 
 z & q::Send("{Blind}{!}") ;[z] + [q] -> [!]
 z & w::Send('{Blind}{"}') ;[z] + [w] -> ["]
