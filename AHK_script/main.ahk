@@ -44,6 +44,7 @@ A_MaxHotkeysPerInterval := 200
     #Include sub_script/Symbol_direct_input.ahk
     #Include sub_script/Shift_symbol.ahk
     #Include sub_script/VScode_Shortcut.ahk
+    #Include sub_script/default.ahk
 #HotIf
 
 ;====================ゲームモード====================
