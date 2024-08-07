@@ -28,9 +28,6 @@ Insert::Send("{Blind}{Delete}") ;[Insrt] -> [Delete]
     Return
 }
 
-; Appキー代用
-RAlt::Send("{Blind}{AppsKey}") ;[右Alt(単押し)] -> [Appキー]
-
 F12::{
     key := "F12"
     Critical "On"
