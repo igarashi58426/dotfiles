@@ -250,7 +250,7 @@ F13 & Esc::Send("{Blind}{Delete}") ;[CapsLock] + [Esc] -> [Delete]
 F13 & F1::Send("{Volume_Mute}") ;[CapsLock] + [F1] -> [ミュート]
 F13 & F2::Send("{Volume_Down 1}") ;[CapsLock] + [F2] -> [音量↓ダウン]
 F13 & F3::Send("{Volume_Up 1}") ;[CapsLock] + [F3] -> [音量↑アップ]
-F13 & F4::Return
+F13 & F4::launch_disable_window() ;[CapsLock] + [F4] -> [スクリプト一時停止ウィンドウ]
 F13 & F5::Reload ;[CapsLock] + [F5] -> [スクリプトを再読込し、最初から実行し直す]
 F13 & F6::{
     Send("^{l}") ;[CapsLock] + [F6] -> [デスクトップディレクトリに移動  (アドレスバーを選択)]
@@ -530,6 +530,27 @@ google_translation(){
 }
 
 ;***********************************************************************************************
+
+launch_disable_window(){
+    ; ウィンドウを作成
+    MyGui := Gui(,"ScriptDisabled")
+    MyGui.Opt("AlwaysOnTop") ; 強制最前面オプション
+
+    ; ボタン追加+クリックで終了
+    B := MyGui.Add("Button",, "Click to release")
+    B.OnEvent("Click", win_exit)
+    win_exit(*)
+    {
+        ; ウィンドウ削除
+        MyGui.Destroy
+    }
+    
+    ; 画面表示
+    MyGui.Show("x0 y" . A_ScreenHeight-85)
+
+}
+;***********************************************************************************************
+
 
 ;***********装飾キーメモ************/
 ;キー名 説明                        /

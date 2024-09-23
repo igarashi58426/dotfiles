@@ -31,7 +31,7 @@ A_MaxHotkeysPerInterval := 200
 #Include config/Game_group.ahk
 
 ;====================ショートカットスクリプトの読み込み====================
-#HotIf not WinActive("ahk_group Disable_software")
+#HotIf not WinActive("ahk_group Disable_software") AND not WinExist("ScriptDisabled")
     #Include sub_script/Key_remapping.ahk
     #Include sub_script/CapslLock_shortcut.ahk
     #Include sub_script/Winkey_shortcut.ahk
@@ -51,7 +51,6 @@ A_MaxHotkeysPerInterval := 200
 #HotIf WinActive("ahk_group Game_group")
     #Include sub_script/Game_shortcut.ahk
 #HotIf
-
 
 
 
