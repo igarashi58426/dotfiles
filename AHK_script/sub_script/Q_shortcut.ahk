@@ -1,16 +1,15 @@
 ﻿;***********************Qショートカット*****************************************************
-q & 1::send_as_direct_input_IME("{Blind}{?}") ;[q] + [1] -> [?]
-q & 2::send_as_direct_input_IME("{Blind}{(}") ;[q] + [2] -> [(]
-q & 3::send_as_direct_input_IME("{Blind}{)}") ;[q] + [3] -> [)]
-q & 4::send_as_direct_input_IME("{Blind}{+}") ;[q] + [4] -> [+]
-q & 5::send_as_direct_input_IME("{Blind}{*}") ;[q] + [5] -> [*]
+q & 2::Send("{Blind}{(}") ;[q] + [2] -> [(]
+q & 3::Send("{Blind}{)}") ;[q] + [3] -> [)]
+q & 4::Send("{Blind}{+}") ;[q] + [4] -> [+]
+q & 5::Send("{Blind}{*}") ;[q] + [5] -> [*]
 
-q & w::send_as_direct_input_IME("{Blind}{'}") ;[q] + [x] -> [']
-q & e::send_as_direct_input_IME("{Blind}{=}") ;[q] + [x] -> [=]
-q & r::send_as_direct_input_IME("{Blind}{|}") ;[q] + [x] -> [|]
+q & w::Send("{Blind}{'}") ;[q] + [x] -> [']
+q & e::Send("{Blind}{=}") ;[q] + [x] -> [=]
+q & r::Send("{Blind}{|}") ;[q] + [x] -> [|]
 
-q & s::send_as_direct_input_IME("{Blind}{<}") ;[q] + [x] -> [<]
-q & d::send_as_direct_input_IME("{Blind}{>}") ;[q] + [x] -> [>]
+q & s::Send("{Blind}{<}") ;[q] + [x] -> [<]
+q & d::Send("{Blind}{>}") ;[q] + [x] -> [>]
 
 
 ;***********************Qキーデフォルト動作定義*****************************************************
