@@ -298,5 +298,40 @@
         "command": "workbench.action.compareEditor.openSide",
         "when": "inDiffEditor"
         // ================================================================================
+    },
+    {
+        // ctrl+shift+n でエクスプローラーバーで新しいフォルダを作る
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFolder"
+    },
+    {
+        // 規定のインストールF3割当[次を検索を削除]
+        "key": "f3",
+        "command": "-editor.action.nextMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        // F3 で選択範囲を検索（次に進む）
+        "key": "f3",
+        "command": "editor.action.nextSelectionMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        // F4 で前を検索
+        "key": "f4",
+        "command": "editor.action.previousMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        // F4 でターミナル上で次を検索
+        "key": "f4",
+        "command": "workbench.action.terminal.findPrevious",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+    },
+    {
+        // ctrl+shift+wで起動中のターミナルを終了
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
     }
 ]

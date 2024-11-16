@@ -3,8 +3,8 @@
     // カラーテーマ:ライト
     "workbench.colorTheme": "Default Light+",
 
-    //  アイコン
-    "workbench.iconTheme": "material-icon-theme",
+    // アイコン
+    "workbench.iconTheme": "vscode-icons",
 
     //エクスプローラーから「開いている開いているエディター」非表示
     "explorer.openEditors.visible": 0,
@@ -71,8 +71,16 @@
 
     // ワークスペース内のターミナル、デバッグコンソール、出力、問題の場所
     "workbench.panel.defaultLocation": "right",
+
     // ターミナルの側面にターミナル タブを一覧として表示する(falseでプルダウン形式)
     "terminal.integrated.tabs.enabled": false,
+
+    // ターミナルのバッファサイズ(規定:1000)
+    "terminal.integrated.scrollback": 10000,
+
+    // ターミナルのヒストリサイズ(規定:100)
+    "terminal.integrated.shellIntegration.history": 1000,
+
     // マルチカーソルのショートカットキー(ctrlCmd=WindowではCtrl)
     "editor.multiCursorModifier": "ctrlCmd",
 
@@ -164,8 +172,8 @@
 
     // ====================plantUML拡張機能====================
     "plantuml.render": "PlantUMLServer",
-    "plantuml.server": "http://localhost:8080",
-    "markdown-pdf.plantumlServer": "http://localhost:8080",
+    "plantuml.server": "http://localhost:58080",
+    "markdown-pdf.plantumlServer": "http://localhost:58080",
 
     // ====================yaml拡張機能====================
     "yaml.validate":false,
@@ -183,6 +191,11 @@
         "napt","proto","nmcli","ssid","snat","dnat","ifname","autoconnect","nmap","upnp","upnpd","Linksys","dnsmasq","Rcvd","dns-nsid","dhcpd","qdisc","qlen","pfifo","hostdocker","vethf",
         "ADDRTYPE","ctstate","SIGINT","linkdown","linkup","Datagram","hoge","fuga","","","",""
     ],
+
+    // ==================== remote SSH ====================
+    "remote.SSH.remotePlatform": {
+        "raspi5": "linux"
+    },
 
     // ====================multiCommand拡張機能====================
     //  マルチコマンドショートカット
@@ -203,10 +216,6 @@
                 "workbench.action.focusSideBar"
             ]
         }
-    ],
-
-    // ==================== remote SSH ====================
-    "remote.SSH.remotePlatform": {
-    // ============================================================
-    }
+    // ==================== end ====================
+    ]
 }
