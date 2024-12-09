@@ -35,3 +35,27 @@ set_direct_input_mode(){
         IME_SET(0)
     }
 }
+
+;====================モニター輝度増加====================
+up_monitor_luminance() {
+    Critical "On"
+    ExitCode := Run("python ./external_script/change_luminance/script/change_luminance.py +3","","Hide")
+    if (NOT ExitCode){
+        Run("./external_script/change_luminance/executable/change_luminance.exe +3")
+    }
+    Critical "Off"
+    Sleep(200)
+    return
+}
+
+;====================モニター輝度減少====================
+down_monitor_luminance(){
+    Critical "On"
+    ExitCode := Run("python ./external_script/change_luminance/script/change_luminance.py -3","","Hide")
+    if (NOT ExitCode){
+        Run("./external_script/change_luminance/executable/change_luminance.exe -3")
+    }
+    Critical "Off"
+    Sleep(200)
+    return
+}

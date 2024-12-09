@@ -75,15 +75,6 @@ RButton & 3::Send("{Blind}^{v}") ;[マウス右] + [v] -> [Ctrl+v (貼り付け)
 ; *********************** ホイール中 ***********************************************************
 #MButton::send("{Blind}#{d}") ;[win] + [中央ボタン] -> [win + d (デスクトップ画面)]
 
-#WheelUp:: {
-    WinMaximize("A") ;[win] + [ホイール↑] -> [win + ↑ (ウィンドウ最大化)]
-}
-
-#WheelDown::{
-    send("{Blind}#{down}") ;[win] + [ホイール↓] -> [win + ↓ (ウィンドウ縮小)]
-    Sleep(1000)
-}
-
 ; *********************** ホイール↑↓ ***********************************************************
 
 +WheelUp::Send("{WheelLeft 2}") ;[Shift] + [ホイール↑] -> [ホイール←左]
@@ -92,6 +83,28 @@ RButton & 3::Send("{Blind}^{v}") ;[マウス右] + [v] -> [Ctrl+v (貼り付け)
 #!WheelDown::Send("{Volume_Down}") ;[win] + [Alt] + [ホイール↑] -> [音量アップ]
 #!WheelUp::Send("{Volume_Up}") ;[win] + [Alt] + [ホイール↓] -> [音量ダウン]
 
+#WheelDown::{
+    like_ctrl_key := "ESC"
+    If (GetKeyState(like_ctrl_key,"P")) {
+        down_monitor_luminance() ;[] + [ホイール↑] -> [モニター輝度3増加]
+    }
+    Else {
+        send("{Blind}#{down}") ;[win] + [ホイール↓] -> [win + ↓ (ウィンドウ縮小)]
+        Sleep(1000)
+    }
+    Return
+}
+
+#WheelUp::{
+    like_ctrl_key := "ESC"
+    If (GetKeyState(like_ctrl_key,"P")) {
+        up_monitor_luminance() ;[] + [ホイール↑] -> [モニター輝度3増加]
+    }
+    Else {
+        WinMaximize("A") ;[win] + [ホイール↑] -> [win + ↑ (ウィンドウ最大化)]
+    }
+    Return
+}
 
 ; *********************** マウス戻る進む ***********************************************************
 $XButton1::{
@@ -149,31 +162,9 @@ XButton1 & LButton::{
 
 ; *********************** アプリケーションキー ***********************************************************
 AppsKey::AppsKey
-AppsKey & WheelUp::{ ;[右Alt] + [ホイール↑] -> [モニター輝度3増加]
-    Critical "On"
-    Try
-    {
-        Run("python ./external_script/change_luminance/script/change_luminance.py +3","","Hide")
-    }catch {
-        Run("./external_script/change_luminance/executable/change_luminance.exe +3")
-    }
-    Critical "Off"
-    Sleep(200)
-    return
-}
+AppsKey & WheelUp::up_monitor_luminance() ;[App] + [ホイール↑] -> [モニター輝度3増加]
+AppsKey & WheelDown::down_monitor_luminance() ;[App] + [ホイール↓] -> [モニター輝度3減少]
 
-AppsKey & WheelDown::{ ;[右Alt] + [ホイール↓] -> [モニター輝度3減少]
-    Critical "On"
-    Try
-    {
-        Run("python ./external_script/change_luminance/script/change_luminance.py -3","","Hide")
-    }catch {
-        Run("./external_script/change_luminance/executable/change_luminance.exe -3")
-    }
-    Critical "Off"
-    Sleep(200)
-    return
-}
 
 ;***********装飾キーメモ************/
 ;キー名 説明                        /
