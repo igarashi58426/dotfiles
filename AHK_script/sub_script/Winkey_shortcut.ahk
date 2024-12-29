@@ -3,6 +3,7 @@
 #a::Send("{Blind}#^{v}") ;[win] + [a] -> [win + Ctrl + v (サウンド出力の選択)
 #s::Send("{Blind}#+{s}") ;[win] + [s] -> [win + Shift + s (スクリーンショット)
 #c::Run("calc.exe") ;[win] + [c] -> [電卓を起動]
+#q::Send("^{p}") ;[win] + [s] -> [Ctrl + p (印刷)]
 
 #!Up::MouseMove(0,-40,1,"R")   ;[win] + [Alt] + [↑] -> [マウスカーソル移動(上)]
 #!Down::MouseMove(0,40,1,"R")  ;[win] + [Alt] + [↓] -> [マウスカーソル移動(下)]
@@ -26,7 +27,7 @@
 #m::Return
 #n::Return
 ;#p::  外部ディスプレイへ出力(標準)
-#q::Return ;Windows（アプリ、ファイル、設定）の検索を表示(標準)
+;#q::Return ;Windows（アプリ、ファイル、設定）の検索を表示(標準)
 ;#r::  ;ファイル名を指定して実行(標準)
 ;#s::
 ;#t::       ;タスクバーでアプリを切り替える(標準)
