@@ -25,6 +25,7 @@
         "key": "shift+alt",
         "command": "workbench.action.toggleMultiCursorModifier"
     },
+    // ================================================================================
     {
         // 表示: 以前のエディターを開く
         "key": "ctrl+shift+tab",
@@ -35,18 +36,20 @@
         "key": "ctrl+tab",
         "command": "workbench.action.nextEditor"
     },
+    // ================================================================================
     {
         // 表示: 最大化されるパネルの切り替え
         "key": "ctrl+shift+j",
         "command": "workbench.action.toggleMaximizedPanel"
     },
+    // ================================================================================
     {
-        // 新しい外部ターミナルを開くを無効化
+        // [無効化]新しい外部ターミナルを開くを
         "key": "ctrl+shift+c",
         "command": "-workbench.action.terminal.openNativeConsole"
     },
     {
-        // マークダウンでの太字化のctrl+bを無効化
+        // [無効化]マークダウンでの太字化のctrl+bを無効化
         "key": "ctrl+b",
         "command": "-markdown.extension.editing.toggleBold"
     },
@@ -56,6 +59,7 @@
         "command": "markdown.extension.editing.toggleBold",
         "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
     },
+    // ================================================================================
     {
         // リモートエクスプローラーのサイドバーに移動をctrl+shift+rに定義
         "key": "ctrl+shift+r",
@@ -68,7 +72,7 @@
         "when": "(explorerResourceMoveableToTrash && !explorerResourceReadonly) && (filesExplorerFocus && foldersViewVisible && !inputFocus)"
     },
     {
-        // サイドバーエクスプローラーでの削除のdeleteを無効化
+        // [無効化]deleteでサイドバーエクスプローラーでの削除
         "key": "delete",
         "command": "-moveFileToTrash"
     },
@@ -79,10 +83,11 @@
        "when": "(!explorerResourceMoveableToTrash && !explorerResourceReadonly) && (filesExplorerFocus && foldersViewVisible && !inputFocus)"
     },
     {
-            // サイドバーエクスプローラーでの削除のdeleteを無効化
+        // [無効化]deleteでサイドバーエクスプローラー上の削除
         "key": "delete",
         "command": "-deleteFile"
     },
+    // ================================================================================
     {
         // エクスプローラーで表示するをRキーに再定義
         "key": "r",
@@ -90,7 +95,7 @@
         "when": "!editorFocus && !inputFocus"
     },
     {
-        // エクスプローラーで表示するのshift+alt+rを無効化
+        // [無効化]エクスプローラーで表示するのshift+alt+rを無効化
         "key": "shift+alt+r",
         "command": "-revealFileInOS"
     },
@@ -100,6 +105,7 @@
         "command": "revealInExplorer",
         "when": "!editorFocus && !inputFocus && !textInputFocus"
     },
+    // ================================================================================
     {
         // 相対パスをコピーをGキーに再定義
         "key": "g",
@@ -118,25 +124,27 @@
         "when": "!editorFocus && !inputFocus && !textInputFocus"
     },
     {
-        // 絶対パスをコピーのshift+alt+cを無効化
+        // [無効化]絶対パスをコピーのshift+alt+cを無効化
         "key": "shift+alt+c",
         "command": "-copyFilePath"
     },
     {
-        // ウィンドウを閉じるのctrl+shift+wを無効化
+        // [無効化]ウィンドウを閉じるのctrl+shift+wを無効化
         "key": "ctrl+shift+w",
         "command": "-workbench.action.closeWindow"
     },
+    // ================================================================================
     {
-        // ctrl+e の連続系ショートカットキーを無効化
+        // [無効化]ctrl+e の連続系ショートカットキーを無効化
         "key": "ctrl+e ctrl+d",
         "command": "-extension.base64Decode"
     },
     {
-        // ctrl+e の連続系ショートカットキーを無効化
+        // [無効化]ctrl+e の連続系ショートカットキーを無効化
         "key": "ctrl+e ctrl+e",
         "command": "-extension.base64Encode"
     },
+    // ================================================================================
     {
         // サイドバーが開いているならばサイドバーを閉じる
         "key": "ctrl+shift+w",
@@ -149,6 +157,7 @@
         "command": "workbench.action.togglePanel",
         "when": "panelVisible"
     },
+    // ================================================================================
     {
         // パネル内のアイクティブ要素右方向に移動
         "key": "ctrl+tab",
@@ -179,23 +188,25 @@
         },
         "when": "sideBarFocus"
     },
+    // ================================================================================
     {
-        // 新しいウィンドウの作成を無効化
+        // [無効化]新しいウィンドウの作成を無効化
         "key": "ctrl+shift+n",
         "command": "-workbench.action.newWindow"
     },
+    // ================================================================================
     {
         // ctrl+o で パンくずリストのプルダウンを表示
         "key": "ctrl+o",
         "command": "breadcrumbs.toggleToOn"
     },
     {
-        // ファイルを開くctrl+oを削除
+        // [無効化]ファイルを開くctrl+oを削除
         "key": "ctrl+o",
         "command": "-workbench.action.files.openFile"
     },
     {
-        // シンボル表示ctrl+shift+oを削除
+        // [無効化]シンボル表示ctrl+shift+oを削除
         "key": "ctrl+shift+o",
         "command": "-workbench.action.gotoSymbol"
     },
@@ -204,20 +215,21 @@
         "key": "ctrl+shift+o",
         "command": "outline.focus"
     },
+    // ================================================================================
     {
-        // サイドパネルでの検索を削除
+        // [無効化]サイドパネルでの検索を削除
         "key": "ctrl+f",
         "command": "-list.find",
         "when": "listFocus && listSupportsFind"
     },
     {
-        // 行を下に挿入を削除
+        // [無効化]行を下に挿入を削除
         "key": "ctrl+enter",
         "command": "-editor.action.insertLineAfter",
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        // 行を下へコピーのデフォルを削除
+        // [無効化]行を下へコピーのデフォルを削除
         "key": "shift+alt+down",
         "command": "-editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
@@ -228,8 +240,9 @@
         "command": "editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     },
+    // ================================================================================
     {
-        // ctrl+Shift+mのデフォルトを削除
+        // [無効化]ctrl+Shift+mのデフォルトを削除
         "key": "ctrl+shift+m",
         "command": "-workbench.actions.view.problems",
         "when": "workbench.panel.markers.view.active"
@@ -239,12 +252,14 @@
         "key": "ctrl+shift+m",
         "command": "workbench.action.editor.changeLanguageMode",
     },
+    // ================================================================================
     {
         // Ctrl+Shift+xで「すべてのコマンド」を定義
         "key": "ctrl+shift+x",
         "command": "workbench.action.showCommands",
         "when": "editorTextFocus"
     },
+    // ================================================================================
     {
         // Ctrl+Shift+|で「エディタを垂直分割」を定義
         "key": "ctrl+shift+oem_5",
@@ -257,11 +272,13 @@
         "command": "workbench.action.splitEditorOrthogonal",
         "when": "editorTextFocus"
     },
+    // ================================================================================
     {
         // ctrl+t で パンくずリストのプルダウンを表示
         "key": "ctrl+t",
         "command": "breadcrumbs.toggleToOn",
     },
+    // ================================================================================
     {
         // ctrl+backspace で 単語単位削除
         "key": "ctrl+backspace",
@@ -274,17 +291,12 @@
         "command": "editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
     },
+    // ================================================================================
     {
-        // 既存のctrl+shift+iを削除
+        // [無効化]既存のctrl+shift+iを削除
         "key": "ctrl+shift+i",
         "command": "-workbench.action.quickchat.toggle",
         "when": "chatIsEnabled"
-    },
-    {
-        // ctrl+shift+u で Git変更差分表示
-        "key": "ctrl+shift+u",
-        "command": "git.openChange",
-        "when": "textInputFocus"
     },
     {
         // ctrl+shift+i で クリップボードと変更差分表示
@@ -293,12 +305,18 @@
         "when": "textInputFocus"
     },
     {
+        // ctrl+shift+u で Git変更差分表示
+        "key": "ctrl+shift+u",
+        "command": "git.openChange",
+        "when": "textInputFocus"
+    },
+    {
         // ctrl+q で差分ビュワーの場合、元のファイルを開く
         "key": "ctrl+q",
         "command": "workbench.action.compareEditor.openSide",
         "when": "inDiffEditor"
-        // ================================================================================
     },
+    // ================================================================================
     {
         // ctrl+shift+n でエクスプローラーバーで新しいフォルダを作る
         "key": "ctrl+shift+n",
@@ -328,10 +346,12 @@
         "command": "workbench.action.terminal.findPrevious",
         "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
     },
+    // ================================================================================
     {
         // ctrl+shift+wで起動中のターミナルを終了
         "key": "ctrl+shift+w",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
+        // ==================== End of committed key ====================
     }
 ]
