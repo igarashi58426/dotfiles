@@ -318,12 +318,7 @@
     },
     // ================================================================================
     {
-        // ctrl+shift+n でエクスプローラーバーで新しいフォルダを作る
-        "key": "ctrl+shift+n",
-        "command": "explorer.newFolder"
-    },
-    {
-        // 規定のインストールF3割当[次を検索を削除]
+        // [無効化]規定のインストールF3割当[次を検索を削除]
         "key": "f3",
         "command": "-editor.action.nextMatchFindAction",
         "when": "editorFocus"
@@ -352,6 +347,39 @@
         "key": "ctrl+shift+w",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
-        // ==================== End of committed key ====================
+    },
+    // ================================================================================
+    {
+        // [無効化] Enterで置換実行
+        "key": "enter",
+        "command": "-editor.action.replaceOne",
+        "when": "editorFocus && findWidgetVisible && replaceInputFocussed"
+    },
+    {
+        // 置換モード中にctrl+enterで置換を実行
+        "key": "ctrl+enter",
+        "command": "editor.action.replaceOne",
+        "when": "editorFocus && findWidgetVisible && replaceInputFocussed"
+    },
+    {
+        // 検索モード中にctrl+enterでエディターをフォーカス
+        "key": "ctrl+enter",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "editorFocus && findWidgetVisible && findInputFocussed"
+    },
+    // ================================================================================
+    {
+        // ctrl+shift+n で「新しいフォルダを作る」にフォーカス条件を追加
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFolder",
+        "when": "filesExplorerFocus"
+    },
+    {
+        // ctrl+shift+n で次の検索へ進む
+        "key": "ctrl+shift+n",
+        "command": "editor.action.nextMatchFindAction",
+        "when": "editorFocus"
+    // ==================== End of committed key ====================
     }
 ]
+
