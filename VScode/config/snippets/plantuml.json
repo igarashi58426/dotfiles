@@ -1,41 +1,10 @@
 {
-    "center_txt": {
-        "prefix": "center_txt",
-        "body": " <p style=\"text-align: center;\">$0</p> ",
-        "description": "中央寄せ文字"
-    },
-    "page_break": {
-        "prefix": "page_break",
-        "body": "<div class=\"page\"/><!-- 改ページ -->",
-        "description": "改ページ"
-    },
-    "table_line": {
-        "prefix": "table_line",
-        "body": "---|---|---|---",
-        "description": "表の横線 4要素"
-    },
-    "table_template": {
-        "prefix": "table_template",
-        "body": [
-            "   |   |   |   ",
-            "---|---|---|---",
-            "   |   |   |   "
-        ],
-        "description": "横4要素の表テンプレート"
-    },
-    "center_table_style": {
-        "prefix": "center_table_style",
-        "body": "<style>table{margin: auto;}</style>",
-        "description": "表を中央寄せにするスタイル"
-    },
     "plantuml": {
         "prefix": "plantuml_code",
         "body": [
-            "```plantuml",
             "@startuml",
             "$0",
-            "@enduml",
-            "```"
+            "@enduml"
         ],
         "description": "plantuml用コードブロック"
     },
