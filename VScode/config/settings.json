@@ -2,46 +2,36 @@
     // ====================VScodeのカスタマイズ====================
     // カラーテーマ:ライト
     "workbench.colorTheme": "Default Light+",
-
     // アイコン
     "workbench.iconTheme": "vscode-icons",
-
     //エクスプローラーから「開いている開いているエディター」非表示
-    "explorer.openEditors.visible": 0,
-
+    "explorer.openEditors.visible": 1,
     //行と行の文字の上下左右の間隔を変更する
     "editor.letterSpacing": -0.3,
     "editor.lineHeight": 20,
-
     // ドラッグアンドドロップで選択範囲のテキストを移動できるようにする
     "editor.dragAndDrop": false,
-
     // ホイールによるズームを有効化
     "editor.mouseWheelZoom": true,
-
+    // Ctrlキー+クリックでURLを開く
+    "window.customMenuBarAltFocus": false,
+    // 信頼されていないファイルを信頼されているワークスペースに追加することを常に許可
+    "security.workspace.trust.untrustedFiles": "open",
     // カーソル移動アニメーション
     "editor.cursorSmoothCaretAnimation": "on",
-
     // ====================エディター画面構成====================
-
     // タイトルバーの文字
     "window.title": "${dirty}${activeEditorShort} / ${rootName}",
-
     //ミニマップの非表示
     // "editor.minimap.enabled": false,
-
     // ミニマップの最大幅
     "editor.minimap.maxColumn": 60,
-
     // ミニマップのスライダーの表示方法
     "editor.minimap.showSlider": "always",
-
     // ミニマップのサイズ
     "editor.minimap.size": "fit",
-
     // ミニマップを右に表示
     "editor.minimap.side": "right",
-
     // 選択中の行を強調する
     "editor.renderLineHighlight": "all",
     // 行の左端に余白を作る
@@ -54,39 +44,28 @@
     "editor.renderControlCharacters": true,
     // Tabキーで半角スペースを入力
     "editor.insertSpaces": true,
-
     // 選択範囲無しでのコピー 不許可
     "editor.emptySelectionClipboard": false,
     // ファイルの終端に空の行を追加
     "files.insertFinalNewline": true,
     // 文字コードを自動判別
     "files.autoGuessEncoding": true,
-
     // 上段タブを表示
     "workbench.editor.showTabs": "multiple",
     // サイドバーを左に
     "workbench.sideBar.location": "left",
     // 下のステータスバーを表示
     "workbench.statusBar.visible": true,
-
     // ワークスペース内のターミナル、デバッグコンソール、出力、問題の場所
     "workbench.panel.defaultLocation": "right",
-
     // ターミナルの側面にターミナル タブを一覧として表示する(falseでプルダウン形式)
     "terminal.integrated.tabs.enabled": false,
-
     // ターミナルのバッファサイズ(規定:1000)
     "terminal.integrated.scrollback": 10000,
-
     // ターミナルのヒストリサイズ(規定:100)
     "terminal.integrated.shellIntegration.history": 1000,
-
-    // マルチカーソルのショートカットキー(ctrlCmd=WindowではCtrl)
-    "editor.multiCursorModifier": "ctrlCmd",
-
     // 開かれるエディターをプレビュー として表示するかどうか
     "workbench.editor.enablePreview": true,
-
     // Quick Open で開いたエディター をプレビューとして表示するかどうかを制御します。
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "explorer.confirmDelete": false,
@@ -95,108 +74,81 @@
     // エディターの書式をコピー時に保持するか
     "editor.copyWithSyntaxHighlighting": true,
     "vsicons.dontShowNewVersionMessage": true,
-
     // アウトラインで初期状態を収納とする
     "outline.collapseItems": "alwaysCollapse",
-
     // 診断データを送信しない
     "telemetry.telemetryLevel": "off",
-
     // スクロールに関数名を追従
     "editor.stickyScroll.enabled": true,
-     // スクロールに関数名を追従する行数
+    // スクロールに関数名を追従する行数
     "editor.stickyScroll.maxLineCount": 3,
-
     // 隠しフォルダを非表示にする
     "files.exclude": {
         // "**/.*": true
     },
-
     // diff表示で行の前後空白を無視する
     "diffEditor.ignoreTrimWhitespace": false,
-
     // 余分なホワイトスペースを削除
     "files.trimTrailingWhitespace": false,
-
     // 単語間以外のホワイトスペースを常時表示
     "editor.renderWhitespace": "boundary",
-
     //全角空白などの基本的な ASCII 文字と混同される可能性のある文字を強調表示する
     "editor.unicodeHighlight.ambiguousCharacters": true,
-
     // 自動保存 フォーカスを失うと実行
     "files.autoSave": "onFocusChange",
-
+    // コパイロットアイコンを非表示
+    "chat.commandCenter.enabled": false,
     // ====================デバック====================
-
     //ブレークポイントの表示
     "editor.glyphMargin": true,
-
     // デバッグコンソールの表示方法
     "debug.internalConsoleOptions": "openOnSessionStart",
-
     // デバッグ中に行内に変数値を表示
     "debug.inlineValues": "on",
-
     // デバッグビューの表示方法
     "debug.openDebug": "openOnSessionStart",
-
     "git.autofetch": true,
     // ====================マークダウン====================
-
     // カラーテーマをOSに合わせる
     "markdown-preview-github-styles.colorTheme": "system",
-
     // テキストファイルをMarkdownとして開く
     "files.associations": {
         "*.txt": "markdown",
         "*.env": "shellscript"
     },
-
     // / マークダウンの改行を反映
     "markdown.preview.breaks": true,
-    
     // プレビュー時にダブルクリックで文書に戻らない
     "markdown.preview.doubleClickToSwitchToEditor": false,
-
     // プレビュー時のcssスタイル
     // "markdown.styles":["~/Documents/dotfiles/Markdown_stylesheet/hachian.css"], // ←何故か「~」を含む設定できない なので拡張機能に頼る
-    
     // pdf出力時のcssスタイル
-    "markdown-pdf.styles": ["~/Documents/dotfiles/VScode/Markdown_css/github-markdown.css"],
-
-
+    "markdown-pdf.styles": [
+        "~/Documents/dotfiles/VScode/Markdown_css/github-markdown.css"
+    ],
     // ====================AHK拡張機能====================
-
-    "vscode-ahk-plus.executePath":"C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
-
+    "vscode-ahk-plus.executePath": "C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
     // ====================plantUML拡張機能====================
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "http://localhost:58080",
     "markdown-pdf.plantumlServer": "http://localhost:58080",
-
     // ====================yaml拡張機能====================
-    "yaml.validate":false,
-
+    "yaml.validate": false,
     // ====================スペルチェック拡張機能====================
     // 辞書追加
-    "cSpell.userWords": [
-        "adamhartford", "autohotkey", "bierner", "charactercount", "Compulim", "janisdd", "mechatroner", "tomoki1207", "dconf", "logind", "raspberrypi", "plantuml", "dotfiles",
-        "autofetch","styleSheet","vsicons","hexeditor","extensionpack","toolsai","isort","createnew","fsutil","SATA","UASP","KIOXIA","raspi","scancode","scrcpy","AUSU",
-        "resolv","nameserver","gdisk","fdisk","dpkg","listfiles","autoremove","noarch","pstree","updatedb","poweroff","xwininfo","SIGKILL","docfiles","configfiles","pgrep",
-        "showrgb","xlsclients","xdpyinfo","SysVinit","nohup","smartmontools","testscript","fgrep","testuser","srcdir","testfile","Nextcloud","potgre","Logicool","ESET","NETGEAR",
-        "gameing","Ryzen","WQHD","chgrp","nsswitch","reflog","pycache","Keepalive","pubkey","genkey","startuml","enduml","iperf","nuttcp","tracepath","traceroute","mdextensions",
-        "htmlpath","mdfile","htmlname","mdpath","switchbot","numstat","oneline","scandir","pygmentize","codehilite","Alexa","echoshow","Realtek","icmplib","multiping","rtts","Mbits",
-        "Retr","Cwnd","hoge","userland","WSGI","journalctl","hwmon","Undervoltage","uwsgi","Referer","iframe","pyfile","SMBC","prerouting","postrouting","DNAT","dport","uart","inet",
-        "napt","proto","nmcli","ssid","snat","dnat","ifname","autoconnect","nmap","upnp","upnpd","Linksys","dnsmasq","Rcvd","dns-nsid","dhcpd","qdisc","qlen","pfifo","hostdocker","vethf",
-        "ADDRTYPE","ctstate","SIGINT","linkdown","linkup","Datagram","hoge","fuga","","","",""
+    "cSpell.userWords": ["adamhartford", "autohotkey", "bierner", "charactercount", "Compulim", "janisdd", "mechatroner", "tomoki1207", "dconf", "logind", "raspberrypi", "plantuml", "dotfiles", "autofetch",
+        "styleSheet", "vsicons", "hexeditor", "extensionpack", "toolsai", "isort", "createnew", "fsutil", "SATA", "UASP", "KIOXIA", "raspi", "scancode", "scrcpy", "AUSU", "resolv", "nameserver", "gdisk", "fdisk", "dpkg", "listfiles", "autoremove",
+        "noarch", "pstree", "updatedb", "poweroff", "xwininfo", "SIGKILL", "docfiles", "configfiles", "pgrep", "showrgb", "xlsclients", "xdpyinfo", "SysVinit", "nohup", "smartmontools", "testscript", "fgrep", "testuser",        "srcdir",
+        "testfile", "Nextcloud", "potgre", "Logicool", "ESET", "NETGEAR", "gameing", "Ryzen", "WQHD", "chgrp", "nsswitch", "reflog", "pycache", "Keepalive", "pubkey", "genkey", "startuml",
+        "enduml", "iperf", "nuttcp", "tracepath", "traceroute", "mdextensions", "htmlpath", "mdfile", "htmlname", "mdpath", "switchbot", "numstat", "oneline", "scandir", "pygmentize", "codehilite", "Alexa", "echoshow", "Realtek", "icmplib", "multiping", "rtts", "Mbits",
+        "Retr", "Cwnd", "hoge", "userland", "WSGI", "journalctl", "hwmon", "Undervoltage", "uwsgi", "Referer", "iframe", "pyfile", "SMBC", "prerouting", "postrouting", "DNAT", "dport", "uart", "inet", "napt", "proto", "nmcli", "ssid", "snat", "dnat", "ifname",
+        "autoconnect", "nmap", "upnp", "upnpd", "Linksys", "dnsmasq", "Rcvd", "dns-nsid", "dhcpd", "qdisc", "qlen", "pfifo", "hostdocker", "vethf", "ADDRTYPE", "ctstate", "SIGINT", "linkdown", "linkup", "Datagram", "hoge",
+        "fuga", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
     ],
-
     // ==================== remote SSH ====================
     "remote.SSH.remotePlatform": {
         "raspi5": "linux"
     },
-
     // ====================multiCommand拡張機能====================
     //  マルチコマンドショートカット
     "multiCommand.commands": [
@@ -216,6 +168,6 @@
                 "workbench.action.focusSideBar"
             ]
         }
-    // ==================== end ====================
+        // ==================== end ====================
     ]
 }
