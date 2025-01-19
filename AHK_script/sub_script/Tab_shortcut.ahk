@@ -10,7 +10,7 @@ Tab & 8::Send("{Blind}{(}") ;[Tab] + [8] -> [(]
 Tab & 9::Send("{Blind}{)}") ;[Tab] + [9] -> [)]
 
 Tab & q::Send("{Blind}{-}") ;[Tab] + [q] -> [-]
-Tab & w::Send("{Blind}{^}") ;[Tab] + [w] -> [^]
+Tab & w::Send("{Blind}{``}") ;[Tab] + [w] -> [`]
 Tab & e::Send("{Blind}{\}") ;[Tab] + [e] -> [\]
 Tab & r::Send("{Blind}{:}")
 Tab & t::{
@@ -25,9 +25,9 @@ Tab & t::{
     Return
 }
 
-Tab & a::Send("{=}") ;[Tab] + [a] -> [=]
-Tab & s::Send("{~}") ;[Tab] + [s] -> [~]
-Tab & d::Send("{|}") ;[Tab] + [d] -> [|]
+Tab & a::Send("{^}") ;[Tab] + [a] -> [^]
+Tab & s::Send("{@}") ;[Tab] + [s] -> [@]
+Tab & d::Send("{~}") ;[Tab] + [d] -> [~]
 Tab & f::Send("{;}")
 Tab & g::{
     key := "g"
