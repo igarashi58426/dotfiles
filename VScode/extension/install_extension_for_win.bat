@@ -27,10 +27,8 @@ code --install-extension Asuka.insertnumbers
 code --install-extension mechatroner.rainbow-csv
 @REM 複数連続ショートカット作成
 code --install-extension ryuta46.multi-command
-redhat.vscode-yaml
 
 @REM ====================追加エディタ====================
-
 @REM PDFの閲覧
 code --install-extension tomoki1207.pdf
 @REM CSVエディタ
@@ -64,6 +62,8 @@ code --install-extension jebbs.plantuml
 @REM ====================git====================
 @REM Git履歴のグラフ表示
 code --install-extension mhutchie.git-graph
+@REM Git エディター内Blame
+code --install-extension eamodio.gitlens
 
 @REM ====================Docker====================
 @REM Docker制御
@@ -71,9 +71,8 @@ code --install-extension ms-azuretools.vscode-docker
 @REM Docker Compose制御
 code --install-extension p1c2u.docker-compose
 
-
 @REM ====================AHK====================
-code --install-extension cweijan.vscode-autohotkey-plus
+code --install-extension mark-wiemer.vscode-autohotkey-plus-plus
 
 @REM ====================HTML====================
 @REM CSSサポート
@@ -90,7 +89,6 @@ code --install-extension ms-toolsai.jupyter-keymap
 code --install-extension ms-toolsai.jupyter-renderers
 code --install-extension ms-toolsai.vscode-jupyter-cell-tags
 code --install-extension ms-toolsai.vscode-jupyter-slideshow
-
 
 @REM ====================C/C++言語====================
 code --install-extension ms-vscode.cpptools
