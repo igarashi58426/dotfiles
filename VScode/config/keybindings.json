@@ -379,6 +379,22 @@
         "key": "ctrl+shift+n",
         "command": "editor.action.nextMatchFindAction",
         "when": "editorFocus"
+    // ================================================================================
+    },
+    {
+        // 既存の ctrl+p を削除
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        // 既存の ctrl+shift+p を削除
+        "key": "ctrl+shift+p",
+        "command": "-workbench.action.showCommands"
+    },
+    {
+        // ctrl+p でコマンドパレット
+        "key": "ctrl+p",
+        "command": "workbench.action.showCommands"
     // ==================== End of committed key ====================
     }
 ]
