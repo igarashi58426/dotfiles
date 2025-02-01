@@ -379,22 +379,125 @@
         "key": "ctrl+shift+n",
         "command": "editor.action.nextMatchFindAction",
         "when": "editorFocus"
-    // ================================================================================
     },
+    // ================================================================================
     {
-        // 既存の ctrl+p を削除
+        // [無効化] ctrl+p でクイックオープン
         "key": "ctrl+p",
         "command": "-workbench.action.quickOpen"
     },
     {
-        // 既存の ctrl+shift+p を削除
-        "key": "ctrl+shift+p",
-        "command": "-workbench.action.showCommands"
-    },
-    {
-        // ctrl+p でコマンドパレット
+        // [無効化] ctrl+p でコマンドパレット
         "key": "ctrl+p",
         "command": "workbench.action.showCommands"
+    },
+    // ================================================================================
+    {
+        // ctrl+n でエディタ上で「新しいファイルを作る」(フォーカス条件を追加)
+        "key": "ctrl+n",
+        "command": "workbench.action.files.newUntitledFile",
+        "when": "editorFocus"
+    },
+    {
+        // ctrl+n でエクスプローラー上で「新しいファイルを作る」
+        "key": "ctrl+n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus"
+    },
+    // ================================================================================
+    {
+        // ctrl+shift+\ でターミナルを分割
+        "key": "ctrl+shift+oem_5",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    },
+    {
+        // alt+shift+d でターミナルを分割
+        "key": "alt+shift+d",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    },
+    // ================================================================================
+    {
+        // alt+shift+"*"でズームアウト
+        // (alt+shift+"+"でズームイン)
+        "key": "ctrl+shift+oem_1",
+        "command": "workbench.action.zoomOut"
+    },
+    {
+        // [無効化] alt+shift+*でファイル内階層のフォーカス
+        "key": "ctrl+shift+oem_1",
+        "command": "-breadcrumbs.focus",
+        "when": "breadcrumbsPossible && breadcrumbsVisible"
+    },
+    {
+        //[無効化] alt+shift+"-"でズームアウト
+        "key": "ctrl+shift+oem_minus",
+        "command": "-workbench.action.zoomOut"
+    },
+    // ================================================================================
+    {
+        //ctrl+shift+spaceでタスクを実行
+        "key": "ctrl+shift+space",
+        "command": "workbench.action.tasks.runTask"
+    },
+    {
+        //[無効化] ctrl+shift+spaceでヒント
+        "key": "ctrl+shift+space",
+        "command": "-editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    // ================================================================================
+    {
+        //ctrl+shift+< で値を増加
+        "key": "ctrl+shift+oem_period",
+        "command": "editor.action.inPlaceReplace.up",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        //ctrl+shift+> で値を減少
+        "key": "ctrl+shift+oem_comma",
+        "command": "editor.action.inPlaceReplace.down",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        //[無効化]
+        "key": "ctrl+shift+oem_period",
+        "command": "-breadcrumbs.focusAndSelect",
+        "when": "breadcrumbsPossible && breadcrumbsVisible"
+    },
+    {
+        //[無効化]
+        "key": "ctrl+shift+oem_period",
+        "command": "-editor.action.inPlaceReplace.down",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        //[無効化]
+        "key": "ctrl+shift+oem_comma",
+        "command": "-editor.action.inPlaceReplace.up",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    // ================================================================================
+    {
+        // ctrl+shift+/ ユーザー設定(JSON)を開く
+        "key": "ctrl+shift+oem_2",
+        "command": "workbench.action.openSettingsJson"
+    },
+    {
+        // ctrl+shift+_ キーバインド設定(JSON)を開く
+        "key": "ctrl+shift+oem_102",
+        "command": "workbench.action.openGlobalKeybindingsFile"
+    },
+    {
+        // shift+alt+/ GUIユーザー設定を開く
+        "key": "shift+alt+oem_2",
+        "command": "workbench.action.openGlobalSettings"
+    },
+    {
+        // shift+alt+_ GUIキーバインド設定を開く
+        "key": "shift+alt+oem_102",
+        "command": "workbench.action.openGlobalKeybindings"
     // ==================== End of committed key ====================
     }
 ]
