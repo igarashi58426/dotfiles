@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    // ==================== 規定設定 ====================
+    "type": "shell", // シェルスクリプト実行をデフォルト化
+    "problemMatcher": [], // スキャン無効化
+    "presentation": {
+        "focus": true, // ターミナルをフォーカス
+        "showReuseMessage": false // 終了時の「閉じるには任意のキーを押してください」を表示しない
+    },
+    // ==================== 規定設定 ====================
+    "tasks": [
+        {
+            "label": "task.sh A",
+            "command": "bash .vscode/task.sh A"
+        },
+        {
+            "label": "task.sh B",
+            "command": "bash .vscode/task.sh B",
+        },
+        {
+            "label": "task.sh C",
+            "command": "bash .vscode/task.sh C"
+        },
+        {
+            "label": "task.sh D",
+            "command": "bash .vscode/task.sh D"
+        }
+    ]
+}
+
+// {
+//     "version": "2.0.0",
+//     // ==================== 規定設定 ====================
+//     "type": "shell", // シェルスクリプト実行をデフォルト化
+//     "problemMatcher": [], // スキャン無効化
+//     "presentation": {
+//         "focus": true, // ターミナルをフォーカス
+//         "showReuseMessage": false // 終了時の「閉じるには任意のキーを押してください」を表示しない
+//     // ==================== 規定設定 ====================
+//     }
+//     "tasks": [
+//         {
+//             "label": "docker down&up",
+//             "command": "docker compose -f 'docker-compose.yml' down && docker compose -f 'docker-compose.yml' up -d --build"
+//         },
+//         {
+//             "label": "docker down",
+//             "command": "docker compose -f 'docker-compose.yml' down"
+//         },
+//         {
+//         "label": "docker up",
+//             "command": "docker compose -f 'docker-compose.yml' up -d"
+//         },
+//     ]
+// },
