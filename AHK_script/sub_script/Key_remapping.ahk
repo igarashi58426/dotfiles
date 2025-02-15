@@ -2,12 +2,6 @@
 
 SC079::Send("{SC070}") ;[変換] -> [日本語入力モード]
 
-Esc::{
-    Send("{Esc}") ; [Esc] -> [Esc → 直接入力]
-    set_direct_input_mode()
-    Return
-}
-
 ;InsrtをDeleteに変更
 Insert::Send("{Blind}{Delete}") ;[Insrt] -> [Delete]
 
