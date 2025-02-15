@@ -4,7 +4,7 @@
 
 F13 & Tab::Send("{SC070}") ;[CapsLock] + [Tab] -> [ひらがな入力]
 
-Shift & F13::set_direct_input_mode() ; [Shift] + [CapsLock] -> [直直接入力モード接入力]
+Shift & F13::set_direct_input_mode() ; [Shift] + [CapsLock] -> [直接入力モード接入力]
 
 F13 & w::{
     like_ctrl_key := "n"
@@ -247,9 +247,40 @@ F13 & 0::{
 
 F13 & Esc::Send("{Blind}{Delete}") ;[CapsLock] + [Esc] -> [Delete]
 
-F13 & F1::Send("{Volume_Mute}") ;[CapsLock] + [F1] -> [ミュート]
-F13 & F2::Send("{Volume_Down 1}") ;[CapsLock] + [F2] -> [音量↓ダウン]
-F13 & F3::Send("{Volume_Up 1}") ;[CapsLock] + [F3] -> [音量↑アップ]
+F13 & F1::{
+    key := "F1"
+    If (GetKeyState("Shift","P")) {
+        Send("{Media_Play_Pause}") ; [Shift] + [CapsLock] + [F1] -> [再生/停止]
+    }else{
+        long_press_timeout := KeyWait(key, "T0.25")
+        if(long_press_timeout) {
+            Send("{Volume_Mute}") ;[CapsLock] + [F1(1回押し)] -> [ミュート]
+        }else{
+            Send("{Blind}#^{v}") ;[CapsLock] + [F1--(長押し)] -> [win + Ctrl + v (サウンド出力の選択)
+        }
+        KeyWait(key)
+    }
+    Return
+}
+
+F13 & F2::{
+    If (GetKeyState("Shift","P")) {
+        Send("{Media_Next}") ; [CapsLock] + [Shift] + [F2] -> [次の曲]
+    }else{
+        Send("{Volume_Down 1}") ;[CapsLock] + [F2] -> [音量↓ダウン]
+    }
+    Return
+}
+
+F13 & F3::{
+    If (GetKeyState("Shift","P")) {
+        Send("{Media_Prev}") ;[CapsLock] + [Shift] + [F3] -> [前の曲]
+    }else{
+        Send("{Volume_Up 1}") ;[CapsLock] + [F3] -> [音量↑アップ]
+    }
+    Return
+}
+
 F13 & F4::launch_disable_window() ;[CapsLock] + [F4] -> [スクリプト一時停止ウィンドウ]
 F13 & F5::Reload ;[CapsLock] + [F5] -> [スクリプトを再読込し、最初から実行し直す]
 F13 & F6::{
