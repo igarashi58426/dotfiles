@@ -4,6 +4,7 @@ GroupAdd("Disable_software", "ahk_class FFXIVGAME")
 GroupAdd("Disable_software", "ahk_class ARMORED CORE VI FIRES OF RUBICON")
 GroupAdd("Disable_software", "Titanfall 2")
 GroupAdd("Disable_software", "ahk_class FREEDOM WARS Remastered")
+GroupAdd("Game_group", "Mecha BREAK")
 
 
 ;***********装飾キーメモ************/
