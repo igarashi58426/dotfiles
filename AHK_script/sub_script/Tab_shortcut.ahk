@@ -58,7 +58,7 @@ Tab & v::{
 
 Tab & Space::Send("{Blind}{_}") ;[Tab] + [Space] -> ["_"]
 
-Tab & n::Send("^+{Ta    b}")
+Tab & n::Send("^+{Tab}")
 Tab & m::Send("^{Tab}")
 
 ;==================== マウス系 ====================
@@ -73,13 +73,6 @@ tab & WheelDown::{
     Sleep(1000)
 }
 
-tab & RButton::EWD_MoveWindow("RButton") ;[Tab] + [左クリック長押し] -> [ウィンドウの移動]
-
-tab & LButton::ResizeWindow("LButton") ;[Tab] + [左クリック長押し] -> [ウィンドウのサイズ変更]
-
-
-
-
 ;***********************Tabキーデフォルト動作定義*****************************************************
 
 Tab::Send("{Blind}{Tab}") ;[Tab] -> [Tab]
@@ -89,81 +82,6 @@ Tab::Send("{Blind}{Tab}") ;[Tab] -> [Tab]
 #Tab::Send("{Blind}#{Tab}") ;[win] + [Tab] -> [win + tab (デスクトップ一覧)]
 
 ;***********************************************************************************************
-
-;*********************** ウィンドウサイズ変更 *****************************************************
-
-ResizeWindow(trigger_key){
-    ; 動作中の場合は、押し上げの終了処理を行う
-    if(GetKeyState(trigger_key)){
-        Send("{Blind}{LButton up}")
-        Return
-    }
-    ; 最大化されている場合は何もしない
-    if ( !WinGetMinMax("A") ) {
-        Return
-    }
-
-    WinGetPos(&X, &Y, &W, &H, "A") ;対象ウィンドウの領域の座標取得
-    SM_CYFULLSCREEN := SysGet(17) ;フルスクリーン領域の下限座標取得
-    CoordMode("Mouse", "Screen") ;マウス動作を絶対座標系へ
-    if Y+H-1 < SM_CYFULLSCREEN ;ウィンドウの下が画面からはみ出していない
-    {
-        MouseMove(X+W-1, Y+H-1) ;ウィンドウの右下を選択
-    }
-    else
-    {
-        MouseMove(X+W-1, Y+1)   ;ウィンドウの右下を選択
-    }
-    Send("{Blind}{LButton down}") ;クリック押し下げ
-    
-}
-
-
-;***********************************************************************************************
-;*********************** ウィンドウ移動 *****************************************************
-; Easy Window Dragging
-; https://www.autohotkey.com
-; Normally, a window can only be dragged by clicking on its title bar.
-; This script extends that so that any point inside a window can be dragged.
-; To activate this mode, hold down CapsLock or the middle mouse button while
-; clicking, then drag the window to a new position.
-
-; Note: You can optionally release CapsLock or the middle mouse button after
-; pressing down the mouse button rather than holding it down the whole time.
-EWD_MoveWindow(trigger_key){
-    CoordMode "Mouse"  ; Switch to screen/absolute coordinates.
-    MouseGetPos &EWD_MouseStartX, &EWD_MouseStartY, &EWD_MouseWin
-    WinGetPos &EWD_OriginalPosX, &EWD_OriginalPosY,,, EWD_MouseWin
-    WinRestore("A") ;最大化解除
-    ;最大化されていない場合に実行
-    if !WinGetMinMax(EWD_MouseWin){
-        ; ユーザーがドラッグするときにマウスを追跡します。
-        SetTimer(EWD_WatchMouse, 10)
-    }
-
-    EWD_WatchMouse(){
-        if !GetKeyState(trigger_key, "P") ; Button has been released, so drag is complete.
-        {
-            SetTimer(, 0)
-            return
-        }
-        if GetKeyState("Escape", "P") ; Escape has been pressed, so drag is cancelled.
-        {
-            SetTimer(, 0)
-            WinMaximize("A")
-            return
-        }
-        ; Otherwise, reposition the window to match the change in mouse coordinates
-        ; caused by the user having dragged the mouse:
-        CoordMode "Mouse"
-        MouseGetPos &EWD_MouseX, &EWD_MouseY
-        WinGetPos &EWD_WinX, &EWD_WinY,,, EWD_MouseWin
-        SetWinDelay -1   ; Makes the below move faster/smoother.
-        WinMove EWD_WinX + EWD_MouseX - EWD_MouseStartX, EWD_WinY + EWD_MouseY - EWD_MouseStartY,,, EWD_MouseWin
-        EWD_MouseStartX := EWD_MouseX  ; Update for the next timer-call to this subroutine.
-        EWD_MouseStartY := EWD_MouseY
-    }
-}
 
 ;***********装飾キーメモ************/
 ;キー名 説明                        /
