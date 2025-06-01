@@ -126,6 +126,9 @@
     "markdown-pdf.styles": [
         "~/Documents/dotfiles/VScode/Markdown_css/github-markdown.css"
     ],
+    "markdown.copyFiles.destination": {
+        "*": "${documentBaseName}/"
+    },
     // ====================AHK拡張機能====================
     "vscode-ahk-plus.executePath": "C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
     // ====================plantUML拡張機能====================
@@ -144,7 +147,7 @@
         "Retr", "Cwnd", "hoge", "userland", "WSGI", "journalctl", "hwmon", "Undervoltage", "uwsgi", "Referer", "iframe", "pyfile", "SMBC", "prerouting", "postrouting", "DNAT", "dport", "uart", "inet", "napt", "proto", "nmcli", "ssid", "snat", "dnat",
         "autoconnect", "nmap", "upnp", "upnpd", "Linksys", "dnsmasq", "Rcvd", "dns-nsid", "dhcpd", "qdisc", "qlen", "pfifo", "hostdocker", "vethf", "ADDRTYPE", "ctstate", "SIGINT", "linkdown", "linkup", "Datagram", "hoge",
         "fuga", "lscr", "userns", "peerdns", "allowedips", "coredns", "sysctls", "dnscrypt", "puid", "pgid", "serverurl", "ddns", "serverport", "persistentkeepalive", "ceintl", "codercom", "sambasava", "pihole", "lighttpd", "photoprism",
-        "ifname", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+        "ifname", "softether", "softethervpn", "siomiz", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
     ],
     // ==================== remote SSH ====================
     "remote.SSH.remotePlatform": {
