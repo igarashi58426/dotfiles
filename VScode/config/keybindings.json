@@ -250,7 +250,7 @@
     {
         // Ctrl+Shift+mで「言語設定を開く」を定義
         "key": "ctrl+shift+m",
-        "command": "workbench.action.editor.changeLanguageMode",
+        "command": "workbench.action.editor.changeLanguageMode"
     },
     // ================================================================================
     {
@@ -274,9 +274,9 @@
     },
     // ================================================================================
     {
-        // ctrl+t で パンくずリストのプルダウンを表示
-        "key": "ctrl+t",
-        "command": "breadcrumbs.toggleToOn",
+        // ctrl+q で パンくずリストのプルダウンを表示
+        "key": "ctrl+q",
+        "command": "breadcrumbs.toggleToOn"
     },
     // ================================================================================
     {
@@ -498,7 +498,42 @@
         // shift+alt+_ GUIキーバインド設定を開く
         "key": "shift+alt+oem_102",
         "command": "workbench.action.openGlobalKeybindings"
-    // ==================== End of committed key ====================
+    },
+    {
+        // [無効化] ctrl+shift+i チャットエージェント
+        "key": "ctrl+shift+i",
+        "command": "-workbench.action.chat.openAgent",
+        "when": "config.chat.agent.enabled && !chatSetupHidden"
+    },
+    {
+        // [無効化] ctrl+e クイックオープンを無効化
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        // ctrl+e クイックオープンをターミナルフォーカス以外で有効化
+        "key": "ctrl+e",
+        "command": "workbench.action.quickOpen",
+        // "when": "!terminalFocus"
+        "when": "scmViewletVisible"
+
+    },
+    {
+        // ctrl+shift+] で比較エディターの次の変更へ移動
+        "key": "ctrl+shift+]",
+        "command": "workbench.action.compareEditor.nextChange"
+    },
+    {
+        // ctrl+shift+[ で比較エディターの前の変更へ移動
+        "key": "ctrl+shift+[",
+        "command": "workbench.action.compareEditor.previousChange"
+    },
+    {
+        // ctrl+shift+g 2回でGitグラフを表示
+        // (ctrl+shift+g 1回でGitパネル表示)
+        "key": "ctrl+shift+g",
+        "command": "git-graph.view",
+        "when": "view.workbench.scm.visible"
+        // ==================== End of committed key ====================
     }
 ]
-
