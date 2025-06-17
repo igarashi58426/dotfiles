@@ -514,9 +514,7 @@
         // ctrl+e クイックオープンをターミナルフォーカス以外で有効化
         "key": "ctrl+e",
         "command": "workbench.action.quickOpen",
-        // "when": "!terminalFocus"
-        "when": "scmViewletVisible"
-
+        "when": "!terminalFocus"
     },
     {
         // ctrl+shift+] で比較エディターの次の変更へ移動
