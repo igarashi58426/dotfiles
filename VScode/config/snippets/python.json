@@ -20,7 +20,7 @@
     },
     "value_for_print()": {
         "prefix": "pv",
-        "body": "print('${1:value}: ',${1:value})",
+        "body": "print(f'{${1:value} = }')",
         "description": "変数を名前とセットでprint出力"
     },
     "args_kwargs": {
