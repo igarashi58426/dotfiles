@@ -33,37 +33,37 @@
 	},
 	"line_number": {
 		"prefix": "line_number",
-		"body": "$TM_LINE_NUMBER",
+		"body": "$0$TM_LINE_NUMBER",
 		"description": "最初の行を１行目としたときの現在の行番号"
 	},
 	"file_and_line": {
 		"prefix": "filename_and_line",
-		"body": "$RELATIVE_FILEPATH#L$TM_LINE_NUMBER",
+		"body": "$0$RELATIVE_FILEPATH#L$TM_LINE_NUMBER",
 		"description": "ファイル名と行番号"
 	},
 	"filename": {
 		"prefix": "filename",
-		"body": "$TM_FILENAME",
+		"body": "$0$TM_FILENAME",
 		"description": "現在のファイル名"
 	},
 	"filename_base": {
 		"prefix": "filename_base",
-		"body": "$TM_FILENAME_BASE",
+		"body": "$0$TM_FILENAME_BASE",
 		"description": "現在のファイル名(拡張子を含まない)"
 	},
 	"directory": {
 		"prefix": "path_folder",
-		"body": "$TM_DIRECTORY",
+		"body": "$0$TM_DIRECTORY",
 		"description": "現在のフォルダパス(ディレクトリ)"
 	},
 	"filepath": {
 		"prefix": "path_file",
-		"body": "$TM_FILEPATH",
+		"body": "$0$TM_FILEPATH",
 		"description": "現在のフルパス"
 	},
 	"relative_filepath": {
 		"prefix": "path_relative",
-		"body": "./$RELATIVE_FILEPATH",
+		"body": "$0./$RELATIVE_FILEPATH",
 		"description": "現在の相対パス"
 	},
 	"unix_time": {
@@ -115,6 +115,4 @@
 	// 1～9 タブストップ$1～$9の内容
 	// CURSOR_INDEX マルチカーソルの最初の選択を0とした番号
 	// CURSOR_NUMBER マルチカーソルの最初の選択を1とした番号
-
-
 }
