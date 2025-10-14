@@ -32,6 +32,7 @@ A_MaxHotkeysPerInterval := 200
 
 ;====================ショートカットスクリプトの読み込み====================
 #HotIf not WinActive("ahk_group Disable_software") AND not WinExist("ScriptDisabled")
+    #Include sub_script/asdw_shortcut.ahk
     #Include sub_script/Key_remapping.ahk
     #Include sub_script/CapslLock_shortcut.ahk
     #Include sub_script/Winkey_shortcut.ahk

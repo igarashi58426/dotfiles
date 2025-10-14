@@ -14,7 +14,7 @@ q & d::Send("{Blind}{>}") ;[q] + [x] -> [>]
 
 ;***********************Qキーデフォルト動作定義*****************************************************
 
-q::Send("{Blind}{q}") ;[q] -> [q]
+; q::Send_in_critical("{Blind}{q}") ;(別定義)
 ^q::Send("{Blind}^{q}") ;[Ctrl] + [q] -> [Ctrl + q]
 +q::Send("{Blind}+{q}") ;[shift] + [q] -> [shift + q]
 !q::Send("{Blind}!{q}") ;[alt] + [q] -> [alt + q]

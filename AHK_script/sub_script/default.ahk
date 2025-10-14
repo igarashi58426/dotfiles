@@ -4,16 +4,16 @@
 ;=======================================
 
 ; ==================== 英字 ====================
-a::Send("{Blind}{a Down}") ;[a] -> [a]
-a up::Send("{Blind}{a up}")
+; a::Send("{Blind}{a Down}") ;[a] -> [a]
+; a up::Send("{Blind}{a up}")
 b::Send("{Blind}{b Down}") ;[b] -> [b]
 b up::Send("{Blind}{b up}")
 c::Send("{Blind}{c Down}") ;[c] -> [c]
 c up::Send("{Blind}{c up}")
-d::Send("{Blind}{d Down}") ;[d] -> [d]
-d up::Send("{Blind}{d up}")
-e::Send("{Blind}{e Down}") ;[e] -> [e]
-e up::Send("{Blind}{e up}")
+; d::Send("{Blind}{d Down}") ;[d] -> [d]
+; d up::Send("{Blind}{d up}")
+; e::Send("{Blind}{e Down}") ;[e] -> [e]
+; e up::Send("{Blind}{e up}")
 f::Send("{Blind}{f Down}") ;[f] -> [f]
 f up::Send("{Blind}{f up}")
 g::Send("{Blind}{g Down}") ;[g] -> [g]
@@ -40,16 +40,16 @@ p up::Send("{Blind}{p up}")
 ; q up::Send("{Blind}{q up}")
 r::Send("{Blind}{r Down}") ;[r] -> [r]
 r up::Send("{Blind}{r up}")
-s::Send("{Blind}{s Down}") ;[s] -> [s]
-s up::Send("{Blind}{s up}")
+; s::Send("{Blind}{s Down}") ;[s] -> [s]
+; s up::Send("{Blind}{s up}")
 t::Send("{Blind}{t Down}") ;[t] -> [t]
 t up::Send("{Blind}{t up}")
 u::Send("{Blind}{u Down}") ;[u] -> [u]
 u up::Send("{Blind}{u up}")
 v::Send("{Blind}{v Down}") ;[v] -> [v]
 v up::Send("{Blind}{v up}")
-w::Send("{Blind}{w Down}") ;[w] -> [w]
-w up::Send("{Blind}{w up}")
+; w::Send("{Blind}{w Down}") ;[w] -> [w]
+; w up::Send("{Blind}{w up}")
 x::Send("{Blind}{x Down}") ;[x] -> [x]
 x up::Send("{Blind}{x up}")
 y::Send("{Blind}{y Down}") ;[y] -> [y]

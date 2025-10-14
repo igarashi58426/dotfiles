@@ -6,36 +6,6 @@ F13 & Tab::Send("{SC070}") ;[CapsLock] + [Tab] -> [ひらがな入力]
 
 Shift & F13::set_direct_input_mode() ; [Shift] + [CapsLock] -> [直接入力モード接入力]
 
-F13 & w::{
-    Send("{Blind}{Up}") ;[CapsLock] + [w] -> [↑]
-    Return
-}
-
-F13 & s::{
-    Send("{Blind}{Down}") ;[CapsLock] + [s] -> [↓]
-    Return
-}
-
-F13 & d::{
-    Send("{Blind}{Right}") ;[CapsLock] + [d] -> [→]
-    Return
-}
-
-F13 & a::{
-    Send("{Blind}{Left}") ;[CapsLock] + [a] -> [←]
-    Return
-}
-
-F13 & q::{
-    Send("{Blind}{Backspace}") ;[CapsLock] + [q] -> [Backspace]
-    Return
-}
-
-F13 & e::{
-    Send("{Blind}{Enter}") ;[CapsLock] + [e] -> [Enter]
-    Return
-}
-
 F13 & 1::{
     key := "1"
     long_press_timeout := KeyWait(key, "T0.25")
