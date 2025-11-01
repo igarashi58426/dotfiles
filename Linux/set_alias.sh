@@ -10,5 +10,6 @@ echo "alias gr='grep'" >> ~/.bashrc
 echo "alias ..='cd ..'" >> ~/.bashrc
 echo "alias gr='grep'" >> ~/.bashrc
 echo "alias ii='explorer.exe'" >> ~/.bashrc
+echo "alias dxker='oxker'"  >> ~/.bashrc
 
 source ~/.bashrc
