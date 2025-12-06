@@ -527,11 +527,38 @@
         "command": "workbench.action.compareEditor.previousChange"
     },
     {
-        // ctrl+shift+g 2回でGitグラフを表示
-        // (ctrl+shift+g 1回でGitパネル表示)
-        "key": "ctrl+shift+g",
-        "command": "git-graph.view",
-        "when": "view.workbench.scm.visible"
+        // [無効化] ctrl+shift+l のcontinue拡張のバティング無効化
+        "key": "ctrl+shift+l",
+        "command": "-continue.focusContinueInputWithoutClear"
+    },
+    {
+        // [無効化] ctrl+shift+i のgithub Copilot拡張のchatのバティング無効化
+        "key": "ctrl+shift+i",
+        "command": "-workbench.action.chat.openagent",
+        "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
+    },
+    {
+        // ctrl+shift+g→tでGitグラフを表示
+        "key": "ctrl+shift+g ctrl+shift+t",
+        "command": "git-graph.view"
+    },
+    {
+        // ctrl+shift+g 2回でGitパネル表示 
+        "key": "ctrl+shift+g ctrl+shift+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active && !chatSetupDisabled && !chatSetupHidden"
+    },
+    {
+        // ctrl+shift+d でTerminal上で次のTerminalにフォーカス
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+       // ctrl+shift+s でTerminal上で前のTerminalにフォーカス
+        "key": "ctrl+shift+a",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
         // ==================== End of committed key ====================
     }
 ]
