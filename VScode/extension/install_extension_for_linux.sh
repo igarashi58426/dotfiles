@@ -10,8 +10,8 @@ code --install-extension MS-CEINTL.vscode-language-pack-ja
 code --install-extension sgryjp.japanese-word-handler
 
 # ====================便利ユーティリティ====================
-# ファイル名コピー
-code --install-extension nemesv.copy-file-name
+# ファイルツール・ファイル名取得
+code --install-extension sleistner.vscode-fileutils
 # base64変換
 code --install-extension adamhartford.vscode-base64
 # 連番数字挿入
@@ -25,7 +25,7 @@ code --install-extension bibhasdn.unique-lines
 # HTLMエスケープ変換
 code --install-extension christopherstyles.html-entities
 # システム情報表示
-code --install-extension wraith13.sysinfo-vscode
+# code --install-extension wraith13.sysinfo-vscode
 
 # ====================追加エディタ====================
 # PDFの閲覧
