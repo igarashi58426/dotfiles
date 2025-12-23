@@ -7,7 +7,12 @@ RButton & MButton::{
     key := "MButton"
     not_long_press := KeyWait(key, "T0.35")
     if(not_long_press){
-        send("^{w}") ;[マウス右] + [マウス中] -> [ctrl + w (タブを閉じる)]
+        is_double_press := KeyWait(key, "D T0.2")
+        if(is_double_press){
+            Send("!{F4}") ;[マウス右] + [マウス中中(2回押し)] -> [Alt + F4(ウィンドウ終了)]
+        }else{
+            send("^{w}") ;[マウス右] + [マウス中] -> [ctrl + w (タブを閉じる)]
+        }
     }else{
         send("^+{t}") ;[マウス右] + [マウス中(長押し)] -> [ctrl + Shift + t (閉じたタブを復元)]
     }
