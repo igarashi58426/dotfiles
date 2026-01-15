@@ -83,6 +83,9 @@ RButton & 9::Send("{Blind}{Right}") ;[マウス右] + [9] -> [→]
 
 ; *********************** ホイール↑↓ ***********************************************************
 
+; WheelDown::Send("{LButton}") ;[ホイール↓] -> [クリック]
+; WheelUp::Send("{LButton}") ;[ホイール↑] -> [クリック]
+
 +WheelUp::Send("{WheelLeft 2}") ;[Shift] + [ホイール↑] -> [ホイール←左]
 +WheelDown::Send("{WheelRight 2}") ;[Shift] + [ホイール↓] -> [ホイール→右]
 
