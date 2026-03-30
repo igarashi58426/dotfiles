@@ -19,7 +19,7 @@
     if(not_long_press){
         is_double_press := KeyWait(key, "D T0.2")
         if(is_double_press){
-            Send("^{j}") ;[CapsLock] + [qq(2回押し)] -> [Ctrl + j (出力パネルの表示/非表示)]
+            Send("^{@}") ;[CapsLock] + [qq(2回押し)] -> [Ctrl + j (出力パネルの表示/非表示)]
         }else{
             Send("^{b}") ;[CapsLock] + [q(1回押し)] -> [Ctrl + b (サイドパネルの表示/非表示)]
         }
