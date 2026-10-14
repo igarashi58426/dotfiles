@@ -5,7 +5,7 @@ from sys import exit
 key_root = winreg.HKEY_LOCAL_MACHINE
 key_path = r'SYSTEM\CurrentControlSet\Control\Keyboard Layout'
 key_name = 'Scancode Map'
-key_data = b'\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00d\x00:\x00\x00\x00\x00\x00'
+key_data = b'\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00d\x00:\x00\x00\x00\x00\x00'  # Caps Lock キーをF13キーに変換
 
 
 def get_winreg_type(data):

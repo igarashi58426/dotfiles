@@ -7,13 +7,13 @@ setlocal
 set "batch_dir=%~dp0"
 
 @REM 入力する.ahkスクリプトのファイル名
-set script_file_name=main_script.ahk
+set script_file_name=main.ahk
 
 @REM 入力する.ahkファイルのパスを生成
 set "input_file=%batch_dir%\..\%script_file_name%"
 
 @REM 出力する.exeファイルのファイル名
-set exe_file_name=main_script.exe
+set exe_file_name=main.exe
 
 @REM 出力する.exeファイルパスを生成
 set "output_file="%batch_dir%\%exe_file_name%"
