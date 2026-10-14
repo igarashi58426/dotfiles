@@ -23,34 +23,34 @@ A_HotkeyInterval := 1000
 A_MaxHotkeysPerInterval := 200
 
 ;====================ライブラリ読み込み====================
-#Include library_script/IMEv2.ahk
-#Include library_script/utility.ahk
+#Include library/IMEv2.ahk
+#Include library/utility.ahk
 
 ;====================設定読み込み====================
 #Include config/Disable_software.ahk
 #Include config/Game_group.ahk
 
 ;====================ショートカットスクリプトの読み込み====================
-#HotIf not WinActive("ahk_group Disable_software") AND not WinExist("ScriptDisabled")
-    #Include sub_script/asdw_shortcut.ahk
-    #Include sub_script/Key_remapping.ahk
-    #Include sub_script/CapslLock_shortcut.ahk
-    #Include sub_script/Winkey_shortcut.ahk
-    #Include sub_script/Mouse_shortcut.ahk
-    #Include sub_script/Z_shortcut.ahk
-    #Include sub_script/Q_shortcut.ahk
-    #Include sub_script/Tab_shortcut.ahk
-    #Include sub_script/Muhenkan_shortcut.ahk
-    #Include sub_script/Underscore_alternative_shift.ahk
-    #Include sub_script/Symbol_direct_input.ahk
-    #Include sub_script/Shift_symbol.ahk
-    #Include sub_script/VScode_Shortcut.ahk
-    #Include sub_script/default.ahk
+#HotIf not WinActive("ahk_group Disable_software") AND not WinExist("ScriptsscriptsDisabled")
+    #Include scripts/asdw_shortcut.ahk
+    #Include scripts/Key_remapping.ahk
+    #Include scripts/CapslLock_shortcut.ahk
+    #Include scripts/Winkey_shortcut.ahk
+    #Include scripts/Mouse_shortcut.ahk
+    #Include scripts/Z_shortcut.ahk
+    #Include scripts/Q_shortcut.ahk
+    #Include scripts/Tab_shortcut.ahk
+    #Include scripts/Muhenkan_shortcut.ahk
+    #Include scripts/Underscore_alternative_shift.ahk
+    #Include scripts/Symbol_direct_input.ahk
+    #Include scripts/Shift_symbol.ahk
+    #Include scripts/VScode_Shortcut.ahk
+    #Include scripts/default.ahk
 #HotIf
 
 ;====================ゲームモード====================
 #HotIf WinActive("ahk_group Game_group")
-    #Include sub_script/Game_shortcut.ahk
+    #Include scripts/Game_shortcut.ahk
 #HotIf
 
 
